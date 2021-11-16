@@ -2,11 +2,6 @@
 
 Commande: npm install
 
-## Compte administrateur pour se connecter
-
-Courriel: admin@admin.com
-Mot de passe: admin
-
 ## Fin de la journée 1
 
 La base de donnée est en place. Les relations entres les modèles sont en places. Le controlleur du cellier est terminé.
