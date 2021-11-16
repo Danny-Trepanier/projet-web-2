@@ -16,7 +16,7 @@ class CreateBottlesCellarsTable extends Migration
         Schema::create('bottles_cellars', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->foreignId('bottle_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
-            $table->foreignId('user_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('cellar_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
         });
     }
 
