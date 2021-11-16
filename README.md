@@ -1,6 +1,6 @@
 ## Première chose à faire, télécharger les packages et les dépendances
 
-Commande: npm install
+Commande: composer update
 
 ## Compte administrateur pour se connecter
 
