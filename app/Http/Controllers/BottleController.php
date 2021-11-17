@@ -6,6 +6,7 @@ use App\Models\Bottle;
 use App\Models\Cellar;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Http;
 
 class BottleController extends Controller
 {
@@ -18,7 +19,9 @@ class BottleController extends Controller
     {
         // Afficher le résultat du "scraper" ici
         // Pour le moment, on affiche les bouteilles de notre base de donnée
-        $bottles = Bottle::all();
+        //$bottles = Bottle::all();
+        $response = Http::withBasicAuth('V6J3PXu5RXMasroclOfK', 'apikey=7duGx0ooDpG8vwkn1j5yvynYJ4L3Vh9S')->get('https://simplescraper.io/api/V6J3PXu5RXMasroclOfK?apikey=7duGx0ooDpG8vwkn1j5yvynYJ4L3Vh9S&limit=100');
+        return Http::dd()->get('https://simplescraper.io/api/V6J3PXu5RXMasroclOfK?apikey=7duGx0ooDpG8vwkn1j5yvynYJ4L3Vh9S&limit=100');
 
         return view('bottle.index', [
             'bottles' => $bottles
