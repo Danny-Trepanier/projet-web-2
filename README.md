@@ -1,3 +1,5 @@
+Salut maxime !
+
 ## Première chose à faire, télécharger les packages et les dépendances
 
 Commande: npm install
