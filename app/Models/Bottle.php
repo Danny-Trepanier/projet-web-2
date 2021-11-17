@@ -22,6 +22,6 @@ class Bottle extends Model
 
     public function cellars()
     {
-        return $this->belongsToMany(Cellar::class, 'bottles_cellars');
+        return $this->belongsToMany(Cellar::class);
     }
 }

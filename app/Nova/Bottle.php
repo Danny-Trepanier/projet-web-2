@@ -51,7 +51,7 @@ class Bottle extends Resource
     {
         return [
             ID::make(__('ID'), 'id')->sortable()->rules('required', 'max:255'),
-            Text::make('Nom', 'name')->sortable()->rules('required', 'max:255'),
+            Text::make('Nom', 'name')->sortable()->rules('required', 'min:4', 'max:255'),
             Select::make('Couleur', 'color')->options([
                 'Rouge' => 'Rouge',
                 'Blanc' => 'Blanc',
@@ -59,7 +59,7 @@ class Bottle extends Resource
             ])->sortable()->rules('required', 'max:20'),
             Number::make('Quantité ml', 'ml_quantity')->sortable()->rules('required'),
             Country::make('Pays', 'country')->sortable()->rules('required', 'max:255'),
-            Text::make('Code', 'code')->rules('required', 'max:255'),
+            Text::make('Code', 'code')->rules('required', 'unique:bottles', 'max:255'),
             Number::make('Prix', 'price')->step(0.01)->sortable()->rules('required'),
             Image::make('Lien image', 'image_link')->disk('public')->disableDownload()->creationRules('required'),
         ];

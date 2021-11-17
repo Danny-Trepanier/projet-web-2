@@ -67,11 +67,11 @@ class CellarController extends Controller
     {
         $this->authorize('view', $cellarPost);
 
-        $myBottles = Cellar::find($cellarPost->id)->bottles;
+        $myCellars = Cellar::find($cellarPost->id);
 
         return view('cellar.show', [
             'cellar' => $cellarPost,
-            'myBottles' => $myBottles
+            'myCellars' => $myCellars
         ]);
     }
 

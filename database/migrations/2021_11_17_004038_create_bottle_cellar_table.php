@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBottlesCellarsTable extends Migration
+class CreateBottleCellarTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,7 @@ class CreateBottlesCellarsTable extends Migration
      */
     public function up()
     {
-        Schema::create('bottles_cellars', function (Blueprint $table) {
-            $table->bigIncrements('id');
+        Schema::create('bottle_cellar', function (Blueprint $table) {
             $table->foreignId('bottle_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
             $table->foreignId('cellar_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
         });
@@ -27,6 +26,6 @@ class CreateBottlesCellarsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('bottles_cellars');
+        Schema::dropIfExists('bottle_cellar');
     }
 }
