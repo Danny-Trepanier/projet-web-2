@@ -1,4 +1,4 @@
-Salut maxime !
+Salut danny !
 
 ## Première chose à faire, télécharger les packages et les dépendances
 
