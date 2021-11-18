@@ -23,12 +23,10 @@ Les validations des formulaires sont également faits.
 
 Installation de Laravel Nova. L'admin peut gérer les utilisateurs et les bouteilles. Le controlleur de la bouteille est terminé. 
 
-
 ## Correction
 Correction effectuée au niveau de la table 
 bottles_cellars. user_id devient cellar_id
 
-<<<<<<< HEAD
 ## Laravel Sponsors
 
 We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
