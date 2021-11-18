@@ -6,6 +6,7 @@ use App\Models\Bottle;
 use App\Models\Cellar;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Http;
 
 class BottleController extends Controller
 {
@@ -16,8 +17,7 @@ class BottleController extends Controller
      */
     public function index()
     {
-        // Afficher le résultat du "scraper" ici
-        // Pour le moment, on affiche les bouteilles de notre base de donnée
+        // On affiche les bouteilles de notre base de donnée
         $bottles = Bottle::all();
 
         return view('bottle.index', [
@@ -75,6 +75,7 @@ class BottleController extends Controller
     public function show(Bottle $bottlePost)
     {
 
+        dd($bottlePost);
         return view('bottle.show', [
             'bottle' => $bottlePost,
         ]);
