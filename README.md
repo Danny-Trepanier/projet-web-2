@@ -3,8 +3,14 @@
 Commande: npm install
 
 ## Étapes pour git Pull/Push
+git checkout <branche>
 git pull origin developpement
 git push origin <ma-branche>:developpement
+git add <file>
+git commit -m "commentaire"
+git rm <file>
+git reset -- <file>
+get checkout -- <file>
 
 ## Fin de la journée 1
 
