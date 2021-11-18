@@ -1,0 +1,19 @@
+:root {
+
+    /* Palette de couleurs */
+
+    --rich-black: #161B1F;
+    --caput-mortuum: #58181F;
+    --mint-cream: #F2F7F2;
+    --xanadu: #607466;
+
+    /* Typographie */
+
+    --font-title: 'Montserrat', sans-serif;
+    --font-subtitle: 'Roboto Condensed', sans-serif;
+    --font-text: 'Martel', serif;
+    --font-size-title: 1.77em;
+    --font-size-subtitle: 1.33em;
+    --font-size-text: 1em;
+
+}
