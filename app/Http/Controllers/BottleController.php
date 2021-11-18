@@ -87,9 +87,13 @@ class BottleController extends Controller
      * @param  \App\Models\Bottle  $bottle
      * @return \Illuminate\Http\Response
      */
-    public function edit(Bottle $bottle)
+    public function edit(Bottle $bottlePost)
     {
-        //
+        $this->authorize('update', $bottlePost);
+
+        return view('bottle.edit', [
+            'bottle' => $bottlePost
+        ]);
     }
 
     /**
@@ -99,9 +103,29 @@ class BottleController extends Controller
      * @param  \App\Models\Bottle  $bottle
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Bottle $bottle)
+    public function update(Request $request, Bottle $bottlePost)
     {
-        //
+        $bottlePost->validate([
+            'name' => 'required|min:4|max:255',
+            'color' => 'required|max:20',
+            'ml_quantity' => 'required',
+            'country' => 'required|max:255',
+            'code' => 'required|unique:bottles|max:255',
+            'price' => 'required',
+            'image_link' => 'required',
+        ]);
+
+        $bottlePost->update([
+            'name' => $bottlePost->name,
+            'color' => $bottlePost->color,
+            'ml_quantity' => $bottlePost->ml_quantity,
+            'country' => $bottlePost->country,
+            'code' => $bottlePost->code,
+            'price' => $bottlePost->price,
+            'image_link' => $bottlePost->image_link,
+        ]);
+
+        return redirect('bottle/' . $bottlePost->id );
     }
 
     /**

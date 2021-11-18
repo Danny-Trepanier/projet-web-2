@@ -3,8 +3,14 @@
 Commande: npm install
 
 ## Étapes pour git Pull/Push
+git checkout <branche>
 git pull origin developpement
 git push origin <ma-branche>:developpement
+git add <file>
+git commit -m "commentaire"
+git rm <file>
+git reset -- <file>
+get checkout -- <file>
 
 ## Fin de la journée 1
 
@@ -17,12 +23,10 @@ Les validations des formulaires sont également faits.
 
 Installation de Laravel Nova. L'admin peut gérer les utilisateurs et les bouteilles. Le controlleur de la bouteille est terminé. 
 
-
 ## Correction
 Correction effectuée au niveau de la table 
 bottles_cellars. user_id devient cellar_id
 
-<<<<<<< HEAD
 ## Laravel Sponsors
 
 We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
