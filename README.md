@@ -60,9 +60,8 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
- ;uwhogrwe
-=======
+
 Correction sur les modèles et controlleur Bottle & Cellar pour les relations N:M.
 Correction sur les tables bottles_carts & bottles_cellars. 
 Elles deviennent bottle_cart & bottle_cellar pour respecter la documentation.
->>>>>>> 7958e542e7be914766f13460b5c1f8ff25f95b15
+
