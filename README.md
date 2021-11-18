@@ -2,6 +2,10 @@
 
 Commande: npm install
 
+## Étapes pour git Pull/Push
+git pull origin developpement
+git push origin <ma-branche>:developpement
+
 ## Fin de la journée 1
 
 La base de donnée est en place. Les relations entres les modèles sont en places. Le controlleur du cellier est terminé.
