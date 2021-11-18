@@ -17,11 +17,8 @@ class BottleController extends Controller
      */
     public function index()
     {
-        // Afficher le résultat du "scraper" ici
-        // Pour le moment, on affiche les bouteilles de notre base de donnée
-        //$bottles = Bottle::all();
-        $response = Http::withBasicAuth('V6J3PXu5RXMasroclOfK', 'apikey=7duGx0ooDpG8vwkn1j5yvynYJ4L3Vh9S')->get('https://simplescraper.io/api/V6J3PXu5RXMasroclOfK?apikey=7duGx0ooDpG8vwkn1j5yvynYJ4L3Vh9S&limit=100');
-        return Http::dd()->get('https://simplescraper.io/api/V6J3PXu5RXMasroclOfK?apikey=7duGx0ooDpG8vwkn1j5yvynYJ4L3Vh9S&limit=100');
+        // On affiche les bouteilles de notre base de donnée
+        $bottles = Bottle::all();
 
         return view('bottle.index', [
             'bottles' => $bottles
@@ -78,6 +75,7 @@ class BottleController extends Controller
     public function show(Bottle $bottlePost)
     {
 
+        dd($bottlePost);
         return view('bottle.show', [
             'bottle' => $bottlePost,
         ]);
