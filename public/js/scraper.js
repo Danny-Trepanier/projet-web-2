@@ -34,4 +34,4 @@ async function scrapeProduct(numberPage, product_list_limit) {
 //     }
 // }
 
-scrapeProduct(5,96);
+scrapeProduct(93,96);
