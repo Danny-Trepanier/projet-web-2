@@ -9,7 +9,7 @@ async function scrapeProduct(numberPage, product_list_limit) {
     data = [];
 
     for(let i=1; i<=numberPage; i++) {
-        url = 'https://www.saq.com/fr/produits/vin?p='+ i +'&product_list_limit='+ product_list_limit +'';
+        url = 'https://www.saq.com/fr/produits/vin?p='+ i +'&product_list_limit='+product_list_limit;
 
         const browser = await puppeteer.launch();
         const page  = await browser.newPage();
@@ -17,12 +17,12 @@ async function scrapeProduct(numberPage, product_list_limit) {
         for(let j=1; j<=product_list_limit; j++) {
             try {
                 const [name] = await page.$x('/html/body/div[3]/div[2]/div[1]/main/div/div[2]/div[3]/ol/li['+ j +']/div/div[3]/div[1]/div[1]/strong[1]/a');
-                const [image_link] = await page.$x('/html/body/div[3]/div[2]/div[1]/main/div/div[2]/div[3]/ol/li[10]/div/a/span[2]/span/img');
-                const [code] = await page.$x('/html/body/div[3]/div[2]/div[1]/main/div/div[2]/div[3]/ol/li[1]/div/div[3]/div[1]/div[1]/div[2]/span[2]');
-                const [price] = await page.$x('/html/body/div[3]/div[2]/div[1]/main/div/div[2]/div[3]/ol/li[1]/div/div[3]/div[1]/div[1]/div[4]/span/span/span');
-                const [color] = await page.$x('/html/body/div[3]/div[2]/div[1]/main/div/div[2]/div[3]/ol/li[1]/div/div[3]/div[1]/div[1]/strong[2]/span/text()[1]');
-                const [ml_quantity] = await page.$x('/html/body/div[3]/div[2]/div[1]/main/div/div[2]/div[3]/ol/li[1]/div/div[3]/div[1]/div[1]/strong[2]/span/text()[2]');
-                const [country] = await page.$x('/html/body/div[3]/div[2]/div[1]/main/div/div[2]/div[3]/ol/li[1]/div/div[3]/div[1]/div[1]/strong[2]/span/text()[3]');
+                const [image_link] = await page.$x('/html/body/div[3]/div[2]/div[1]/main/div/div[2]/div[3]/ol/li['+ j +']/div/a/span[2]/span/img');
+                const [code] = await page.$x('/html/body/div[3]/div[2]/div[1]/main/div/div[2]/div[3]/ol/li['+ j +']/div/div[3]/div[1]/div[1]/div[2]/span[2]');
+                const [price] = await page.$x('/html/body/div[3]/div[2]/div[1]/main/div/div[2]/div[3]/ol/li['+ j +']/div/div[3]/div[1]/div[1]/div[4]/span/span/span');
+                const [color] = await page.$x('/html/body/div[3]/div[2]/div[1]/main/div/div[2]/div[3]/ol/li['+ j +']/div/div[3]/div[1]/div[1]/strong[2]/span/text()[1]');
+                const [ml_quantity] = await page.$x('/html/body/div[3]/div[2]/div[1]/main/div/div[2]/div[3]/ol/li['+ j +']/div/div[3]/div[1]/div[1]/strong[2]/span/text()[2]');
+                const [country] = await page.$x('/html/body/div[3]/div[2]/div[1]/main/div/div[2]/div[3]/ol/li['+ j +']/div/div[3]/div[1]/div[1]/strong[2]/span/text()[3]');
 
 
                 const srcName = await name.getProperty('textContent');
@@ -51,6 +51,8 @@ async function scrapeProduct(numberPage, product_list_limit) {
                 // console.log('Page: ' + i + ' id=' + j + ' => ' + srcCountryText.replace(/^\s+|\s+$/g, "").replace(/\s+/g, " "));
 
                 data = {
+                    "page": i,
+                    "id": j,
                     "name": srcNameText.replace(/^\s+|\s+$/g, "").replace(/\s+/g, " "),
                     "color": srcColorText.replace(/^\s+|\s+$/g, "").replace(/\s+/g, " ").substring(4),
                     "ml_quantity": srcMlQuantityText.replace(/^\s+|\s+$/g, "").replace(/\s+/g, " ").slice(0, -3),
