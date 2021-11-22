@@ -70,7 +70,6 @@ async function scrapeProduct(numberPage, product_list_limit) {
     }
 }
 
-<<<<<<< HEAD
 // On fait la boucle pour appeler le nombre de page et le nombre de produit limite par page demandé par l'admin
 // function sendRequest(numberPage, product_list_limit) {
 
@@ -79,7 +78,4 @@ async function scrapeProduct(numberPage, product_list_limit) {
 //     }
 // }
 
-scrapeProduct(93,96);
-=======
 scrapeProduct(1,24);
->>>>>>> 8b2e6e445e16c6063ba29402f01a913aa9237a59
