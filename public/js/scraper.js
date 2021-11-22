@@ -70,4 +70,12 @@ async function scrapeProduct(numberPage, product_list_limit) {
     }
 }
 
+// On fait la boucle pour appeler le nombre de page et le nombre de produit limite par page demandé par l'admin
+// function sendRequest(numberPage, product_list_limit) {
+
+//     for(let i=1; i<=numberPage; i++) {
+//         scrapeProduct('https://www.saq.com/fr/produits/vin?p='+ i +'&product_list_limit='+ product_list_limit +'', i, product_list_limit);
+//     }
+// }
+
 scrapeProduct(1,24);
