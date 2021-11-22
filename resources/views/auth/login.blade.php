@@ -42,7 +42,7 @@
                 <x-jet-button class="button">
                     {{ __('Log in') }}
                 </x-jet-button>
-                <span>ou inscrivez-vous : </span>
+                <span>or register : </span>
                 <x-jet-button class="button">
                     <a href="{{ route('register') }}">Register</a>
                 </x-jet-button>
