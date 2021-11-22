@@ -1,3 +1,5 @@
+@import url(login.css);
+
 :root {
 
     /* Palette de couleurs */
@@ -16,4 +18,39 @@
     --font-size-subtitle: 1.33em;
     --font-size-text: 1em;
 
+}
+
+/* Général ----------------------------------------------------------------------------- */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-family: var(--font-title);
+    font-size: var(--font-size-title);
+}
+
+h2 {
+    font-family: var(--font-subtitle);
+    font-size: var(--font-size-subtitle);
+}
+
+h3, h4, h5, h6 {
+    font-family: var(--font-subtitle);
+}
+
+p {
+    font-family: var(--font-text);
+    font-size: var(--font-size-text);
+}
+
+.button {
+    background-color: var(--caput-mortuum);
+    text-align: center;
+}
+
+.button:active {
+    background-color: var(--xanadu);
 }
