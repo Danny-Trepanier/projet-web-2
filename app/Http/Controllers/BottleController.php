@@ -79,13 +79,17 @@ class BottleController extends Controller
             'note' => 'required|min:1|max:5',
         ]);
 
-        $bottle = Comment::updateOrCreate([
-            'note' => $bottlePost->note,
-            'bottle_id' => $bottlePost->id,
-            'user_id' => Auth::user()->id,
-        ]);
+        $bottle = Comment::updateOrCreate(
+            [
+                'bottle_id' => $bottlePost->bottle_id,
+                'user_id' => Auth::user()->id,
+            ],
+            [
+                'note' => $bottlePost->note,
+            ]
+        );
 
-        return redirect('bottle/' . $bottle->id );
+        return redirect('bottle/' . $bottle->bottle_id );
     }
 
     /**
@@ -96,8 +100,6 @@ class BottleController extends Controller
      */
     public function show(Bottle $bottlePost)
     {
-
-        dd($bottlePost);
         return view('bottle.show', [
             'bottle' => $bottlePost,
         ]);
