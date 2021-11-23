@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Bottle;
 use App\Models\Cellar;
+use App\Models\Comment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Http;
@@ -67,6 +68,31 @@ class BottleController extends Controller
     }
 
     /**
+     * Ajoute une note à une bière.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function storeComment(Request $bottlePost)
+    {
+        $bottlePost->validate([
+            'note' => 'required|min:1|max:5',
+        ]);
+
+        $bottle = Comment::updateOrCreate(
+            [
+                'bottle_id' => $bottlePost->bottle_id,
+                'user_id' => Auth::user()->id,
+            ],
+            [
+                'note' => $bottlePost->note,
+            ]
+        );
+
+        return redirect('bottle/' . $bottle->bottle_id );
+    }
+
+    /**
      * Display the specified resource.
      *
      * @param  \App\Models\Bottle  $bottle
@@ -74,8 +100,6 @@ class BottleController extends Controller
      */
     public function show(Bottle $bottlePost)
     {
-
-        dd($bottlePost);
         return view('bottle.show', [
             'bottle' => $bottlePost,
         ]);

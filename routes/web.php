@@ -43,3 +43,5 @@ Route::get('/bottle/create/bottle', [BottleController::class, 'create'])->middle
 Route::post('/bottle/create/bottle', [BottleController::class, 'store'])->middleware(['auth:sanctum', 'verified']);
 Route::get('/bottle/{bottlePost}/edit', [BottleController::class, 'edit'])->middleware(['auth:sanctum', 'verified']);
 Route::put('/bottle/{bottlePost}/edit', [BottleController::class, 'update'])->middleware(['auth:sanctum', 'verified']);
+//Route pour ajouter une note à une bouteille
+Route::post('/bottle/create/comment', [BottleController::class, 'storeComment'])->middleware(['auth:sanctum', 'verified'])->name('bottle.create.comment');
