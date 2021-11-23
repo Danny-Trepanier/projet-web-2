@@ -70,4 +70,6 @@ async function scrapeProduct(numberPage, product_list_limit) {
     }
 }
 
+
 scrapeProduct(2,24);
+

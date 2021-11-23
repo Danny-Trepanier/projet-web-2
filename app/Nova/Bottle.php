@@ -12,6 +12,7 @@ use App\Nova\Metrics\NewBottles;
 use Laravel\Nova\Fields\Country;
 use Laravel\Nova\Fields\Currency;
 use App\Nova\Metrics\BottlesPerDay;
+use App\Nova\Actions\ScraperCalling;
 use App\Nova\Metrics\BottlesPerColor;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
@@ -50,18 +51,43 @@ class Bottle extends Resource
     public function fields(Request $request)
     {
         return [
-            ID::make(__('ID'), 'id')->sortable()->rules('required', 'max:255'),
-            Text::make('Nom', 'name')->sortable()->rules('required', 'min:4', 'max:255'),
-            Select::make('Couleur', 'color')->options([
-                'Rouge' => 'Rouge',
-                'Blanc' => 'Blanc',
-                'Rosé' => 'Rosé',
-            ])->sortable()->rules('required', 'max:20'),
-            Number::make('Quantité ml', 'ml_quantity')->sortable()->rules('required'),
-            Country::make('Pays', 'country')->sortable()->rules('required', 'max:255'),
-            Text::make('Code', 'code')->rules('required', 'unique:bottles', 'max:255'),
-            Number::make('Prix', 'price')->step(0.01)->sortable()->rules('required'),
-            Image::make('Lien image', 'image_link')->disk('public')->disableDownload()->creationRules('required'),
+            ID::make(__('ID'), 'id')
+                ->sortable()
+                ->rules('required', 'max:255'),
+
+            Text::make('Nom', 'name')
+                ->sortable()
+                ->rules('required', 'min:4', 'max:255'),
+
+            Select::make('Couleur', 'color')
+                ->sortable()
+                ->rules('required', 'max:20')
+                ->options([
+                    'Rouge' => 'Rouge',
+                    'Blanc' => 'Blanc',
+                    'Rosé' => 'Rosé',
+                ]),
+
+            Number::make('Quantité ml', 'ml_quantity')
+                ->sortable()
+                ->rules('required'),
+
+            Country::make('Pays', 'country')
+                ->sortable()
+                ->rules('required', 'max:255'),
+
+            Text::make('Code', 'code')
+                ->rules('required', 'unique:bottles', 'max:255'),
+
+            Number::make('Prix', 'price')
+                ->sortable()
+                ->step(0.01)
+                ->rules('required'),
+
+            Image::make('Lien image', 'image_link')
+                ->disk('public')
+                ->disableDownload()
+                ->creationRules('required'),
         ];
     }
 
@@ -110,6 +136,9 @@ class Bottle extends Resource
      */
     public function actions(Request $request)
     {
-        return [];
+        return [
+
+            Actions\ScraperCalling::make()->standalone()
+        ];
     }
 }
