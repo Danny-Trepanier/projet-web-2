@@ -1,6 +1,7 @@
 <x-guest-layout>
-
-        <img src="/storage/logo-vino-noir.svg" alt="Logo du site Vino en noir" class="logo-noir">
+		<svg>
+        	<img src="" alt="Logo du site Vino en noir" class="logo-noir">
+		</svg>
         <h1>Vino</h1>
 
         <x-jet-validation-errors class="error"/>
