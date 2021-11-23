@@ -20,7 +20,19 @@
         <!-- Scripts -->
         <script src="{{ mix('js/app.js') }}" defer></script>
     </head>
-    <body class="font-sans antialiased">
+    <body>
+        <button class="menu--burger">
+            <span class="menu--burger-bar"></span>
+        </button>
+        <nav class="navbar">
+            <ul class="navbar--links">
+                <li class="navbar--link"><a href="{{ route('cellar') }}">Cellier</a></li>
+                <li class="navbar--link"><a href="{{ route('dashboard') }}">Tableau de bord</a></li>
+                <li class="navbar--link"><a href="#">Mon compte</a></li>
+                <li class="navbar--link"><a href="#">Déconnexion</a></li>
+                <img src="{{ asset('img/logo-vino-blanc.png') }}" alt="Logo du site Vino en blanc" class="logo-blanc">
+            </ul>
+        </nav>
         <x-jet-banner />
 
         <div class="min-h-screen bg-gray-100">
@@ -28,15 +40,16 @@
 
             <!-- Page Heading -->
             @if (isset($header))
-                <header class="bg-white shadow">
-                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                        {{ $header }}
-                    </div>
-                </header>
+            <header class="bg-white shadow">
+                <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                    {{ $header }}
+                </div>
+            </header>
             @endif
 
             <!-- Page Content -->
             <main>
+                <button class="menu-burger"><img src="{{ asset('img/menu-burger.png') }}" alt="Image d'un menu style burger"></button>
                 {{ $slot }}
             </main>
         </div>

@@ -19,6 +19,18 @@
         <script src="{{ mix('js/app.js') }}" defer></script>
     </head>
     <body>
+        <button class="menu--burger">
+            <span class="menu--burger-bar"></span>
+        </button>
+        <nav class="navbar">
+            <ul class="navbar--links">
+                <li class="navbar--link"><a href="{{ route('cellar') }}">Cellier</a></li>
+                <li class="navbar--link"><a href="{{ route('dashboard') }}">Tableau de bord</a></li>
+                <li class="navbar--link"><a href="#">Mon compte</a></li>
+                <li class="navbar--link"><a href="#">Déconnexion</a></li>
+                <img src="{{ asset('img/logo-vino-blanc.png') }}" alt="Logo du site Vino en blanc" class="logo-blanc">
+            </ul>
+        </nav>
         <div class="font-sans text-gray-900 antialiased">
             {{ $slot }}
         </div>
