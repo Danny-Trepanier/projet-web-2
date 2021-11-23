@@ -18,7 +18,7 @@ use App\Http\Controllers\CellarController;
 
 // Routes sans être connecté
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
 
