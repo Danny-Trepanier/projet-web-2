@@ -1,12 +1,17 @@
 
-const { result } = require('lodash');
 const puppeteer = require('puppeteer');
 
 
 // https://www.youtube.com/watch?v=TzZ3YOUhCxo  Youtube video sur comment utiliser Puppeteer
+/**
+ * 
+ * @param {*} numberPage 
+ * @param {*} product_list_limit 
+ */
 async function scrapeProduct(numberPage, product_list_limit) {
 
-    data = [];
+    const aData = [];
+	const fs = require('fs');
 
     for(let i=1; i<=numberPage; i++) {
         url = 'https://www.saq.com/fr/produits/vin?p='+ i +'&product_list_limit='+product_list_limit;
@@ -42,17 +47,7 @@ async function scrapeProduct(numberPage, product_list_limit) {
                 const srcCountryText = await srcCountry.jsonValue();
 
 
-                // console.log('Page: ' + i + ' id=' + j + ' => ' + srcNameText.replace(/^\s+|\s+$/g, "").replace(/\s+/g, " "));
-                // console.log('Page: ' + i + ' id=' + j + ' => ' + srcImageLinkText.replace(/^\s+|\s+$/g, "").replace(/\s+/g, " "));
-                // console.log('Page: ' + i + ' id=' + j + ' => ' + srcCodeText.replace(/^\s+|\s+$/g, "").replace(/\s+/g, " "));
-                // console.log('Page: ' + i + ' id=' + j + ' => ' + srcPriceText.replace(/^\s+|\s+$/g, "").replace(/\s+/g, " "));
-                // console.log('Page: ' + i + ' id=' + j + ' => ' + srcColorText.replace(/^\s+|\s+$/g, "").replace(/\s+/g, " "));
-                // console.log('Page: ' + i + ' id=' + j + ' => ' + srcMlQuantityText.replace(/^\s+|\s+$/g, "").replace(/\s+/g, " "));
-                // console.log('Page: ' + i + ' id=' + j + ' => ' + srcCountryText.replace(/^\s+|\s+$/g, "").replace(/\s+/g, " "));
-
-                data = {
-                    "page": i,
-                    "id": j,
+                let data = {
                     "name": srcNameText.replace(/^\s+|\s+$/g, "").replace(/\s+/g, " "),
                     "color": srcColorText.replace(/^\s+|\s+$/g, "").replace(/\s+/g, " ").substring(4),
                     "ml_quantity": srcMlQuantityText.replace(/^\s+|\s+$/g, "").replace(/\s+/g, " ").slice(0, -3),
@@ -61,14 +56,26 @@ async function scrapeProduct(numberPage, product_list_limit) {
                     "price": srcPriceText.replace(/^\s+|\s+$/g, "").replace(/\s+/g, " ").slice(0, -2).replace(',', '.'),
                     "image_link": srcImageLinkText.replace(/^\s+|\s+$/g, "").replace(/\s+/g, " "),
                 };
-                console.log(data);
+				aData.push(data);
+
             }
             catch (error) {
                 console.log("Impossible de prendre la bouteille " +j);
             }
         }
     }
+	console.log(aData);
+	const wineData = JSON.stringify(aData);
+	try {
+		fs.writeFileSync('nova/resources/wineData.json', wineData);
+		//console.log("JSON data is saved.");
+	} catch (error) {
+		console.error(err);
+	}
+
 }
+
+
 
 // On fait la boucle pour appeler le nombre de page et le nombre de produit limite par page demandé par l'admin
 // function sendRequest(numberPage, product_list_limit) {
@@ -77,5 +84,6 @@ async function scrapeProduct(numberPage, product_list_limit) {
 //         scrapeProduct('https://www.saq.com/fr/produits/vin?p='+ i +'&product_list_limit='+ product_list_limit +'', i, product_list_limit);
 //     }
 // }
+
 
 scrapeProduct(1,24);
