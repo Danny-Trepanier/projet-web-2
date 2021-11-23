@@ -23,7 +23,7 @@ Route::get('/', function () {
 
 
 // Routes de l'application
-Route::get('/dashboard', [\App\Http\Controllers\BottleController::class, 'index'])->middleware(['auth:sanctum', 'verified'])->name('dashboard');
+Route::get('/dashboard', [BottleController::class, 'index'])->middleware(['auth:sanctum', 'verified'])->name('dashboard');
 
 
 
