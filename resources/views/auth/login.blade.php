@@ -14,7 +14,7 @@
 
         <div class="connexion--login-container">
             <h2>Log in</h2>
-            <x-jet-validation-errors id="email" class="error"/>
+            <x-jet-validation-errors class="error"/>
             <div>
                 <x-jet-label for="email" value="{{ __('Email') }}"/>
                 <x-jet-input id="email" type="email" name="email" :value="old('email')"/>
