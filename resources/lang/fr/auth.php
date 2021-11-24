@@ -2,12 +2,11 @@
 
 /*
 |--------------------------------------------------------------------------
-| Authentication Language Lines
+| Lignes de langue d'authentification
 |--------------------------------------------------------------------------
 |
-| The following language lines are used during authentication for various
-| messages that we need to display to the user. You are free to modify
-| these language lines according to your application's requirements.
+| Les lignes de langue suivantes sont utilisées lors de l'authentification pour divers
+| messages que nous devons afficher à l'utilisateur.
 |
 */
 

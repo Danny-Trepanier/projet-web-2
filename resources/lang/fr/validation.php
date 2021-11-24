@@ -2,12 +2,12 @@
 
 /*
 |--------------------------------------------------------------------------
-| Validation Language Lines
+| Lignes de langage pour les validations
 |--------------------------------------------------------------------------
 |
-| The following language lines contain the default error messages used by
-| the validator class. Some of these rules have multiple versions such
-| as the size rules. Feel free to tweak each of these messages here.
+| Les lignes de langue suivantes contiennent les messages d'erreur par
+| défaut utilisés par la classe validateur. Certaines de ces règles
+| ont plusieurs versions telles que les règles de taille.
 |
 */
 

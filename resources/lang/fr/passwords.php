@@ -2,12 +2,13 @@
 
 /*
 |--------------------------------------------------------------------------
-| Password Reset Language Lines
+| Lignes de langue pour la réinitialisation du mot de passe
 |--------------------------------------------------------------------------
 |
-| The following language lines are the default lines which match reasons
-| that are given by the password broker for a password update attempt
-| has failed, such as for an invalid token or invalid new password.
+| Les lignes de langue suivantes sont les lignes par défaut qui correspondent
+| aux raisons données par password broker pour l'échec d'une tentative de
+| mise à jour du mot de passe, par exemple pour un jeton invalide ou un
+| nouveau mot de passe invalide.
 |
 */
 
