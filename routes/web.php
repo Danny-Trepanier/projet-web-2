@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BottleController;
 use App\Http\Controllers\CellarController;
+use App\Http\Controllers\ScraperController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,7 +26,8 @@ Route::get('/', function () {
 // Routes de l'application
 Route::get('/dashboard', [BottleController::class, 'index'])->middleware(['auth:sanctum', 'verified'])->name('dashboard');
 
-
+// Route du scraper
+Route::get('/scraper', [ScraperController::class, 'index'])->middleware(['auth:sanctum', 'verified'])->name('scraper');
 
 
 // Routes pour le cellier

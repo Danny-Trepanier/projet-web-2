@@ -57,16 +57,6 @@ p {
 
 /* Menu burger --------------------------------------------------------------------------- */
 
-/* .menu-burger {
-    width: 40px;
-    margin: 30px 0px 0px 40px;
-} */
-
-/* navbar
-navbar--link
-menu--burger
-menu--burger-bar */
-
 .menu--burger {
     display: block;
     position: relative;
@@ -74,7 +64,6 @@ menu--burger-bar */
     width: 45px;
     height: 45px;
     border: none;
-    /* background-color: transparent; */
     cursor: pointer;
 }
 
@@ -135,6 +124,10 @@ menu--burger-bar */
    background-color: rgb(83, 81, 81);
    border-left: white 10px solid;
    padding-left: 20px;
+}
+
+.navbar--link-button {
+    margin-left: -80px;
 }
 
 /* vue du menu burger */
