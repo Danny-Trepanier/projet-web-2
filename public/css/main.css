@@ -127,7 +127,7 @@ p {
 }
 
 .navbar--link-button {
-    margin-left: -80px;
+    margin-left: 0px;
 }
 
 /* vue du menu burger */
