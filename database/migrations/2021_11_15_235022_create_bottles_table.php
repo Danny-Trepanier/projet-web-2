@@ -17,7 +17,7 @@ class CreateBottlesTable extends Migration
             $table->bigIncrements('id');
             $table->string('name', 255);
             $table->string('color', 20);
-            $table->integer('ml_quantity');
+            $table->string('ml_quantity', 20);
             $table->string('country', 255);
             $table->string('code', 255);
             $table->integer('price');
