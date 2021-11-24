@@ -33,29 +33,5 @@
                 <img src="{{ asset('img/logo-vino-blanc.png') }}" alt="Logo du site Vino en blanc" class="logo-blanc">
             </ul>
         </nav>
-        <x-jet-banner />
-
-        <div class="min-h-screen bg-gray-100">
-            @livewire('navigation-menu')
-
-            <!-- Page Heading -->
-            @if (isset($header))
-            <header class="bg-white shadow">
-                <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                    {{ $header }}
-                </div>
-            </header>
-            @endif
-
-            <!-- Page Content -->
-            <main>
-                <button class="menu-burger"><img src="{{ asset('img/menu-burger.png') }}" alt="Image d'un menu style burger"></button>
-                {{ $slot }}
-            </main>
-        </div>
-
-        @stack('modals')
-
-        @livewireScripts
     </body>
 </html>
