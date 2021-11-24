@@ -19,6 +19,7 @@
         <script src="{{ mix('js/app.js') }}" defer></script>
     </head>
     <body>
+        
         <button class="menu--burger">
             <span class="menu--burger-bar"></span>
         </button>
@@ -27,12 +28,19 @@
                 <li class="navbar--link"><a href="{{ route('cellar') }}">Cellier</a></li>
                 <li class="navbar--link"><a href="{{ route('dashboard') }}">Tableau de bord</a></li>
                 <li class="navbar--link"><a href="#">Mon compte</a></li>
-                <li class="navbar--link"><a href="#">Déconnexion</a></li>
+                <li class="navbar--link">
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+                        <button class="navbar--link-button">{{ __('Log Out') }}</button>
+                    </form>
+                </li>
                 <img src="{{ asset('img/logo-vino-blanc.png') }}" alt="Logo du site Vino en blanc" class="logo-blanc">
             </ul>
         </nav>
+
         <div class="font-sans text-gray-900 antialiased">
             {{ $slot }}
         </div>
+
     </body>
 </html>
