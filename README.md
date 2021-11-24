@@ -9,6 +9,7 @@ git push origin <ma-branche>:developpement
 git add <file>
 git commit -m "commentaire"
 git rm <file>
+git restore <file>
 git reset -- <file>
 get checkout -- <file>
 
