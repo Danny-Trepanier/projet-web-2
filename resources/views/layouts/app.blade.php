@@ -21,7 +21,7 @@
         <script src="{{ mix('js/app.js') }}" defer></script>
     </head>
     <body>
-        
+
         <button class="menu--burger">
             <span class="menu--burger-bar"></span>
         </button>
@@ -43,7 +43,6 @@
         <x-jet-banner />
 
         <div class="min-h-screen bg-gray-100">
-            @livewire('navigation-menu')
 
             <!-- Page Heading -->
             @if (isset($header))
