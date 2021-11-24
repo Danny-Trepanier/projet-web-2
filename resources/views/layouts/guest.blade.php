@@ -19,7 +19,7 @@
         <script src="{{ mix('js/app.js') }}" defer></script>
     </head>
     <body>
-        
+
         <button class="menu--burger">
             <span class="menu--burger-bar"></span>
         </button>
@@ -29,7 +29,7 @@
                 <li class="navbar--link"><a href="{{ route('dashboard') }}">Tableau de bord</a></li>
                 <li class="navbar--link"><a href="#">Mon compte</a></li>
                 <li class="navbar--link">
-                    <form method="POST" action="{{ route('logout') }}">
+                    <form method="POST" action="{{ route('logout') }}" class="navbar--link-button">
                         @csrf
                         <button class="navbar--link-button">{{ __('Log Out') }}</button>
                     </form>
