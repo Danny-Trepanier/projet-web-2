@@ -1,24 +1,66 @@
 /* Composant wine-card pour les vin de la liste de la SAQ */
 
 .wine-card {
-display: flex;
-border: 1px black solid;
-min-height: 80px;
+	display: flex;
+	border: 1px black solid;
+	height: 80px;
 }
 
-.wine-card > div > h1 {
+.wine-card > .img-wrap,
+.wine-card > .info-wrap {
+	margin-top: 11px;
+	margin-bottom: 11px;
+}
+
+
+.wine-card > .info-wrap > .info--text > h1 {
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
 	font-size: 13px;
+	line-height: 16px;
 	text-align: left;
-	max-width: 28ch;
+	width: 26ch;
 }
 
-.wine-card--img-wrap {
+.wine-card > .img-wrap {
 	width: 66px;
 	height: 58px;
-	border: 1px black solid;
-	margin-left: 18px;
+	border: 1px solid rgba(0, 0, 0, .5);
+	border-radius: 20%;
+	margin-left: 14px;
+	overflow: hidden;
+
 }
 
-.wine-card--img-wrap > img {
-	
+.wine-card > .img-wrap > img {
+	object-fit: cover;
+	transform: translateY(-2em);
+
 }
+
+.wine-card > .info-wrap {
+	margin-left: 5px;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.wine-card > .info-wrap > .info--text {
+	border: 1px dotted green;
+	flex-grow: 1;
+
+}
+
+.wine-card > .info-wrap > .info--text > p {
+	font-family: var(--font-subtitle);
+	font-size: 12px;
+	display: inline-block;
+	vertical-align: bottom;
+}
+
+.wine-card > .info-wrap > .info--icons {
+	border: 1px dotted blue;
+	flex-grow: 2;
+}
+

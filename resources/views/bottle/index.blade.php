@@ -12,21 +12,28 @@
 
                 <a href="{{ url("") }}/bottle/{{ $bottle->id }}">
 					<article class="wine-card">
-						<div class="wine-card--img-wrap">
+						<div class="img-wrap">
 							<img src="{{ $bottle->image_link }}?quality=80&fit=bounds&height=166&width=111&canvas=111:166 " alt="{{ $bottle->name }}">
 						</div>
-						<div>
-							<h1>{{ $bottle->name }}</h1>
-							<p>{{ $bottle->country }}</p>
-							<p>{{ $bottle->price }}</p>
-				@forelse($comments as $comment)
-					@if($bottle->id == $comment->bottle_id)
+						<div class="info-wrap">
+							<div class="info--text">
+								<h1>{{ $bottle->name }}</h1>
+								<p>{{ $bottle->country }}</p>
+								<p>{{ $bottle->price }}$</p>
+							</div>
+
+
+							<div class="info--icons">
+
+							@forelse($comments as $comment)
+			@if($bottle->id == $comment->bottle_id)
 							<p>{{ $comment->note }}</p>
-						@else <p>0</p>
-					@endif
-					@empty
+				@else <p>0</p>
+			@endif
+			@empty
 							<p>0</p>
-				@endforelse
+		@endforelse
+							</div>
 						</div>
 					</article>
 				</a>
