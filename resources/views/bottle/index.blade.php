@@ -9,7 +9,20 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                 @forelse ($bottles as $bottle)
-                <p><a href="{{ url("") }}/bottle/{{ $bottle->id }}">{{ $bottle->name }}</a></p>
+
+                <a href="{{ url("") }}/bottle/{{ $bottle->id }}">
+					<article class="wine-card">
+						<div class="wine-card--img-wrap">
+							<img src="{{ $bottle->image_link }}?quality=80&fit=bounds&height=166&width=111&canvas=111:166 " alt="{{ $bottle->name }}">
+						</div>
+						<div>
+							<h1>{{ $bottle->name }}</h1>
+							<p>{{ $bottle->country }}</p>
+							<p>{{ number_format($bottle->price, 2) }}</p>
+						</div>
+					</article>
+				</a>
+
                 @empty
                 <p>Il y a aucune bouteille dans la base de donnée.</p>
                 @endforelse

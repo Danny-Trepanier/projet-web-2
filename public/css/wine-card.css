@@ -1,0 +1,24 @@
+/* Composant wine-card pour les vin de la liste de la SAQ */
+
+.wine-card {
+display: flex;
+border: 1px black solid;
+min-height: 80px;
+}
+
+.wine-card > div > h1 {
+	font-size: 13px;
+	text-align: left;
+	max-width: 28ch;
+}
+
+.wine-card--img-wrap {
+	width: 66px;
+	height: 58px;
+	border: 1px black solid;
+	margin-left: 18px;
+}
+
+.wine-card--img-wrap > img {
+	
+}
