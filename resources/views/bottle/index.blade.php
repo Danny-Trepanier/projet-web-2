@@ -18,7 +18,15 @@
 						<div>
 							<h1>{{ $bottle->name }}</h1>
 							<p>{{ $bottle->country }}</p>
-							<p>{{ number_format($bottle->price, 2) }}</p>
+							<p>{{ $bottle->price }}</p>
+				@forelse($comments as $comment)
+					@if($bottle->id == $comment->bottle_id)
+							<p>{{ $comment->note }}</p>
+						@else <p>0</p>
+					@endif
+					@empty
+							<p>0</p>
+				@endforelse
 						</div>
 					</article>
 				</a>
