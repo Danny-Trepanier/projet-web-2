@@ -22,13 +22,8 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
-
-// Routes de l'application
-Route::get('/dashboard', [BottleController::class, 'index'])->middleware(['auth:sanctum', 'verified'])->name('dashboard');
-
 // Route du scraper
 Route::get('/scraper', [ScraperController::class, 'index'])->middleware(['auth:sanctum', 'verified'])->name('scraper');
-
 
 // Routes pour le cellier
 Route::get('/cellar', [CellarController::class, 'index'])->middleware(['auth:sanctum', 'verified'])->name('cellar');
@@ -40,10 +35,12 @@ Route::put('/cellar/{cellarPost}/edit', [CellarController::class, 'update'])->mi
 Route::delete('/cellar/{cellarPost}', [CellarController::class, 'destroy'])->middleware(['auth:sanctum', 'verified']);
 
 // Routes pour une bouteille
+Route::get('/bottle', [BottleController::class, 'index'])->middleware(['auth:sanctum', 'verified'])->name('bottle');
 Route::get('/bottle/{bottlePost}', [BottleController::class, 'show'])->middleware(['auth:sanctum', 'verified']);
-Route::get('/bottle/create/bottle', [BottleController::class, 'create'])->middleware(['auth:sanctum', 'verified'])->name('bottle');
+Route::get('/bottle/create/bottle', [BottleController::class, 'create'])->middleware(['auth:sanctum', 'verified']);
 Route::post('/bottle/create/bottle', [BottleController::class, 'store'])->middleware(['auth:sanctum', 'verified']);
 Route::get('/bottle/{bottlePost}/edit', [BottleController::class, 'edit'])->middleware(['auth:sanctum', 'verified']);
 Route::put('/bottle/{bottlePost}/edit', [BottleController::class, 'update'])->middleware(['auth:sanctum', 'verified']);
+
 //Route pour ajouter une note à une bouteille
 Route::post('/bottle/create/comment', [BottleController::class, 'storeComment'])->middleware(['auth:sanctum', 'verified'])->name('bottle.create.comment');

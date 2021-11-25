@@ -28,9 +28,9 @@
         </button>
         <nav class="navbar">
             <ul class="navbar--links">
-                <li class="navbar--link"><a href="{{ route('cellar') }}">Cellier</a></li>
-                <li class="navbar--link"><a href="{{ route('dashboard') }}">Tableau de bord</a></li>
-                <li class="navbar--link"><a href="#">Mon compte</a></li>
+                <li class="navbar--link"><a href="{{ route('cellar') }}">Cellar</a></li>
+                <li class="navbar--link"><a href="{{ route('bottle') }}">Bottle lists</a></li>
+                <li class="navbar--link"><a href="#">My account</a></li>
                 <li class="navbar--link">
                     <form method="POST" action="{{ route('logout') }}" class="navbar--link-button">
                         @csrf
