@@ -1,11 +1,11 @@
 @import url(nav/burger.css);
 @import url(auth/login.css);
 @import url(auth/register.css);
+@import url(bottle/wine-card.css);
 @import url(cellar/create.css);
 @import url(cellar/edit.css);
 @import url(cellar/index.css);
 @import url(cellar/show.css);
-@import url(wine-card.css);
 
 :root {
 
