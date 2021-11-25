@@ -1,7 +1,7 @@
 <x-guest-layout>
 
     <div class="login--container">
-        <img src="{{ asset('img/logo-vino-noir.png') }}" alt="Logo du site Vino en noir" class="logo-noir">
+        <img src="{{ asset('img/logo/logo-vino-noir.png') }}" alt="Logo du site Vino en noir" class="logo-noir">
         <h1>Vino</h1>
 
         @if (session('status'))

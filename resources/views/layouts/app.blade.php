@@ -36,7 +36,7 @@
                         <button>{{ __('Log Out') }}</button>
                     </form>
                 </li>
-                <img src="{{ asset('img/logo-vino-blanc.png') }}" alt="Logo du site Vino en blanc" class="logo-blanc">
+                <img src="{{ asset('img/logo/logo-vino-blanc.png') }}" alt="Logo du site Vino en blanc" class="navbar--logo-blanc">
             </ul>
         </nav>
 
