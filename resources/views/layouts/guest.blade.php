@@ -7,6 +7,9 @@
 
         <title>{{ config('app.name', 'Laravel') }}</title>
 
+        <!-- Favicon -->
+        <link rel="icon" href="{{ url('img/favicon/favicon.png') }}" type="image/x-icon">
+
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Martel&family=Montserrat:wght@700&family=Roboto+Condensed&display=swap" rel="stylesheet">
@@ -34,7 +37,7 @@
                         <button class="navbar--link-button">{{ __('Log Out') }}</button>
                     </form>
                 </li>
-                <img src="{{ asset('img/logo-vino-blanc.png') }}" alt="Logo du site Vino en blanc" class="logo-blanc">
+                <img src="{{ asset('img/logo/logo-vino-blanc.png') }}" alt="Logo du site Vino en blanc" class="navbar--logo-blanc">
             </ul>
         </nav>
 
