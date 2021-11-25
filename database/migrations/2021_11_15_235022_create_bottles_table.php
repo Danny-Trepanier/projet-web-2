@@ -20,7 +20,7 @@ class CreateBottlesTable extends Migration
             $table->string('ml_quantity', 20);
             $table->string('country', 255);
             $table->string('code', 255);
-            $table->integer('price');
+            $table->decimal('price', 10, 2);
             $table->string('image_link', 255);
             $table->timestamps();
         });

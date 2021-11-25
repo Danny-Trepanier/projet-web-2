@@ -70,10 +70,11 @@ p {
 }
 
 .menu--burger-bar {
+    position: absolute;
     display: block;
     width: 45px;
     height: 6px;
-    margin: 30px 0px 0px 30px;
+    margin: 15px 0px 0px 30px;
     background-color: rgb(0, 0, 0);
     border-radius: 5px;
 }
@@ -81,7 +82,7 @@ p {
 .menu--burger-bar::before, .menu--burger-bar::after {
     position: absolute;
     content: "";
-    left: 30px;
+    left: 0px;
     width: 45px;
     height: 6px;
     background-color: rgb(0, 0, 0);
@@ -109,10 +110,11 @@ p {
     background-color: rgb(0, 0, 0);
     color: white;
     width: 100%;
-    height: calc(100vh - 80px);
+    height: calc(100vh);
     display: none;
-    top: 80px;
+    top: 0px;
     bottom: 0;
+    padding-top: 80px;
 }
 
 .navbar--link {
@@ -137,12 +139,9 @@ p {
     display: inline;
 }
 
-    .body-black {
-        background-color: black;
-    }
-
     .menu--burger-bar-white, .menu--burger-bar-white::before, .menu--burger-bar-white::after {
         background-color: white;
+        z-index: 2;
     }
 
     .logo-blanc {
