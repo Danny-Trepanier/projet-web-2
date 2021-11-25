@@ -1,12 +1,10 @@
 function toggleMenu () {
-    let bodyColor = document.querySelector("body");
     let navbar = document.querySelector(".navbar");
     let burger = document.querySelector(".menu--burger");
     let burgerBar = document.querySelector(".menu--burger-bar");
     burger.addEventListener("click", () => {
         navbar.classList.toggle("show-nav");
         burgerBar.classList.toggle("menu--burger-bar-white");
-        bodyColor.classList.toggle("body-black");
     })
 }
 toggleMenu();
