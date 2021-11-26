@@ -1,0 +1,41 @@
+.cellar--index {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cellar--index .cellar--index-create {
+    margin-bottom: 15px;
+    margin-top: 40px;
+}
+
+.cellar--index .cellar--index-link {
+    display: flex;
+    justify-content: center;
+    border: black 1px solid;
+    border-radius: 10px 10px;
+    padding: 10px;
+    background-color: var(--caput-mortuum);
+    font-family: var();
+    color: white;
+    margin-bottom: 20px;
+}
+
+.cellar--index .cellar--index-link:hover {
+    background-color: var(--xanadu);
+}
+
+.cellar--index .cellar--index-link:active {
+    background-color: var(--xanadu);
+    text-decoration: underline;
+}
+
+.cellar--index .cellar--index-name {
+    margin-bottom: 10px;
+}
+
+.cellar--index  .cellar--index-empty {
+    text-align: center;
+}

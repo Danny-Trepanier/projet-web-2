@@ -4,8 +4,10 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
-
         <title>{{ config('app.name', 'Laravel') }}</title>
+
+        <!-- Favicon -->
+        <link rel="icon" href="{{ url('img/favicon/favicon.png') }}" type="image/x-icon">
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,7 +30,7 @@
         <nav class="navbar">
             <ul class="navbar--links">
                 <li class="navbar--link"><a href="{{ route('cellar') }}">Cellar</a></li>
-                <li class="navbar--link"><a href="{{ route('dashboard') }}">Dashboard</a></li>
+                <li class="navbar--link"><a href="{{ route('bottle') }}">Bottle lists</a></li>
                 <li class="navbar--link"><a href="#">My account</a></li>
                 <li class="navbar--link">
                     <form method="POST" action="{{ route('logout') }}" class="navbar--link-button">
@@ -36,7 +38,7 @@
                         <button>{{ __('Log Out') }}</button>
                     </form>
                 </li>
-                <img src="{{ asset('img/logo-vino-blanc.png') }}" alt="Logo du site Vino en blanc" class="logo-blanc">
+                <img src="{{ asset('img/logo/logo-vino-blanc.png') }}" alt="Logo du site Vino en blanc" class="navbar--logo-blanc">
             </ul>
         </nav>
 

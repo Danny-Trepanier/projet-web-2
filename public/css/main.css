@@ -1,4 +1,11 @@
-@import url(login.css);
+@import url(nav/burger.css);
+@import url(auth/login.css);
+@import url(auth/register.css);
+@import url(bottle/wine-card.css);
+@import url(cellar/create.css);
+@import url(cellar/edit.css);
+@import url(cellar/index.css);
+@import url(cellar/show.css);
 
 :root {
 
@@ -54,100 +61,3 @@ p {
 .button:active {
     background-color: var(--xanadu);
 }
-
-/* Menu burger --------------------------------------------------------------------------- */
-
-.menu--burger {
-    display: block;
-    position: relative;
-    padding: 0px;
-    width: 45px;
-    height: 45px;
-    border: none;
-    cursor: pointer;
-}
-
-.menu--burger-bar {
-    position: absolute;
-    display: block;
-    width: 45px;
-    height: 6px;
-    margin: 15px 0px 0px 30px;
-    background-color: rgb(0, 0, 0);
-    border-radius: 5px;
-}
-
-.menu--burger-bar::before, .menu--burger-bar::after {
-    position: absolute;
-    content: "";
-    left: 0px;
-    width: 45px;
-    height: 6px;
-    background-color: rgb(0, 0, 0);
-    border-radius: 5px;
-}
-
-.menu--burger-bar::before {
-    transform: translateY(-12px);
-}
-
-.menu--burger-bar::after {
-    transform: translateY(12px);
-}
-
-.navbar {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-}
-
-.navbar--links {
-    position: absolute;
-    display: flex;
-    flex-flow: column wrap;
-    background-color: rgb(0, 0, 0);
-    color: white;
-    width: 100%;
-    height: calc(100vh);
-    display: none;
-    top: 0px;
-    bottom: 0;
-    padding-top: 80px;
-}
-
-.navbar--link {
-    padding: 10px 30px;
-    font-size: var(--font-size-title);
-    font-family: var(--font-title);
-    background-color: rgb(48, 46, 46);
-}
-
-.navbar--link:active {
-   background-color: rgb(83, 81, 81);
-   border-left: white 10px solid;
-   padding-left: 20px;
-}
-
-.navbar--link-button {
-    margin-left: 0px;
-}
-
-/* vue du menu burger */
-.show-nav .navbar--links {
-    display: inline;
-}
-
-    .menu--burger-bar-white, .menu--burger-bar-white::before, .menu--burger-bar-white::after {
-        background-color: white;
-        z-index: 2;
-    }
-
-    .logo-blanc {
-        width: 120px;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 80px;
-        opacity: 25%;
-    }
-
-

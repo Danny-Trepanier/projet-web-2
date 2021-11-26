@@ -1,0 +1,32 @@
+.register--container h1 {
+    margin: 50px 0px 20px 0px;
+    text-align: left;
+}
+
+.register--container form {
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.register--container input {
+    width: 100%;
+    border-color: black;
+    margin-top: 5px;
+}
+
+.register--container label {
+    font-weight: 700;
+}
+
+.register--already-registered {
+    display: flex;
+    flex-direction: column;
+    margin-top: 35px;
+}
+
+.register--container .register--already-registered .button {
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+}

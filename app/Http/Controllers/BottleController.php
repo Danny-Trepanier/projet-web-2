@@ -21,8 +21,12 @@ class BottleController extends Controller
         // On affiche les bouteilles de notre base de donnée
         $bottles = Bottle::all();
 
+		// La note donnée par l'usager
+		$comments = Comment::all()->where('user_id', Auth::user()->id );
+		//dd($comments);
         return view('bottle.index', [
-            'bottles' => $bottles
+            'bottles' => $bottles,
+			'comments' => $comments
         ]);
     }
 

@@ -13,6 +13,11 @@ git restore <file>
 git reset -- <file>
 get checkout -- <file>
 
+## Étapes pour stream sur mobile
+ipconfig -> carte reseau sans fil wi-fi -> addresse ipv4
+php artisan serve --host <ton ipv4> --port 80
+<ton ipv4> dans ton mobile
+
 ## Fin de la journée 1
 
 La base de donnée est en place. Les relations entres les modèles sont en places. Le controlleur du cellier est terminé.
