@@ -1,0 +1,32 @@
+.filters{
+	width: 100vw;
+	height: 17vh;
+	background-color: var(--mint-cream);
+	position: sticky;
+	top:0;
+	z-index: 2;
+}
+
+.filters > .filters--wrap {
+	height: 50%;
+}
+
+.filters > .filters--wrap > .filters--button {
+
+}
+
+
+.filters > .filters--search-bar {
+	background-color: var(--caput-mortuum);
+	height: 50%;
+}
+
+.filters > .filters--search-bar > input {
+	width: 90%;
+	height: 70%;
+	border-radius: 10px;
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+
+}
