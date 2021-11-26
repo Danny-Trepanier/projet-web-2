@@ -27,7 +27,7 @@
 			</div>
 		</div>
 		<div class="filters--search-bar">
-			<input type="text" placeholder="Nom, Pays, Couleur, Prix... ">
+			<input type="text" placeholder=" Nom, Pays, Couleur, Prix... ">
 		</div>
 	</section>
 
