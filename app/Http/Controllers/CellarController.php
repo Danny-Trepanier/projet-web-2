@@ -69,8 +69,11 @@ class CellarController extends Controller
 
         $myCellars = Cellar::find($cellarPost->id);
 
+<<<<<<< HEAD
+=======
         $myCellars->bottles;
 
+>>>>>>> 85bf6d2a94f7dcd08d742ba8a71cfe26745601ca
         return view('cellar.show', [
             'cellar' => $cellarPost,
             'myCellars' => $myCellars

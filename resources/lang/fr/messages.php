@@ -14,10 +14,13 @@ return [
 
     // Page connexion
     'login_title_page'   => 'Mon compte',
-    'login_form_title'   => 'Me connecter',
-    'login_required_fields_text'   => '* Champs requis',
     'login_label_for_email'   => 'Courriel',
     'login_label_for_password'   => 'Mot de passe',
-    'login_button_text'   => 'Me connecter',
+    'login_button_login'   => 'Me connecter',
+    'login_button_register'   => 'S\'enregistrer',
+    'login_remember_me_text'   => 'Se souvenir de moi',
     'login_link_forgot_password'   => 'Mot de passe oublié ?',
+    'login_span_or_register_text'   => 'ou inscrivez-vous :',
+
+    // Register page
 ];

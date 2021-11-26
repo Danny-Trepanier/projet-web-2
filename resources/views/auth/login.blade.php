@@ -13,37 +13,37 @@
         <form method="POST" action="{{ route('login') }}">
             @csrf
 
-            <h2>Log in</h2>
+            <h2>{{ __('messages.login_title_page') }}</h2>
             <x-jet-validation-errors class="error"/>
             <div>
-                <x-jet-label for="email" value="{{ __('Email') }} *"/>
+                <x-jet-label for="email" value="{{ __('messages.login_label_for_email') }} *"/>
                 <x-jet-input id="email" type="email" name="email" :value="old('email')"/>
             </div>
             <div>
-                <x-jet-label for="password" value="{{ __('Password') }} *" />
+                <x-jet-label for="password" value="{{ __('messages.login_label_for_password') }} *" />
                 <x-jet-input id="password" type="password" name="password"/>
             </div>
             <div class="login--container-checkbox">
                 <label for="remember_me">
                     <x-jet-checkbox id="remember_me" name="remember"/>
-                    <span>{{ __('Remember me') }}</span>
+                    <span>{{ __('messages.login_remember_me_text') }}</span>
                 </label>
             </div>
 
             <div>
                 @if (Route::has('password.request'))
                 <a href="{{ route('password.request') }}">
-                    {{ __('Forgot your password?') }}
+                    {{ __('messages.login_link_forgot_password') }}
                 </a>
                 @endif
 
                 <x-jet-button class="button">
-                    {{ __('Log in') }}
+                    {{ __('messages.login_button_login') }}
                 </x-jet-button>
 
-                <span>or register : </span>
+                <span>{{ __('messages.login_span_or_register_text') }}</span>
                 <x-jet-button class="button">
-                    <a href="{{ route('register') }}">Register</a>
+                    <a href="{{ route('register') }}">{{ __('messages.login_button_register') }}</a>
                 </x-jet-button>
             </div>
         </form>
