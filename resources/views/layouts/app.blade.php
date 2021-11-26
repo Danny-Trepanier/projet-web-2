@@ -31,7 +31,7 @@
             <ul class="navbar--links">
                 <li class="navbar--link"><a href="{{ route('cellar') }}">Cellar</a></li>
                 <li class="navbar--link"><a href="{{ route('bottle') }}">Bottle lists</a></li>
-                <li class="navbar--link"><a href="#">My account</a></li>
+                <li class="navbar--link"><a href="{{ route('profile.show') }}">My account</a></li>
                 <li class="navbar--link">
                     <form method="POST" action="{{ route('logout') }}" class="navbar--link-button">
                         @csrf

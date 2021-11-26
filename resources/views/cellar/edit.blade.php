@@ -1,41 +1,40 @@
 <x-app-layout>
+
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
-        </h2>
+        <h1>Update Cellar</h1>
     </x-slot>
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                <h1>Modification du cellier</h1>
-                <form action="" method="POST">
-                    @csrf
-                    @method('PUT')
-                    <fieldset>
-                        <div class="form-group">
-                            <label for="exampleInputEmail1" class="form-label mt-4">Nom</label>
-                            <input type="text" class="form-control" name="name" value="{{$cellar->name}}">
-                        </div>
+    <div class="cellar--edit">
 
-                        <div class="form-floating mt-3">
-                            @if ($errors->any())
-                                <div class="alert alert-danger">
-                                    <ul>
-                                        @foreach ($errors->all() as $error)
-                                            <li>{{ $error }}</li>
-                                        @endforeach
-                                    </ul>
-                                </div>
-                            @endif
-                        </div>
+        <h2>Update the name of the cellar</h2>
 
-                        <div class="mt-3 mb-3">
-                            <button type="submit" class="btn btn-primary">Mettre à jour</button>
+        <form action="" method="POST">
+            @csrf
+            @method('PUT')
+
+            <fieldset>
+                <div>
+                    <label for="exampleInputEmail1">Name</label>
+                    <input type="text" class="form-control" name="name" value="{{$cellar->name}}">
+                </div>
+                <div>
+                    @if ($errors->any())
+                        <div>
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
                         </div>
-                    </fieldset>
-                </form>
-            </div>
-        </div>
+                    @endif
+                </div>
+                <div>
+                    <button type="submit" class="button">Update</button>
+                </div>
+            </fieldset>
+
+        </form>
+
     </div>
+
 </x-app-layout>
