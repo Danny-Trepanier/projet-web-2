@@ -41,7 +41,7 @@
                     {{ __('messages.login_button_login') }}
                 </x-jet-button>
 
-                <span>{{ __('messages.login_span_or_register') }}</span>
+                <span>{{ __('messages.login_span_or_register_text') }}</span>
                 <x-jet-button class="button">
                     <a href="{{ route('register') }}">{{ __('messages.login_button_register') }}</a>
                 </x-jet-button>

@@ -20,5 +20,7 @@ return [
     'login_button_register'   => 'Register',
     'login_remember_me_text'   => 'Remember me',
     'login_link_forgot_password'   => 'Forgot your password ?',
-    'login_span_or_register'   => 'or register :',
+    'login_span_or_register_text'   => 'or register :',
+
+    // Register page
 ];

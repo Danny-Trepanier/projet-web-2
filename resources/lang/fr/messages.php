@@ -20,5 +20,7 @@ return [
     'login_button_register'   => 'S\'enregistrer',
     'login_remember_me_text'   => 'Se souvenir de moi',
     'login_link_forgot_password'   => 'Mot de passe oublié ?',
-    'login_span_or_register'   => 'ou inscrivez-vous :',
+    'login_span_or_register_text'   => 'ou inscrivez-vous :',
+
+    // Register page
 ];
