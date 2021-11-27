@@ -1,4 +1,5 @@
 @import url(components/burger.css);
+@import url(components/wine-card.css);
 @import url(auth/login.css);
 @import url(auth/register.css);
 @import url(bottle/wine-card.css);
