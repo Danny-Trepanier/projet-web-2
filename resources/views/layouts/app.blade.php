@@ -1,3 +1,4 @@
+@php $locale = session()->get('locale'); @endphp
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
@@ -38,6 +39,11 @@
                         <button>{{ __('Log Out') }}</button>
                     </form>
                 </li>
+                @if($locale == 'fr')
+                    <li class="navbar--link"><a href="{{ url("") }}/lang/en">En</a></li>
+                @else
+                    <li class="navbar--link"><a href="{{ url("") }}/lang/fr">Fr</a></li>
+                @endif
                 <img src="{{ asset('img/logo/logo-vino-blanc.png') }}" alt="Logo du site Vino en blanc" class="navbar--logo-blanc">
             </ul>
         </nav>
