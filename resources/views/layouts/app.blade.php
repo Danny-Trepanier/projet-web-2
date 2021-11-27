@@ -30,19 +30,19 @@
         </button>
         <nav class="navbar">
             <ul class="navbar--links">
-                <li class="navbar--link"><a href="{{ route('cellar') }}">Cellar</a></li>
-                <li class="navbar--link"><a href="{{ route('bottle') }}">Bottle lists</a></li>
-                <li class="navbar--link"><a href="{{ route('profile.show') }}">My account</a></li>
+                <li class="navbar--link"><a href="{{ route('cellar') }}">{{ __('messages.menu_link_my_cellars') }}</a></li>
+                <li class="navbar--link"><a href="{{ route('bottle') }}">{{ __('messages.menu_link_bottles') }}</a></li>
+                <li class="navbar--link"><a href="{{ route('profile.show') }}">{{ __('messages.menu_link_my_account') }}</a></li>
                 <li class="navbar--link">
                     <form method="POST" action="{{ route('logout') }}" class="navbar--link-button">
                         @csrf
-                        <button>{{ __('Log Out') }}</button>
+                        <button>{{ __('messages.menu_link_logout') }}</button>
                     </form>
                 </li>
                 @if($locale == 'fr')
-                    <li class="navbar--link"><a href="{{ url("") }}/lang/en">En</a></li>
+                    <li class="navbar--link"><a href="{{ url("") }}/lang/en">{{ __('messages.menu_link_english') }}</a></li>
                 @else
-                    <li class="navbar--link"><a href="{{ url("") }}/lang/fr">Fr</a></li>
+                    <li class="navbar--link"><a href="{{ url("") }}/lang/fr">{{ __('messages.menu_link_french') }}</a></li>
                 @endif
                 <img src="{{ asset('img/logo/logo-vino-blanc.png') }}" alt="Logo du site Vino en blanc" class="navbar--logo-blanc">
             </ul>
