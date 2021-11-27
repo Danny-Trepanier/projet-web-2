@@ -69,7 +69,6 @@ class CellarController extends Controller
 
         $myCellars = Cellar::find($cellarPost->id);
 
-
         return view('cellar.show', [
             'cellar' => $cellarPost,
             'myCellars' => $myCellars
@@ -101,6 +100,10 @@ class CellarController extends Controller
     public function update(Request $request, Cellar $cellarPost)
     {
         $this->authorize('update', $cellarPost);
+
+        $request->validate([
+            'name' => 'required|min:4|max:255',
+        ]);
 
         $cellarPost->update([
             'name' => $request->name,

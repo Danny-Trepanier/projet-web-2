@@ -19,32 +19,31 @@
 
                         <div class="form-group">
                             <label for="exampleInputEmail1" class="form-label mt-4">Couleur</label>
-                            <input type="text" class="form-control" name="color">
+                            <select name="color">
+                                <option value="Rouge">Rouge</option>
+                                <option value="Blanc">Blanc</option>
+                                <option value="Rosé">Rosé</option>
+                            </select>
                         </div>
 
                         <div class="form-group">
-                            <label for="exampleInputEmail1" class="form-label mt-4">Quantité en ml</label>
+                            <label for="exampleInputEmail1" class="form-label mt-4">Quantité en ml/L</label>
                             <input type="text" class="form-control" name="ml_quantity">
                         </div>
 
                         <div class="form-group">
                             <label for="exampleInputEmail1" class="form-label mt-4">Pays</label>
-                            <input type="text" class="form-control" name="country">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="exampleInputEmail1" class="form-label mt-4">Code</label>
-                            <input type="text" class="form-control" name="code">
+                            <select name="country">
+                                <option value="Canada">Canada</option>
+                                <option value="États-Unis">États-Unis</option>
+                                <option value="Portugal">Portugal</option>
+                            </select>
                         </div>
 
                         <div class="form-group">
                             <label for="exampleInputEmail1" class="form-label mt-4">Prix</label>
-                            <input type="text" class="form-control" name="price">
-                        </div>
+                            <input type="number" min="0.00" max="10000.00" step="0.01" name="price"/>
 
-                        <div class="form-group">
-                            <label for="exampleInputEmail1" class="form-label mt-4">Image</label>
-                            <input type="text" class="form-control" name="image_link">
                         </div>
 
                         <div class="form-floating mt-3">
