@@ -49,13 +49,11 @@ class BottleController extends Controller
     public function store(Request $bottlePost)
     {
         $bottlePost->validate([
-            'name' => 'required|min:4|max:255',
-            'color' => 'required|max:20',
-            'ml_quantity' => 'required',
-            'country' => 'required|max:255',
-            'code' => 'required|unique:bottles|max:255',
-            'price' => 'required',
-            'image_link' => 'required',
+            'name' => 'required|alpha_num|min:4|max:255',
+            'color' => 'required',
+            'ml_quantity' => 'required|alpha_num',
+            'country' => 'required',
+            'price' => 'required|numeric',
         ]);
 
         $bottle = Bottle::create([
@@ -63,9 +61,8 @@ class BottleController extends Controller
             'color' => $bottlePost->color,
             'ml_quantity' => $bottlePost->ml_quantity,
             'country' => $bottlePost->country,
-            'code' => $bottlePost->code,
             'price' => $bottlePost->price,
-            'image_link' => $bottlePost->image_link,
+            'image_link' => '',
         ]);
 
         return redirect('bottle/' . $bottle->id );
@@ -134,13 +131,11 @@ class BottleController extends Controller
     public function update(Request $request, Bottle $bottlePost)
     {
         $bottlePost->validate([
-            'name' => 'required|min:4|max:255',
-            'color' => 'required|max:20',
-            'ml_quantity' => 'required',
-            'country' => 'required|max:255',
-            'code' => 'required|unique:bottles|max:255',
-            'price' => 'required',
-            'image_link' => 'required',
+            'name' => 'required|alpha_num|min:4|max:255',
+            'color' => 'required',
+            'ml_quantity' => 'required|alpha_num',
+            'country' => 'required',
+            'price' => 'required|numeric',
         ]);
 
         $bottlePost->update([
@@ -148,9 +143,7 @@ class BottleController extends Controller
             'color' => $bottlePost->color,
             'ml_quantity' => $bottlePost->ml_quantity,
             'country' => $bottlePost->country,
-            'code' => $bottlePost->code,
             'price' => $bottlePost->price,
-            'image_link' => $bottlePost->image_link,
         ]);
 
         return redirect('bottle/' . $bottlePost->id );
