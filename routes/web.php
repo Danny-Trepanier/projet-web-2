@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BottleController;
 use App\Http\Controllers\CellarController;
 use App\Http\Controllers\ScraperController;
+use App\Http\Controllers\LocalizationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +22,9 @@ use App\Http\Controllers\ScraperController;
 Route::get('/', function () {
     return view('auth.login');
 });
+
+// Route pour changer la langue du site
+Route::get('/lang/{locale}', [LocalizationController::class, 'index']);
 
 // Route du scraper
 Route::get('/scraper', [ScraperController::class, 'index'])->middleware(['auth:sanctum', 'verified'])->name('scraper');
