@@ -1,0 +1,9 @@
+/* Fiche détail d'une bouteille de la SAQ */
+
+.bottle-detail {
+
+}
+
+.bottle-detail > svg {
+	width: 55px;
+}

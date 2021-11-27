@@ -62,21 +62,15 @@
 					<div>
 						<span><b>{{ $comment->note }}</b></span> 
 						<img src="{{ asset('img/icon/icon_etoile_rouge.png') }}" alt="icone etoile note">
-
 					</div>
 
 			@else 
-					<div>
-						<span><b>/</b></span> 
-						<img src="{{ asset('img/icon/icon_etoile_vide.png') }}" alt="icone etoile vide">
 
-					</div>
 			@endif
 		@empty
 					<div>
 						<span><b>/</b></span> 
 						<img src="{{ asset('img/icon/icon_etoile_vide.png') }}" alt="icone etoile vide">
-
 					</div>
 		@endforelse
 
