@@ -16,11 +16,11 @@
             <h2>{{ __('messages.login_title_page') }}</h2>
             <x-jet-validation-errors class="error"/>
             <div>
-                <x-jet-label for="email" value="{{ __('messages.login_label_for_email') }} *"/>
+                <x-jet-label for="email" value="{{ __('messages.login_label_for_email') }}"/>
                 <x-jet-input id="email" type="email" name="email" :value="old('email')"/>
             </div>
             <div>
-                <x-jet-label for="password" value="{{ __('messages.login_label_for_password') }} *" />
+                <x-jet-label for="password" value="{{ __('messages.login_label_for_password') }}" />
                 <x-jet-input id="password" type="password" name="password"/>
             </div>
             <div class="login--container-checkbox">

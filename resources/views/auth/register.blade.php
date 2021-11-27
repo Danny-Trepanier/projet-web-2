@@ -6,23 +6,23 @@
 
         @csrf
 
-            <h1>M'inscrire</h1>
+            <h1>{{ __('messages.register_title_page') }}</h1>
             <x-jet-validation-errors/>
 
             <div>
-                <x-jet-label for="name" value="{{ __('Name') }} *"/>
+                <x-jet-label for="name" value="{{ __('messages.register_label_for_name') }}"/>
                 <x-jet-input id="name" type="text" name="name" :value="old('name')" autofocus autocomplete="name" />
             </div>
             <div class="mt-4">
-                <x-jet-label for="email" value="{{ __('Email') }} *" />
+                <x-jet-label for="email" value="{{ __('messages.register_label_for_email') }}" />
                 <x-jet-input id="email" type="email" name="email" :value="old('email')"/>
             </div>
             <div class="mt-4">
-                <x-jet-label for="password" value="{{ __('Password') }} *" />
+                <x-jet-label for="password" value="{{ __('messages.register_label_for_password') }}" />
                 <x-jet-input id="password" type="password" name="password" autocomplete="new-password" />
             </div>
             <div class="mt-4">
-                <x-jet-label for="password_confirmation" value="{{ __('Confirm Password') }} *" />
+                <x-jet-label for="password_confirmation" value="{{ __('messages.register_label_for_password_repeat') }}" />
                 <x-jet-input id="password_confirmation" type="password" name="password_confirmation" autocomplete="new-password" />
             </div>
 
@@ -45,11 +45,11 @@
 
             <div class="register--already-registered">
                 <a href="{{ route('login') }}">
-                    {{ __('Already registered?') }}
+                    {{ __('messages.register_link_already_registered') }}
                 </a>
 
                 <x-jet-button class="button">
-                    {{ __('Register') }}
+                    {{ __('messages.register_button_register') }}
                 </x-jet-button>
             </div>
 
