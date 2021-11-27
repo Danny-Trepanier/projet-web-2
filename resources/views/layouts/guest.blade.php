@@ -1,3 +1,4 @@
+@php $locale = session()->get('locale'); @endphp
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
@@ -28,15 +29,11 @@
         </button>
         <nav class="navbar">
             <ul class="navbar--links">
-                <li class="navbar--link"><a href="{{ route('cellar') }}">Cellar</a></li>
-                <li class="navbar--link"><a href="{{ route('bottle') }}">Bottle lists</a></li>
-                <li class="navbar--link"><a href="{{ route('profile.show') }}">My account</a></li>
-                <li class="navbar--link">
-                    <form method="POST" action="{{ route('logout') }}" class="navbar--link-button">
-                        @csrf
-                        <button class="navbar--link-button">{{ __('Log Out') }}</button>
-                    </form>
-                </li>
+                @if($locale == 'fr')
+                    <li class="navbar--link"><a href="{{ url("") }}/lang/en">En</a></li>
+                @else
+                    <li class="navbar--link"><a href="{{ url("") }}/lang/fr">Fr</a></li>
+                @endif
                 <img src="{{ asset('img/logo/logo-vino-blanc.png') }}" alt="Logo du site Vino en blanc" class="navbar--logo-blanc">
             </ul>
         </nav>
