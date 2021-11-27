@@ -45,7 +45,6 @@
 }
 
 .wine-card > .info-wrap > .info--text {
-	border: 1px dotted green;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -65,12 +64,20 @@
 }
 
 .wine-card > .info-wrap > .info--icons {
-	border: 1px dotted blue;
 	margin-left: 20px;
+
 }
 
 .wine-card > .info-wrap > .info--icons > div {
 	display: flex;
+	margin-top: 16px;
+	align-content: center;
+}
+
+.wine-card > .info-wrap > .info--icons > div > span {
+	font-family: var(--font-subtitle);
+	font-size: 13px;
+	margin-right: 1ch;
 }
 
 .wine-card > .info-wrap > .info--icons > div > img {
