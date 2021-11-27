@@ -49,9 +49,9 @@ class BottleController extends Controller
     public function store(Request $bottlePost)
     {
         $bottlePost->validate([
-            'name' => 'required|alpha_num|min:4|max:255',
+            'name' => 'required|min:4|max:255',
             'color' => 'required',
-            'ml_quantity' => 'required|alpha_num',
+            'ml_quantity' => 'required',
             'country' => 'required',
             'price' => 'required|numeric',
         ]);
@@ -62,7 +62,7 @@ class BottleController extends Controller
             'ml_quantity' => $bottlePost->ml_quantity,
             'country' => $bottlePost->country,
             'price' => $bottlePost->price,
-            'image_link' => '',
+            'image_link' => 'https://via.placeholder.com/400x600',
         ]);
 
         return redirect('bottle/' . $bottle->id );
@@ -114,8 +114,6 @@ class BottleController extends Controller
      */
     public function edit(Bottle $bottlePost)
     {
-        $this->authorize('update', $bottlePost);
-
         return view('bottle.edit', [
             'bottle' => $bottlePost
         ]);
@@ -130,20 +128,20 @@ class BottleController extends Controller
      */
     public function update(Request $request, Bottle $bottlePost)
     {
-        $bottlePost->validate([
-            'name' => 'required|alpha_num|min:4|max:255',
+        $request->validate([
+            'name' => 'required|min:4|max:255',
             'color' => 'required',
-            'ml_quantity' => 'required|alpha_num',
+            'ml_quantity' => 'required',
             'country' => 'required',
             'price' => 'required|numeric',
         ]);
 
         $bottlePost->update([
-            'name' => $bottlePost->name,
-            'color' => $bottlePost->color,
-            'ml_quantity' => $bottlePost->ml_quantity,
-            'country' => $bottlePost->country,
-            'price' => $bottlePost->price,
+            'name' => $request->name,
+            'color' => $request->color,
+            'ml_quantity' => $request->ml_quantity,
+            'country' => $request->country,
+            'price' => $request->price,
         ]);
 
         return redirect('bottle/' . $bottlePost->id );
