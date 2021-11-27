@@ -22,8 +22,8 @@ return [
 
     // Login page
     'login_title_page'   => 'My account',
-    'login_label_for_email'   => 'Email',
-    'login_label_for_password'   => 'Password',
+    'login_label_for_email'   => 'Email *',
+    'login_label_for_password'   => 'Password *',
     'login_button_login'   => 'Login',
     'login_button_register'   => 'Register',
     'login_remember_me_text'   => 'Remember me',
@@ -31,4 +31,11 @@ return [
     'login_span_or_register_text'   => 'or register :',
 
     // Register page
+    'register_title_page' => 'Register',
+    'register_label_for_name'   => 'Full name *',
+    'register_label_for_email'   => 'Email *',
+    'register_label_for_password'   => 'Password *',
+    'register_label_for_password_repeat'   => 'Confirm password *',
+    'register_link_already_registered'   => 'Already registred ?',
+    'register_button_register'   => 'Register',
 ];
