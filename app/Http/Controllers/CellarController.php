@@ -101,6 +101,10 @@ class CellarController extends Controller
     {
         $this->authorize('update', $cellarPost);
 
+        $request->validate([
+            'name' => 'required|min:4|max:255',
+        ]);
+
         $cellarPost->update([
             'name' => $request->name,
         ]);
