@@ -12,6 +12,14 @@
 
 return [
 
+    // Navigation
+    'menu_link_my_cellars' => 'My cellars',
+    'menu_link_bottles' => 'Bottles of wine',
+    'menu_link_my_account' => 'My account',
+    'menu_link_logout' => 'Log out',
+    'menu_link_french' => 'Français',
+    'menu_link_english' => 'English',
+
     // Login page
     'login_title_page'   => 'My account',
     'login_label_for_email'   => 'Email',

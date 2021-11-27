@@ -12,6 +12,14 @@
 
 return [
 
+    // Navigation
+    'menu_link_my_cellars' => 'Mes celliers',
+    'menu_link_bottles' => 'Bouteilles de vin',
+    'menu_link_my_account' => 'Mon compte',
+    'menu_link_logout' => 'Déconnexion',
+    'menu_link_french' => 'Français',
+    'menu_link_english' => 'English',
+
     // Page connexion
     'login_title_page'   => 'Mon compte',
     'login_label_for_email'   => 'Courriel',
