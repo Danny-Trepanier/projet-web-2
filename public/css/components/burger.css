@@ -91,9 +91,12 @@
 /* vue du menu burger */
 .show-nav .navbar--links {
     display: inline;
+    position: fixed;
 }
 
     .menu--burger-bar-white, .menu--burger-bar-white::before, .menu--burger-bar-white::after {
+        position: fixed;
+        margin-left: 30px;
         background-color: white;
         z-index: 101;
     }
