@@ -1,9 +1,27 @@
 /* Fiche détail d'une bouteille de la SAQ */
 
 .bottle-detail {
-
+	margin-left: 36px;
 }
+
+.bottle-detail > .img-wrap {
+	width: 100vw;
+	display:flex;
+	justify-content: flex-end;
+	z-index: -1;
+}
+
+.bottle-detail > .img-wrap > img {
+	width: 264px;
+}
+
 
 .bottle-detail > svg {
 	width: 55px;
+}
+
+.bottle-detail > h1 {}
+
+.bottle-detail > .detail--info {
+	margin-right: 36px;
 }

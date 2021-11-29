@@ -43,7 +43,7 @@
 		</form>
 
 		<h1>{{ $bottle->name }}</h1>
-		<section>
+		<section class="detail--info">
 			<p>Quantité en ml: {{ $bottle->ml_quantity }}</p>
 			<p>Pays: {{ $bottle->country }}</p>
 			<p>Code: {{ $bottle->code }}</p>
