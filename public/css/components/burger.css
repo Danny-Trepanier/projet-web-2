@@ -54,6 +54,7 @@
     top: 0px;
     bottom: 0;
     padding-top: 80px;
+    z-index: 100;
 }
 
 .navbar--link {
@@ -80,7 +81,7 @@
 
     .menu--burger-bar-white, .menu--burger-bar-white::before, .menu--burger-bar-white::after {
         background-color: white;
-        z-index: 2;
+        z-index: 101;
     }
 
     .navbar--logo-blanc {
