@@ -58,7 +58,7 @@ p {
 .button {
     background-color: var(--caput-mortuum);
 	font-family: var(--font-title);
-	font-size: var(--font-size-subtitle);
+	font-size: var(--font-size-text);
     text-align: center;
 }
 
