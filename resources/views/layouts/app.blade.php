@@ -36,13 +36,13 @@
                 <li class="navbar--link">
                     <form method="POST" action="{{ route('logout') }}" class="navbar--link-button">
                         @csrf
-                        <button>{{ __('messages.menu_link_logout') }}</button>
+                        <button class="red">{{ __('messages.menu_link_logout') }}</button>
                     </form>
                 </li>
                 @if($locale == 'fr')
-                    <li class="navbar--link"><a href="{{ url("") }}/lang/en">{{ __('messages.menu_link_english') }}</a></li>
+                    <li><a href="{{ url("") }}/lang/en" class="navbar--link-lang">{{ __('messages.menu_link_english') }}</a></li>
                 @else
-                    <li class="navbar--link"><a href="{{ url("") }}/lang/fr">{{ __('messages.menu_link_french') }}</a></li>
+                    <li><a href="{{ url("") }}/lang/fr" class="navbar--link-lang">{{ __('messages.menu_link_french') }}</a></li>
                 @endif
                 <img src="{{ asset('img/logo/logo-vino-blanc.png') }}" alt="Logo du site Vino en blanc" class="navbar--logo-blanc">
             </ul>
