@@ -45,3 +45,7 @@
 .user--delete button {
     background-color: red;
 }
+
+.user--delete {
+    margin-bottom: 40px;
+}
