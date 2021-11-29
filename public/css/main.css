@@ -2,6 +2,7 @@
 @import url(components/wine-card.css);
 @import url(auth/login.css);
 @import url(auth/register.css);
+@import url(auth/update.css);
 @import url(bottle/index.css);
 @import url(bottle/show.css);
 @import url(cellar/create.css);

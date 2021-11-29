@@ -29,6 +29,8 @@
         </button>
         <nav class="navbar">
             <ul class="navbar--links">
+                <li class="navbar--link"><a href="{{ route('login') }}">{{ __('messages.menu_link_login') }}</a></li>
+                <li class="navbar--link"><a href="{{ route('register') }}">{{ __('messages.menu_link_register') }}</a></li>
                 @if($locale == 'fr')
                     <li><a href="{{ url("") }}/lang/en" class="navbar--link-lang">{{ __('messages.menu_link_english') }}</a></li>
                 @else

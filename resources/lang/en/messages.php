@@ -13,6 +13,8 @@
 return [
 
     // Navigation
+    'menu_link_login' => 'Connection',
+    'menu_link_register' => 'Registration',
     'menu_link_my_cellars' => 'My cellars',
     'menu_link_bottles' => 'Bottles of wine',
     'menu_link_my_account' => 'My account',

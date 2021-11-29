@@ -18,7 +18,8 @@
     border-radius: 10px 10px;
     padding: 10px;
     background-color: var(--caput-mortuum);
-    font-family: var();
+	font-family: var(--font-title);
+	font-size: var(--font-size-text);
     color: white;
     margin-bottom: 20px;
 }
@@ -30,6 +31,7 @@
 .cellar--index .cellar--index-link:active {
     background-color: var(--xanadu);
     text-decoration: underline;
+
 }
 
 .cellar--index .cellar--index-name {

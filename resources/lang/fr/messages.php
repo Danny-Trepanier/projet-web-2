@@ -13,6 +13,8 @@
 return [
 
     // Navigation
+    'menu_link_login' => 'Connection',
+    'menu_link_register' => 'Inscription',
     'menu_link_my_cellars' => 'Mes celliers',
     'menu_link_bottles' => 'Bouteilles de vin',
     'menu_link_my_account' => 'Mon compte',
