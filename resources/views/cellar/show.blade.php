@@ -1,5 +1,5 @@
 <x-app-layout>
-
+    
     <x-slot name="header">
         <h1>{{ $cellar->name }}</h1>
     </x-slot>
