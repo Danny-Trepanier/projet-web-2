@@ -94,6 +94,10 @@
     position: fixed;
 }
 
+.overflow-scroll-hidden {
+    overflow-y: hidden;
+}
+
     .menu--burger-bar-white, .menu--burger-bar-white::before, .menu--burger-bar-white::after {
         position: fixed;
         margin-left: 30px;
