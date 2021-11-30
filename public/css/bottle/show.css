@@ -3,23 +3,31 @@
 .bottle-detail {
 	background-color: white;
 	margin-bottom: 30px;
+	max-width: 600px;
+	display: flex;
+	flex-direction: column;
 }
 
 .bottle-detail > .img-wrap {
-	width: 100vw;
+	width: 100%;
 	display:flex;
 	justify-content: flex-end;
-	z-index: -1;
 	margin-top: 0;
 }
 
 .bottle-detail > .img-wrap > img {
 	width: 264px;
+	z-index: 2;
 }
 
 
 .bottle-detail > svg {
 	width: 55px;
+	margin-left: 36px;
+	position: absolute;
+	transform: translateY(64px);
+
+	z-index: 3;
 }
 
 .bottle-detail > .detail--info > h1 {
@@ -27,20 +35,30 @@
 	margin: 0px 36px 0 36px;
 }
 
-.bottle-detail > .detail--info {
-
-}
 
 .bg--color {
 	background-color: var(--mint-cream);
 	width: 100vw;
+	padding: 15px 36px 15px 36px;
 }
+
+.wrap--quantity {
+	position: absolute;
+	transform: translateY(120px);
+	vertical-align: center;
+}
+
+.number--quantity {
+	font-family: var(--font-subtitle);
+	font-size: 50px;
+}
+
+
 
 .container--info {
 	display:flex;
 	flex-direction: column;
 	height: fit-content;
-	padding: 15px 36px 15px 36px;
 }
 
 .container--info > div {
