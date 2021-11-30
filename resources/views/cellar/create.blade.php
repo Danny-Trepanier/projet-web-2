@@ -1,19 +1,17 @@
 <x-app-layout>
 
     <x-slot name="header">
-        <h1>Create Cellar</h1>
+        <h1>{{ __('messages.cellar_create_title') }}</h1>
     </x-slot>
 
     <div class="cellar--create">
-
-        <h2>Creation of a cellar</h2>
 
         <form action="" method="POST">
             @csrf
 
             <fieldset>
                 <div>
-                    <label for="exampleInputEmail1">Cellar name</label>
+                    <label for="exampleInputEmail1">{{ __('messages.cellar_create_label_for_name') }}</label>
                     <input type="text" class="form-control" name="name">
                 </div>
                 <div>
@@ -28,7 +26,7 @@
                     @endif
                 </div>
                 <div>
-                    <button type="submit" class="button">Create</button>
+                    <button type="submit" class="button">{{ __('messages.cellar_create_button_create') }}</button>
                 </div>
             </fieldset>
 

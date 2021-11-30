@@ -40,4 +40,21 @@ return [
     'register_label_for_password_repeat'   => 'Confirmez le mot de passe *',
     'register_link_already_registered'   => 'Déjà inscrit ?',
     'register_button_register'   => 'S\'enregistrer',
+
+    // Page index.blade.php de Cellar
+    'cellar_index_title'   => 'Cellier',
+    'cellar_index_link_create'   => 'Créer un cellier',
+    'cellar_index_link_see'   => 'Voir',
+    'cellar_index_link_update'   => 'Modifier',
+    'cellar_index_message_empty'   => 'Vous n\'avez pas de cellier pour le moment.',
+
+    // Page create.blade.php de Cellar
+    'cellar_create_title' => 'Création d\'un cellier',
+    'cellar_create_label_for_name' => 'Nom du cellier',
+    'cellar_create_button_create' => 'Créer',
+
+    // Page edit.blade.php de Cellar
+    'cellar_edit_title' => 'Mofifier le cellier',
+    'cellar_edit_label_for_name' => 'Nom du cellier',
+    'cellar_edit_button_update' => 'Modifier',
 ];
