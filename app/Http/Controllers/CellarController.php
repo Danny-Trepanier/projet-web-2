@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Bottle;
 use App\Models\BottleCellar;
 use App\Models\Cellar;
+use App\Models\Comment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -67,11 +68,17 @@ class CellarController extends Controller
     {
         $this->authorize('view', $cellarPost);
 
+        $count = 0;
+        $quantites = BottleCellar::all()->where('cellar_id', $cellarPost->id);
         $myCellars = Cellar::find($cellarPost->id);
+        $comments = Comment::all()->where('user_id', Auth::user()->id );
 
         return view('cellar.show', [
             'cellar' => $cellarPost,
-            'myCellars' => $myCellars
+            'myCellars' => $myCellars,
+            'comments' => $comments,
+            'quantites' => $quantites,
+            'count' => $count
         ]);
     }
 

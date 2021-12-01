@@ -9,7 +9,7 @@ class BottleCellar extends Model
 {
     use HasFactory;
 
-    protected $table = "bottles_cellars";
+    protected $table = "bottle_cellar";
 
     protected $fillable = [
         'bottle_id',
