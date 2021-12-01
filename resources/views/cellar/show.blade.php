@@ -57,7 +57,9 @@
                             <h1>{{ $myBottle->name }}</h1>
                             <div>
                                 <p>{{ $myBottle->country }}</p>
-                                <p>Qunatité(s) : {{ $count }}</p>
+                                <p>Quantité(s) : 1
+                                    {{-- {{ $count }} --}}
+                                </p>
                                 <p>{{ $myBottle->price }}$</p>
                             </div>
                         </div>
