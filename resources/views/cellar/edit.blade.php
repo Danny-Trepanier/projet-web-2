@@ -1,12 +1,10 @@
 <x-app-layout>
 
     <x-slot name="header">
-        <h1>Update Cellar</h1>
+        <h1>{{ __('messages.cellar_edit_title') }}</h1>
     </x-slot>
 
     <div class="cellar--edit">
-
-        <h2>Update the name of the cellar</h2>
 
         <form action="" method="POST">
             @csrf
@@ -14,7 +12,7 @@
 
             <fieldset>
                 <div>
-                    <label for="exampleInputEmail1">Name</label>
+                    <label for="exampleInputEmail1">{{ __('messages.cellar_edit_label_for_name') }}</label>
                     <input type="text" class="form-control" name="name" value="{{$cellar->name}}">
                 </div>
                 <div>
@@ -29,7 +27,7 @@
                     @endif
                 </div>
                 <div>
-                    <button type="submit" class="button">Update</button>
+                    <button type="submit" class="button">{{ __('messages.cellar_edit_button_update') }}</button>
                 </div>
             </fieldset>
 

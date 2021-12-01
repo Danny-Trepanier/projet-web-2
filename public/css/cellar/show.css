@@ -1,0 +1,52 @@
+.filters{
+	width: 100vw;
+	height: 17vh;
+	background-color: var(--mint-cream);
+	position: sticky;
+	top:0;
+	z-index: 2;
+}
+
+.filters > .filters--wrap {
+	height: 50%;
+	display:flex;
+}
+
+.filters > .filters--wrap > .filters--button {
+	width: 20%;
+	height:100%;
+	border: 1px solid #707070;
+	border-radius: 10%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.filters > .filters--wrap > .filters--button > svg {
+	width: 30px;
+}
+
+.filters > .filters--wrap > .filters--button > span {
+	font-family: var(--font-title);
+	font-size: 26px;
+}
+
+.filters > .filters--wrap > .filters--button > .flag {
+	transform: translateY(10%);
+}
+
+.filters > .filters--search-bar {
+	background-color: var(--caput-mortuum);
+	height: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.filters > .filters--search-bar > input {
+	width: 90%;
+	height: 70%;
+	border-radius: 10px;
+	text-indent: 4ch;
+
+}

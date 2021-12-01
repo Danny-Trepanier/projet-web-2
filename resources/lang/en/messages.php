@@ -22,6 +22,9 @@ return [
     'menu_link_french' => 'Français',
     'menu_link_english' => 'English',
 
+
+    // Auth -----------------------------------------------------------------------------------
+
     // Login page
     'login_title_page'   => 'My account',
     'login_label_for_email'   => 'Email *',
@@ -40,4 +43,28 @@ return [
     'register_label_for_password_repeat'   => 'Confirm password *',
     'register_link_already_registered'   => 'Already registred ?',
     'register_button_register'   => 'Register',
+
+
+    // Cellar -----------------------------------------------------------------------------------
+
+    // Page index.blade.php de Cellar
+    'cellar_index_title'   => 'Cellar',
+    'cellar_index_link_create'   => 'Create a cellar',
+    'cellar_index_link_see'   => 'See',
+    'cellar_index_link_update'   => 'Update',
+    'cellar_index_message_empty'   => 'You have no storeroom at the moment.',
+
+    // Page create.blade.php de Cellar
+    'cellar_create_title' => 'Creation of a cellar',
+    'cellar_create_label_for_name' => 'Cellar name',
+    'cellar_create_button_create' => 'Create',
+
+    // Page edit.blade.php de Cellar
+    'cellar_edit_title' => 'Update the cellar',
+    'cellar_edit_label_for_name' => 'Cellar name',
+    'cellar_edit_button_update' => 'Update',
+
+
+    // Profile -----------------------------------------------------------------------------------
+
 ];
