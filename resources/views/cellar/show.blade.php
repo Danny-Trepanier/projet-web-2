@@ -24,10 +24,10 @@
 				</svg>
 			</div>
 		</div>
-		<div class="filters--search-bar">
 
-			<input type="search" placeholder=" Nom, Pays, Couleur, Prix... " results="0">
-		</div>
+        @livewire('research')
+
+
 	</section>
 
     <div>
