@@ -58,12 +58,20 @@
 	vertical-align: center;
 }
 
+.wrap--quantity > div {
+	display: flex;
+	align-items: center;
+}
+
 .number--quantity {
 	font-family: var(--font-subtitle);
 	font-size: 50px;
 }
 
-
+.button--add {
+	fill: #58181F;
+	margin-left: 5vw;
+}
 
 .container--info {
 	display:flex;
