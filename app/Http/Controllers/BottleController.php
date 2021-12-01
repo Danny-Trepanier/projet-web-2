@@ -8,6 +8,7 @@ use App\Models\Comment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\DB;
 
 class BottleController extends Controller
 {
@@ -104,9 +105,17 @@ class BottleController extends Controller
         // Nous prenons tous les celliers de l'utilisateur
         $myCellars = Cellar::get()->where('user_id', Auth::user()->id);
 
+		// La note donnée par l'usager 
+		// À amméliorer!
+		$comment = DB::table('comments')->where([
+			['user_id', '=', Auth::user()->id],
+			['bottle_id', '=', $bottlePost->id],
+		])->get();
+
         return view('bottle.show', [
             'bottle' => $bottlePost,
             'myCellars' => $myCellars,
+			'comment' => $comment
         ]);
     }
 

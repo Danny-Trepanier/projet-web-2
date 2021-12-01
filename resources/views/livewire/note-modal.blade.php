@@ -1,5 +1,9 @@
-<div>
-	<form action="{{ route('bottle.create.comment') }}" method="POST">
+<div class="modal--wrap" wire:click="showModal()">
+	<span>{{$comment}}</span>
+	<button >
+		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 225"><defs><style>.cls-1{fill:#ffffff;}</style></defs><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path class="cls-1" d="M120,0l30,85h90l-70,55,25,85-75-50L45,225l25-85L0,85H90Z"/></g></g></svg>
+	</button>
+	<form class="modal-note" action="{{ route('bottle.create.comment') }}" method="POST">
 	@csrf
 		<fieldset>
 			<div class="form-group">
