@@ -4,13 +4,17 @@
 	transform: translateY(300px);
 }
 
-.modal--wrap > button > svg {
+.modal--wrap > svg {
 	stroke: black;
 	stroke-width: 5;
 	width: 50px;
+	display: inline;
 }
 
-.modal-note {
-	display:none;
+.modal-form { 
 	
+}
+
+.form--hidden {
+	display: none;
 }

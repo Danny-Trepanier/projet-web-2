@@ -10,8 +10,8 @@ use Illuminate\Support\Facades\Auth;
 
 class NoteModal extends Component
 {
-	public $bottle;
-	public $comment;
+	public Bottle $bottle;
+	public $comment = null;
 
 	public function mount($bottle, $comment)
 	{
@@ -24,18 +24,13 @@ class NoteModal extends Component
 	}
 
 
-    public function render()
-    {
-        return view('livewire.note-modal');
-    }
-
 	/**
-     * Ajoute une note à une bière.
+     * Ajoute une note à une bouteille de vin.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-	/*
+
     public function storeComment(Request $bottlePost)
     {
         $bottlePost->validate([
@@ -51,9 +46,12 @@ class NoteModal extends Component
                 'note' => $bottlePost->note,
             ]
         );
+    }
 
+	public function render()
+    {
         return view('livewire.note-modal');
     }
-	*/
+
 
 }
