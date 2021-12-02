@@ -63,6 +63,7 @@ return [
     'cellar_edit_title' => 'Update the cellar',
     'cellar_edit_label_for_name' => 'Cellar name',
     'cellar_edit_button_update' => 'Update',
+	'cellar_edit_button_delete' => 'Delete',
 
 
     // Profile -----------------------------------------------------------------------------------

@@ -57,4 +57,5 @@ return [
     'cellar_edit_title' => 'Modifier le cellier',
     'cellar_edit_label_for_name' => 'Nom du cellier',
     'cellar_edit_button_update' => 'Modifier',
+	'cellar_edit_button_delete' => 'Supprimer',
 ];
