@@ -39,6 +39,18 @@
     text-decoration: underline;
 }
 
+.cellar--edit form .red {
+    background-color: red;
+}
+
+.cellar--edit form .red:hover {
+    background-color: black;
+}
+
+.cellar--edit form .red:active {
+    background-color: black;
+}
+
 .cellar--edit form input {
     width: 100%;
     border-color: black;

@@ -36,10 +36,10 @@
 			@method('DELETE')
 			@csrf
 			<div>
-				<button type="submit" class="button">{{ __('messages.cellar_edit_button_delete') }}</button>
+				<button type="submit" class="button red">{{ __('messages.cellar_edit_button_delete') }}</button>
 			</div>
 		</form>
-		
+
 
     </div>
 
