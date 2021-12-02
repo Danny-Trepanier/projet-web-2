@@ -175,7 +175,6 @@ Forms
 2. Remove the margin in Firefox and Safari.
 */
 
-button,
 input,
 optgroup,
 select,
@@ -187,41 +186,12 @@ textarea {
 }
 
 /**
-Remove the inheritance of text transform in Edge and Firefox.
-1. Remove the inheritance of text transform in Firefox.
-*/
-
-button,
-select { /* 1 */
-	text-transform: none;
-}
-
-/**
-Correct the inability to style clickable types in iOS and Safari.
-*/
-
-button,
-[type='button'],
-[type='reset'],
-[type='submit'] {
-	-webkit-appearance: button;
-}
-
-/**
 Remove the inner border and padding in Firefox.
 */
 
 ::-moz-focus-inner {
 	border-style: none;
 	padding: 0;
-}
-
-/**
-Restore the focus styles unset by the previous rule.
-*/
-
-:-moz-focusring {
-	outline: 1px dotted ButtonText;
 }
 
 /**
@@ -250,15 +220,6 @@ progress {
 }
 
 /**
-Correct the cursor style of increment and decrement buttons in Safari.
-*/
-
-::-webkit-inner-spin-button,
-::-webkit-outer-spin-button {
-	height: auto;
-}
-
-/**
 1. Correct the odd appearance in Chrome and Safari.
 2. Correct the outline style in Safari.
 */
@@ -274,16 +235,6 @@ Remove the inner padding in Chrome and Safari on macOS.
 
 ::-webkit-search-decoration {
 	-webkit-appearance: none;
-}
-
-/**
-1. Correct the inability to style clickable types in iOS and Safari.
-2. Change font properties to 'inherit' in Safari.
-*/
-
-::-webkit-file-upload-button {
-	-webkit-appearance: button; /* 1 */
-	font: inherit; /* 2 */
 }
 
 /*
@@ -321,11 +272,6 @@ figure,
 p,
 pre {
   margin: 0;
-}
-
-button {
-  background-color: transparent;
-  background-image: none;
 }
 
 fieldset {
@@ -444,11 +390,6 @@ textarea::placeholder {
   color: #9ca3af;
 }
 
-button,
-[role="button"] {
-  cursor: pointer;
-}
-
 /**
  * Override legacy focus reset from Normalize with modern Firefox focus styles.
  *
@@ -456,7 +397,7 @@ button,
  * as it triggers the better focus styles even for links, which still use a dotted
  * outline in Firefox by default.
  */
- 
+
 :-moz-focusring {
 	outline: auto;
 }
@@ -493,7 +434,6 @@ a {
  * normalize.css.
  */
 
-button,
 input,
 optgroup,
 select,
@@ -523,14 +463,14 @@ samp {
  *    CSS Remedy, with `svg` added as well.
  *
  *    https://github.com/mozdevs/cssremedy/issues/14
- * 
+ *
  * 2. Add `vertical-align: middle` to align replaced elements more
  *    sensibly by default when overriding `display` by adding a
  *    utility like `inline`.
  *
  *    This can trigger a poorly considered linting error in some
  *    tools but is included by design.
- * 
+ *
  *    https://github.com/jensimmons/cssremedy/issues/14#issuecomment-634934210
  */
 

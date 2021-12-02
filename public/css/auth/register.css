@@ -13,10 +13,13 @@
     width: 100%;
     border-color: black;
     margin-top: 5px;
+    margin-bottom: -20px;
 }
 
 .register--container label {
     font-weight: 700;
+    font-family: var(--font-size-subtitle);
+    margin-top: 18px;
 }
 
 .register--already-registered {
