@@ -30,7 +30,7 @@ class CellarPolicy
      */
     public function view(User $user, Cellar $cellar)
     {
-        return $user->id === $cellar->user_id;
+        return $user->id == $cellar->user_id;
     }
 
     /**
@@ -53,7 +53,7 @@ class CellarPolicy
      */
     public function update(User $user, Cellar $cellar)
     {
-        return $user->id === $cellar->user_id;
+        return $user->id == $cellar->user_id;
     }
 
     /**
@@ -65,7 +65,7 @@ class CellarPolicy
      */
     public function delete(User $user, Cellar $cellar)
     {
-        return $user->id === $cellar->user_id;
+        return $user->id == $cellar->user_id;
     }
 
     /**
