@@ -58,7 +58,7 @@
 }
 
 .user--delete button {
-    background-color: red;
+    background-color: var(--red);
 }
 
 .user--delete {

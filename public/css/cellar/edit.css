@@ -40,15 +40,7 @@
 }
 
 .cellar--edit form .red {
-    background-color: red;
-}
-
-.cellar--edit form .red:hover {
-    background-color: black;
-}
-
-.cellar--edit form .red:active {
-    background-color: black;
+    background-color: var(--red);
 }
 
 .cellar--edit form input {
