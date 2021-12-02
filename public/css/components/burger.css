@@ -85,6 +85,9 @@
 
 .red {
     color: red;
+    font-family: var(--font-title);
+    font-size: var(--font-subtitle);
+    background-color: transparent;
 }
 
 
