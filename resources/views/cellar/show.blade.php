@@ -67,7 +67,7 @@
                 @endif
 
         <!-- Affichage de la note laissée par l'usager sur la bouteille -->
-                            @if($myBottle->comment->note)
+                            @if($myBottle->comment)
                                 <div>
                                     <span><b>{{ $myBottle->comment->note }}</b></span>
                                     <img src="{{ asset('img/icon/icon_etoile_rouge.png') }}" alt="icone etoile note">
