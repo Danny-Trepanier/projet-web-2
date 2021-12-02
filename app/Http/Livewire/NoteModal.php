@@ -11,12 +11,10 @@ use Illuminate\Support\Facades\Auth;
 class NoteModal extends Component
 {
 	public Bottle $bottle;
-	public $comment = null;
 
-	public function mount($bottle, $comment)
+	public function mount($bottle)
 	{
 		$this->bottle = $bottle;
-		$this->comment = $comment;
 	}
 	
 	public function showModal(){

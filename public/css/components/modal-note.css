@@ -2,18 +2,28 @@
 	margin-left: 36px;
 	position: absolute;
 	transform: translateY(300px);
+	display: flex;
 }
 
-.modal--wrap > svg {
+.modal--wrap > .note--number {
+	font-family: var(--font-subtitle);
+	font-size: 36px;
+	margin-right: 5px;
+}
+
+.modal--wrap > .icon--star {
+	fill: var(--caput-mortuum);
+	width: 20px;
+}
+
+.modal--wrap > .icon--star-empty {
+	fill: white;
 	stroke: black;
-	stroke-width: 5;
-	width: 50px;
-	display: inline;
+	stroke-width: 5px;
+	width: 20px;
 }
 
-.modal-form { 
-	
-}
+
 
 .form--hidden {
 	display: none;
