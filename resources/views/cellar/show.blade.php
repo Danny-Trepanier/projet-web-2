@@ -25,8 +25,10 @@
 			</div>
 		</div>
 
-        @livewire('research')
-
+        @livewire('research', [
+            'myCellars' => $myCellars,
+            'myBottles' => $myCellars->bottles,
+        ])
 
 	</section>
 
@@ -36,16 +38,6 @@
         {{-- <p>Dans mon cellier, il y a: {{ count($myCellars->bottles) }}</p> --}}
 
         @forelse($myCellars->bottles as $myBottle)
-
-        {{-- {{ dd($quantites) }} --}}
-
-            {{-- @forelse($quantites as $quantite) --}}
-
-                {{-- @if($quantite->bottle_id = $myBottle->id) --}}
-                    {{-- {{ $count++ }} --}}
-                {{-- @endif --}}
-
-            {{-- @endforelse --}}
 
             <a href="{{ url("") }}/bottle/{{ $myBottle->id }}">
                 <article class="wine-card">
@@ -75,20 +67,17 @@
                 @endif
 
         <!-- Affichage de la note laissée par l'usager sur la bouteille -->
-                @forelse($comments as $comment)
-                    @if($myBottle->id == $comment->bottle_id)
-                        <div>
-                            <span><b>{{ $comment->note }}</b></span>
-                            <img src="{{ asset('img/icon/icon_etoile_rouge.png') }}" alt="icone etoile note">
-                        </div>
-                    @endif
-                @empty
-                    <div>
-                        <span><b>/</b></span>
-                        <img src="{{ asset('img/icon/icon_etoile_vide.png') }}" alt="icone etoile vide">
-                    </div>
-                @endforelse
-
+                            @if($myBottle->comment->note)
+                                <div>
+                                    <span><b>{{ $myBottle->comment->note }}</b></span>
+                                    <img src="{{ asset('img/icon/icon_etoile_rouge.png') }}" alt="icone etoile note">
+                                </div>
+                            @else
+                                <div>
+                                    <span><b>/</b></span>
+                                    <img src="{{ asset('img/icon/icon_etoile_vide.png') }}" alt="icone etoile vide">
+                                </div>
+                            @endif
                         </div>
                     </div>
                 </article>

@@ -68,17 +68,11 @@ class CellarController extends Controller
     {
         $this->authorize('view', $cellarPost);
 
-        $count = 0;
-        $quantites = BottleCellar::all()->where('cellar_id', $cellarPost->id);
         $myCellars = Cellar::find($cellarPost->id);
-        $comments = Comment::all()->where('user_id', Auth::user()->id );
 
         return view('cellar.show', [
             'cellar' => $cellarPost,
             'myCellars' => $myCellars,
-            'comments' => $comments,
-            'quantites' => $quantites,
-            'count' => $count
         ]);
     }
 

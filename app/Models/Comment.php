@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Bottle;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Comment extends Model
 {
@@ -14,4 +15,9 @@ class Comment extends Model
         'bottle_id',
         'user_id',
     ];
+
+    public function bottle()
+    {
+        return $this->belongsTo(Bottle::class);
+    }
 }

@@ -54,7 +54,7 @@ return [
     'cellar_create_button_create' => 'Créer',
 
     // Page edit.blade.php de Cellar
-    'cellar_edit_title' => 'Mofifier le cellier',
+    'cellar_edit_title' => 'Modifier le cellier',
     'cellar_edit_label_for_name' => 'Nom du cellier',
     'cellar_edit_button_update' => 'Modifier',
 ];

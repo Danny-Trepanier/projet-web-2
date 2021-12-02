@@ -9,10 +9,13 @@ class Research extends Component
 {
 
     public $text;
+    public $myCellars;
+    public $myBottles;
 
-    public function mount()
+    public function mount($myBottles)
     {
-        // dd(ResearchText::searchByText('bor'));
+        // dd(ResearchText::searchByText($myBottles, 'bor'));
+        // dd($myBottles);
     }
 
     public function render()

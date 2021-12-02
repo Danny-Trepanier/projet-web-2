@@ -13,15 +13,15 @@
                 <x-jet-label for="name" value="{{ __('messages.register_label_for_name') }}"/>
                 <x-jet-input id="name" type="text" name="name" :value="old('name')" autofocus autocomplete="name" />
             </div>
-            <div class="mt-4">
+            <div>
                 <x-jet-label for="email" value="{{ __('messages.register_label_for_email') }}" />
                 <x-jet-input id="email" type="email" name="email" :value="old('email')"/>
             </div>
-            <div class="mt-4">
+            <div>
                 <x-jet-label for="password" value="{{ __('messages.register_label_for_password') }}" />
                 <x-jet-input id="password" type="password" name="password" autocomplete="new-password" />
             </div>
-            <div class="mt-4">
+            <div>
                 <x-jet-label for="password_confirmation" value="{{ __('messages.register_label_for_password_repeat') }}" />
                 <x-jet-input id="password_confirmation" type="password" name="password_confirmation" autocomplete="new-password" />
             </div>
