@@ -25,8 +25,10 @@
 			</div>
 		</div>
 
-        @livewire('research')
-
+        @livewire('research', [
+            'myCellars' => $myCellars,
+            'myBottles' => $myCellars->bottles,
+            ])
 
 	</section>
 
@@ -36,16 +38,6 @@
         {{-- <p>Dans mon cellier, il y a: {{ count($myCellars->bottles) }}</p> --}}
 
         @forelse($myCellars->bottles as $myBottle)
-
-        {{-- {{ dd($quantites) }} --}}
-
-            {{-- @forelse($quantites as $quantite) --}}
-
-                {{-- @if($quantite->bottle_id = $myBottle->id) --}}
-                    {{-- {{ $count++ }} --}}
-                {{-- @endif --}}
-
-            {{-- @endforelse --}}
 
             <a href="{{ url("") }}/bottle/{{ $myBottle->id }}">
                 <article class="wine-card">
