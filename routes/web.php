@@ -36,7 +36,7 @@ Route::get('/cellar/create/cellar', [CellarController::class, 'create'])->middle
 Route::post('/cellar/create/cellar', [CellarController::class, 'store'])->middleware(['auth:sanctum', 'verified']);
 Route::get('/cellar/{cellarPost}/edit', [CellarController::class, 'edit'])->middleware(['auth:sanctum', 'verified']);
 Route::put('/cellar/{cellarPost}/edit', [CellarController::class, 'update'])->middleware(['auth:sanctum', 'verified']);
-Route::delete('/cellar/{cellarPost}', [CellarController::class, 'destroy'])->middleware(['auth:sanctum', 'verified']);
+Route::delete('/cellar/{cellarPost}/edit', [CellarController::class, 'destroy'])->middleware(['auth:sanctum', 'verified']);
 
 // Routes pour une bouteille
 Route::get('/bottle', [BottleController::class, 'index'])->middleware(['auth:sanctum', 'verified'])->name('bottle');
