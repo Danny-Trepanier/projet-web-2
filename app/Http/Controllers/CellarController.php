@@ -55,7 +55,7 @@ class CellarController extends Controller
             'user_id' => Auth::user()->id
         ]);
 
-        return redirect('cellar/' . $cellar->id );
+        return redirect('cellar' );
     }
 
     /**
