@@ -35,7 +35,11 @@
 	<a href="{{ url("") }}/bottle/{{ $bottle->id }}">
 		<article class="wine-card">
 			<div class="img-wrap">
+				@if(filter_var($bottle->image_link, FILTER_VALIDATE_URL))
 				<img src="{{ $bottle->image_link }}?quality=80&fit=bounds&height=166&width=111&canvas=111:166 " alt="{{ $bottle->name }}">
+				@else
+				<img src="{{ asset('storage/bouteille-default.png') }} " alt="{{ $bottle->name }}">
+				@endif
 			</div>
 			<div class="info-wrap">
 				<div class="info--text">
@@ -45,29 +49,30 @@
 						<p>{{ $bottle->price }}$</p>
 					</div>
 				</div>
+
 				<div class="info--icons">
 					
 <!-- Déploiement de l'icone de couleur selon les infos de la bouteille  -->
-		@if($bottle->color == 'rouge')
+					@if($bottle->color == 'rouge')
 					<img src="{{ asset('img/icon/icone_vin_rouge.png') }}" alt="icone vin rouge">
-		@elseif($bottle->color == 'blanc')
+					@elseif($bottle->color == 'blanc')
 					<img src="{{ asset('img/icon/icone_vin_blanc.png') }}" alt="icone vin rouge">
-		@elseif($bottle->color == 'rosé')
+					@elseif($bottle->color == 'rosé')
 					<img src="{{ asset('img/icon/icone_vin_rose.png') }}" alt="icone vin rouge">
-		@endif
+					@endif
 
 <!-- Affichage de la note laissée par l'usager sur la bouteille -->
-		@forelse($comments as $comment)
-			@if($bottle->id == $comment->bottle_id)
+					@forelse($comments as $comment)
+						@if($bottle->id == $comment->bottle_id)
 					<div>
 						<span><b>{{ $comment->note }}</b></span> 
 						<img src="{{ asset('img/icon/icon_etoile_rouge.png') }}" alt="icone etoile note">
 					</div>
 
-			@else 
+					@else 
 
-			@endif
-		@empty
+					@endif
+				@empty
 					<div>
 						<span><b>/</b></span> 
 						<img src="{{ asset('img/icon/icon_etoile_vide.png') }}" alt="icone etoile vide">
