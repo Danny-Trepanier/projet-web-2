@@ -1,7 +1,9 @@
+/* Botlle -> Index   | Liste des bouteilles de la SAQ */
+
 .filters{
 	width: 100vw;
 	height: 17vh;
-	background-color: var(--mint-cream);
+	background-color: white;
 	position: sticky;
 	top:0;
 	z-index: 2;
@@ -15,8 +17,9 @@
 .filters > .filters--wrap > .filters--button {
 	width: 20%;
 	height:100%;
-	border: 1px solid #707070;
-	border-radius: 10%;
+	border: 1px solid #707070 ;
+	border-top-left-radius: 20%;
+	border-top-right-radius: 20%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -48,5 +51,4 @@
 	height: 70%;
 	border-radius: 10px;
 	text-indent: 4ch;
-
 }
