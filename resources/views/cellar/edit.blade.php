@@ -1,8 +1,8 @@
 <x-app-layout>
 
-    <x-slot name="header">
+    <div class="title">
         <h1>{{ __('messages.cellar_edit_title') }}</h1>
-    </x-slot>
+    </div>
 
     <div class="cellar--edit">
 

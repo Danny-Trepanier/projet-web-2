@@ -7,6 +7,12 @@
     border: none;
     cursor: pointer;
     background-color: transparent;
+    margin-left: 0;
+}
+
+.menu--burger:active, .menu--burger:hover {
+    background-color: transparent;
+    text-decoration: none;
 }
 
 .menu--burger-bar {
@@ -94,12 +100,16 @@
     text-decoration: underline;
 }
 
-.red {
-    color: red;
+.navbar--link-button .red {
+    color: red !important;
     font-family: var(--font-title);
     font-size: var(--font-subtitle);
     background-color: transparent;
     border: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+    text-transform: capitalize;
 }
 
 .navbar img {

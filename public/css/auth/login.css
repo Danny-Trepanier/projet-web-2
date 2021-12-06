@@ -1,17 +1,15 @@
-.login--container .logo-noir {
-    max-width: 80px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 30px;
+.login--container .login--logo {
+   text-align: center;
 }
 
-.login--container h1 {
-    text-align: center;
-    margin-bottom: 10px;
+.login--container .login--logo img {
+    max-width: 100px;
+    margin-top: 30px;
 }
 
 .login--container h2 {
     font-weight: 700;
+    margin-top: 30px;
     margin-bottom: 10px;
 }
 
@@ -23,13 +21,6 @@
     width: 85%;
     margin-left: auto;
     margin-right: auto;
-}
-
-.login--container input {
-    width: 100%;
-    border-color: black;
-    margin-top: 5px;
-    margin-bottom: 5px;
 }
 
 .login--container .login--container-checkbox {
@@ -47,10 +38,6 @@
     display: flex;
     align-items: center;
     flex-direction: row;
-}
-
-.login--container label {
-    font-weight: 700;
 }
 
 

@@ -1,7 +1,7 @@
 .cellar--edit {
     display: flex;
     flex-direction: column;
-    width: 80%;
+    width: 85%;
     margin-left: auto;
     margin-right: auto;
     margin-top: 40px;
@@ -11,40 +11,6 @@
     margin-bottom: 20px;
 }
 
-.cellar--edit form .button {
-    display: flex;
-    justify-content: center;
-    border: black 1px solid;
-    border-radius: 10px 10px;
-    color: white;
-    background-color: var(--caput-mortuum);
-	font-family: var(--font-title);
-	font-size: var(--font-size-text);
-    text-align: center;
-    width: 100%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 5px;
-    padding: 10px;
-    text-transform: uppercase;
-}
-
-.cellar--edit form .button:hover {
-    background-color: var(--xanadu);
-}
-
-.cellar--edit form .button:active {
-    background-color: var(--xanadu);
-    text-decoration: underline;
-}
-
 .cellar--edit form .red {
     background-color: var(--red);
-}
-
-.cellar--edit form input {
-    width: 100%;
-    border-color: black;
-    margin-bottom: 20px;
 }

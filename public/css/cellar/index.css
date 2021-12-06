@@ -1,7 +1,7 @@
 .cellar--index {
     display: flex;
     flex-direction: column;
-    width: 80%;
+    width: 85%;
     margin-left: auto;
     margin-right: auto;
 }
@@ -9,36 +9,6 @@
 .cellar--index .cellar--index-create {
     margin-bottom: 15px;
     margin-top: 40px;
-}
-
-.cellar--index .cellar--index-link {
-    display: flex;
-    justify-content: center;
-    border: black 1px solid;
-    border-radius: 10px 10px;
-    color: white;
-    background-color: var(--caput-mortuum);
-	font-family: var(--font-title);
-	font-size: var(--font-size-text);
-    text-align: center;
-    width: 100%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 10px;
-    margin-top: 5px;
-    padding: 10px;
-    text-transform: uppercase;
-}
-
-.cellar--index .cellar--index-link:hover {
-    background-color: var(--xanadu);
-}
-
-.cellar--index .cellar--index-link:active {
-    background-color: var(--xanadu);
-    text-decoration: underline;
-
 }
 
 .cellar--index .cellar--index-name {

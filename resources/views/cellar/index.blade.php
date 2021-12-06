@@ -1,18 +1,18 @@
 <x-app-layout>
 
-    <x-slot name="header">
+    <div class="title">
         <h1>{{ __('messages.cellar_index_title') }}</h1>
-    </x-slot>
+    </div>
 
         <div class="cellar--index">
             <div class="cellar--index-create">
-                <a href="{{ url("") }}/cellar/create/cellar" class="cellar--index-link">{{ __('messages.cellar_index_link_create') }}</a>
+                <button><a href="{{ url("") }}/cellar/create/cellar">{{ __('messages.cellar_index_link_create') }}</a></button>
             </div>
             @forelse ($cellars as $cellar)
                 <div>
                     <h2 class="cellar--index-name">{{ $cellar->name }}</h2>
-                    <a href="{{ url("") }}/cellar/{{ $cellar->id }}" class="cellar--index-link">{{ __('messages.cellar_index_link_see') }}</a>
-                    <a href="{{ url("") }}/cellar/{{ $cellar->id }}/edit" class="cellar--index-link">{{ __('messages.cellar_index_link_update') }}</a>
+                    <button><a href="{{ url("") }}/cellar/{{ $cellar->id }}">{{ __('messages.cellar_index_link_see') }}</a></button>
+                    <button><a href="{{ url("") }}/cellar/{{ $cellar->id }}/edit">{{ __('messages.cellar_index_link_update') }}</a></button>
                 </div>
             @empty
                 <div class="cellar--index-empty">

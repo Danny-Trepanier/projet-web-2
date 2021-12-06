@@ -1,8 +1,8 @@
 <x-app-layout>
 
-    <x-slot name="header">
+    <div class="title">
         <h1>{{ __('messages.cellar_create_title') }}</h1>
-    </x-slot>
+    </div>
 
     <div class="cellar--create">
 
@@ -26,7 +26,7 @@
                     @endif
                 </div>
                 <div>
-                    <button type="submit" class="button">{{ __('messages.cellar_create_button_create') }}</button>
+                    <button type="submit">{{ __('messages.cellar_create_button_create') }}</button>
                 </div>
             </fieldset>
 

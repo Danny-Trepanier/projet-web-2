@@ -1,36 +1,39 @@
 <x-guest-layout>
 
+    <div class="title">
+        <h1>{{ __('messages.register_title_page') }}</h1>
+    </div>
+    
     <div class="register--container">
 
         <form method="POST" action="{{ route('register') }}">
 
         @csrf
 
-            <h1>{{ __('messages.register_title_page') }}</h1>
             <x-jet-validation-errors/>
 
             <div>
-                <x-jet-label for="name" value="{{ __('messages.register_label_for_name') }}"/>
-                <x-jet-input id="name" type="text" name="name" :value="old('name')" autofocus autocomplete="name" />
+                <label for="name">{{ __('messages.register_label_for_name') }}</label>
+                <input id="name" type="text" name="name" :value="old('name')" autofocus autocomplete="name" />
             </div>
             <div>
-                <x-jet-label for="email" value="{{ __('messages.register_label_for_email') }}" />
-                <x-jet-input id="email" type="email" name="email" :value="old('email')"/>
+                <label for="email">{{ __('messages.register_label_for_email') }}</label>
+                <input id="email" type="email" name="email" :value="old('email')"/>
             </div>
             <div>
-                <x-jet-label for="password" value="{{ __('messages.register_label_for_password') }}" />
-                <x-jet-input id="password" type="password" name="password" autocomplete="new-password" />
+                <label for="password">{{ __('messages.register_label_for_password') }}</label>
+                <input id="password" type="password" name="password" autocomplete="new-password" />
             </div>
             <div>
-                <x-jet-label for="password_confirmation" value="{{ __('messages.register_label_for_password_repeat') }}" />
-                <x-jet-input id="password_confirmation" type="password" name="password_confirmation" autocomplete="new-password" />
+                <label for="password_confirmation">{{ __('messages.register_label_for_password_repeat') }}</label>
+                <input id="password_confirmation" type="password" name="password_confirmation" autocomplete="new-password" />
             </div>
 
             @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
             <div>
-                <x-jet-label for="terms">
+                <label for="terms">
                     <div>
-                        <x-jet-checkbox name="terms" id="terms"/>
+                        <input type="checkbox" name="terms" id="terms"/>
 
                         <div>
                             {!! __('I agree to the :terms_of_service and :privacy_policy', [
@@ -39,7 +42,7 @@
                                 ]) !!}
                         </div>
                     </div>
-                </x-jet-label>
+                </label>
             </div>
             @endif
 
@@ -48,9 +51,9 @@
                     {{ __('messages.register_link_already_registered') }}
                 </a>
 
-                <x-jet-button class="button">
+                <button class="button">
                     {{ __('messages.register_button_register') }}
-                </x-jet-button>
+                </button>
             </div>
 
         </form>
