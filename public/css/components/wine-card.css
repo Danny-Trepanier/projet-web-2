@@ -2,10 +2,36 @@
 
 .wine-card {
 	display: flex;
-	border: 1px solid rgba(0, 0, 0, .2);
-	height: 80px;
-	padding-top: 11px;
-	padding-bottom: 11px;
+	height: 120px;
+	justify-content: space-between;
+	border-bottom: 1px solid black;
+	align-items: center;
+	max-width: 700px;
+}
+
+.wine-card > .img-wrap {
+	width: 66px;
+	height: 80%;
+	border-radius: 20%;
+	overflow:hidden;
+	display: flex;
+
+}
+
+.wine-card > .img-wrap > img {
+	object-fit: cover;
+	/*transform: translateY(-30%);*/
+	margin-left: auto;
+	margin-right: auto;
+	border: 1px pink solid;
+}
+
+.wine-card > .info-wrap {
+	height: 58px;
+	display: flex;
+	flex-wrap: wrap;
+	border: 1px solid blue;
+	margin-right: 5vw;
 }
 
 
@@ -20,35 +46,13 @@
 	width: 24ch;
 }
 
-.wine-card > .img-wrap {
-	width: 66px;
-	height: 58px;
-	border: 1px solid rgba(0, 0, 0, .5);
-	border-radius: 20%;
-	margin-left: 14px;
-	overflow: hidden;
-
-}
-
-.wine-card > .img-wrap > img {
-	object-fit: cover;
-	transform: translateY(-30%);
-	
-
-}
-
-.wine-card > .info-wrap {
-	margin-left: 10px;
-	height: 58px;
-	display: flex;
-	flex-wrap: wrap;
-}
-
 .wine-card > .info-wrap > .info--text {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
 	height: 58px;
+	margin-right: 5vw;
+	border: 1px solid orange;
 
 }
 
@@ -64,21 +68,23 @@
 }
 
 .wine-card > .info-wrap > .info--icons {
-	margin-left: 20px;
+	border: 1px solid green;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
 
+.wine-card > .info-wrap > .info--icons > img {
+	align-self: center;
 }
 
 .wine-card > .info-wrap > .info--icons > div {
 	display: flex;
-	margin-top: 16px;
 	align-content: center;
-}
-
-.wine-card > .info-wrap > .info--icons > div > span {
 	font-family: var(--font-subtitle);
 	font-size: 13px;
-	margin-right: 1ch;
 }
+
 
 .wine-card > .info-wrap > .info--icons > div > img {
 	width: 100%;
