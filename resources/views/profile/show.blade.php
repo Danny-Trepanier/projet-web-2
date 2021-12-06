@@ -1,7 +1,7 @@
 <x-app-layout>
 
     <div class="title">
-        <h1>{{ __('Profile') }}</h1>
+        <h1>{{ __('Profil') }}</h1>
     </div>
 
     <div class="user">
