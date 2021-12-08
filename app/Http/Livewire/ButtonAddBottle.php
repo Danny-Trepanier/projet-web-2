@@ -14,6 +14,11 @@ class ButtonAddBottle extends Component
 
 	}
 
+	public function showModal()
+	{
+		$this->emit(event: 'showModal');
+	}
+
     public function render()
     {
         return view('livewire.button-add-bottle');

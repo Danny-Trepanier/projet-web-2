@@ -1,6 +1,7 @@
 @import url(components/burger.css);
 @import url(components/filters.css);
 @import url(components/modal-note.css);
+@import url(components/modal-bottle-qty.css);
 @import url(components/wine-card.css);
 
 @import url(auth/login.css);
