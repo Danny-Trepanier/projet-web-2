@@ -3,10 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Bottle;
-use App\Models\BottleCellar;
 use App\Models\Cellar;
 use App\Models\Comment;
+use App\Models\BottleCellar;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 
 class CellarController extends Controller
@@ -68,7 +69,22 @@ class CellarController extends Controller
     {
         $this->authorize('view', $cellarPost);
 
-        $myCellars = Cellar::find($cellarPost->id);
+        //$myCellars = Cellar::find($cellarPost->id)->groupBy('bottle_id');
+        // SELECT COUNT(bottle_id) AS bottleCount, bottle_id, cellar_id, name, color, ml_quantity, country, code, price, image_link
+        // FROM `bottle_cellar`
+        // INNER JOIN bottles ON bottle_cellar.bottle_id = bottles.id
+        // WHERE cellar_id = 1
+        // GROUP BY bottle_id
+
+        $myCellars = DB::table('bottle_cellar')
+                            ->join('bottles', 'bottle_cellar.bottle_id', '=', 'bottles.id')
+                            ->select(DB::raw('count(bottle_id) as bottleCount'), 'bottle_cellar.cellar_id', 'bottles.*')
+                            ->where('cellar_id', '=', $cellarPost->id)
+                            ->groupBy('bottle_id')
+                            ->get();
+
+
+        //dd($myCellars);
 
         return view('cellar.show', [
             'cellar' => $cellarPost,
