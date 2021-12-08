@@ -8,7 +8,6 @@ class ButtonAddBottle extends Component
 {
 
 	public $quantity = 0;
-	public $show;
 
 	public function mount() 
 	{
@@ -29,10 +28,5 @@ class ButtonAddBottle extends Component
 	public function substract() 
 	{
 
-	}
-
-	public function showModal() 
-	{
-		
 	}
 }
