@@ -58,4 +58,7 @@ return [
     'cellar_edit_label_for_name' => 'Nom du cellier',
     'cellar_edit_button_update' => 'Modifier',
 	'cellar_edit_button_delete' => 'Supprimer',
+
+	//Page index.blade.php de Bottle
+	'bottle_index_title'   => 'Liste de la SAQ',
 ];

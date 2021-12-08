@@ -1,6 +1,5 @@
-.register--container h1 {
-    margin: 50px 0px 20px 0px;
-    text-align: left;
+.register--container {
+    margin-top: 40px;
 }
 
 .register--container form {
@@ -9,27 +8,9 @@
     margin-right: auto;
 }
 
-.register--container input {
-    width: 100%;
-    border-color: black;
-    margin-top: 5px;
-    margin-bottom: -20px;
-}
-
-.register--container label {
-    font-weight: 700;
-    font-family: var(--font-size-subtitle);
-    margin-top: 18px;
-}
-
 .register--already-registered {
     display: flex;
     flex-direction: column;
     margin-top: 35px;
 }
 
-.register--container .register--already-registered .button {
-    display: flex;
-    justify-content: center;
-    margin-top: 5px;
-}

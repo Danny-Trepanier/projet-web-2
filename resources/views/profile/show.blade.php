@@ -1,8 +1,8 @@
 <x-app-layout>
 
-    <x-slot name="header">
-        <h1>{{ __('Profile') }}</h1>
-    </x-slot>
+    <div class="title">
+        <h1>{{ __('Profil') }}</h1>
+    </div>
 
     <div class="user">
 

@@ -1,8 +1,8 @@
 <x-app-layout>
 
-    <x-slot name="header">
+    <div class="cellar--show-title">
         <h1>{{ $cellar->name }}</h1>
-    </x-slot>
+    </div>
 
     <section class="filters">
 		<div class="filters--wrap">

@@ -6,6 +6,13 @@
     height: 45px;
     border: none;
     cursor: pointer;
+    background-color: transparent;
+    margin-left: 0;
+}
+
+.menu--burger:active, .menu--burger:hover {
+    background-color: transparent;
+    text-decoration: none;
 }
 
 .menu--burger-bar {
@@ -64,6 +71,11 @@
     background-color: rgb(48, 46, 46);
 }
 
+.navbar--link a {
+    color: white;
+    text-decoration: none;
+}
+
 .navbar--link:active {
    background-color: rgb(83, 81, 81);
    border-left: white 10px solid;
@@ -80,18 +92,32 @@
     font-family: var(--font-title);
     padding: 10px 30px 20px 30px;
     background-color: rgb(48, 46, 46);
+    color: white;
+    text-decoration: none;
+}
+
+.navbar--link-lang:active, .navbar--link-lang:hover {
     text-decoration: underline;
 }
 
-.red {
-    color: red;
+.navbar--link-button .red {
+    color: red !important;
     font-family: var(--font-title);
     font-size: var(--font-subtitle);
     background-color: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+    text-transform: capitalize;
+}
+
+.navbar img {
+    display: flex;
 }
 
 
-/* vue du menu burger */
+/* -- vue du menu burger ouvert -- */
 .show-nav .navbar--links {
     display: inline;
     position: fixed;

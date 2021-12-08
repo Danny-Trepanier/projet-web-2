@@ -1,6 +1,8 @@
 @import url(components/burger.css);
-@import url(components/wine-card.css);
+@import url(components/filters.css);
 @import url(components/modal-note.css);
+@import url(components/wine-card.css);
+
 @import url(auth/login.css);
 @import url(auth/register.css);
 @import url(auth/update.css);
@@ -19,6 +21,7 @@
     --caput-mortuum: #58181F;
     --mint-cream: #F2F7F2;
     --xanadu: #607466;
+    --red: #80232D;
 
     /* Typographie */
 
@@ -43,6 +46,11 @@ h1 {
     font-size: var(--font-size-title);
 }
 
+.title {
+    padding: 20px 0px 20px 30px;
+    border-bottom: 1px outset rgba(0, 0, 0, 0.562);
+}
+
 h2, label {
     font-family: var(--font-subtitle);
     font-size: var(--font-size-subtitle);
@@ -52,16 +60,36 @@ h3, h4, h5, h6 {
     font-family: var(--font-subtitle);
 }
 
-p, input, li {
+p, li {
     font-family: var(--font-text);
     font-size: var(--font-size-text);
 }
 
-.button {
+fieldset {
+    border: none;
+}
+
+input {
+    font-family: var(--font-text);
+    border-radius: 10px 10px;
+    width: calc(100% - 10px);
+    height: 30px;
+    margin: 10px 0px;
+    padding-left: 10px;
+}
+
+a:link, a:visited, a:hover, a:active {
+	text-decoration: none;
+	color: inherit;
+}
+
+button {
     background-color: var(--caput-mortuum);
+    color: white !important;
 	font-family: var(--font-title);
 	font-size: var(--font-size-text);
     text-align: center;
+    border-radius: 10px 10px;
     width: 100%;
     display: block;
     margin-left: auto;
@@ -69,13 +97,14 @@ p, input, li {
     margin-bottom: 10px;
     margin-top: 5px;
     padding: 10px;
+    text-transform: uppercase;
 }
 
-.button:hover {
+button:hover {
     background-color: var(--xanadu);
 }
 
-.button:active {
+button:active {
     background-color: var(--xanadu);
     text-decoration: underline;
 }
