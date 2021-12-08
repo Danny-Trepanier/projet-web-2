@@ -27,7 +27,6 @@
 
         @livewire('research', [
             'myCellars' => $myCellars,
-            'myBottles' => $myCellars->bottles,
         ])
 
 	</section>
@@ -37,7 +36,7 @@
         {{-- <p>Nom du user: {{ $cellar->user->name }}</p> --}}
         {{-- <p>Dans mon cellier, il y a: {{ count($myCellars->bottles) }}</p> --}}
 
-        @forelse($myCellars->bottles as $myBottle)
+        @forelse($myCellars as $myBottle)
 
             <a href="{{ url("") }}/bottle/{{ $myBottle->id }}">
                 <article class="wine-card">
@@ -49,8 +48,8 @@
                             <h1>{{ $myBottle->name }}</h1>
                             <div>
                                 <p>{{ $myBottle->country }}</p>
-                                <p>Quantité(s) : 1
-                                    {{-- {{ $count }} --}}
+                                <p>Quantité(s) :
+                                    {{ $myBottle->bottleCount }}
                                 </p>
                                 <p>{{ $myBottle->price }}$</p>
                             </div>
@@ -67,7 +66,7 @@
                 @endif
 
         <!-- Affichage de la note laissée par l'usager sur la bouteille -->
-                            @if($myBottle->comment)
+                            {{-- @if($myBottle->comment)
                                 <div>
                                     <span><b>{{ $myBottle->comment->note }}</b></span>
                                     <img src="{{ asset('img/icon/icon_etoile_rouge.png') }}" alt="icone etoile note">
@@ -77,7 +76,7 @@
                                     <span><b>/</b></span>
                                     <img src="{{ asset('img/icon/icon_etoile_vide.png') }}" alt="icone etoile vide">
                                 </div>
-                            @endif
+                            @endif --}}
                         </div>
                     </div>
                 </article>

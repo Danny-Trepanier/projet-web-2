@@ -10,9 +10,9 @@ use App\Models\Cellar;
 
 class ResearchText {
 
-    public static function searchByText($myBottles, string $text)
+    public static function searchByText($myCellars, string $text)
     {
-        return collect($myBottles)->filter(function($value, $key) {
+        return collect($myCellars)->filter(function($value, $key) {
             dump($value, $key);
         });
     }
