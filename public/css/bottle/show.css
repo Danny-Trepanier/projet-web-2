@@ -9,7 +9,6 @@
 }
 
 .bottle-detail > .img-wrap {
-	width: 100%;
 	display:flex;
 	justify-content: flex-end;
 	margin-top: 0;
@@ -48,7 +47,6 @@
 
 .bg--color {
 	background-color: var(--mint-cream);
-	width: 100vw;
 	padding: 15px 36px 15px 36px;
 }
 
@@ -63,6 +61,11 @@
 	display: flex;
 	align-items: center;
 }
+
+.wrap--quantity > div > svg {
+	margin-left: 1ch;
+}
+
 
 .number--quantity {
 	font-family: var(--font-subtitle);
@@ -103,3 +106,14 @@
 }
 
 
+/*   MODALE */
+
+.modal--bottle {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+
+	background: blue;
+}
