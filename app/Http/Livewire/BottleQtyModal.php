@@ -2,8 +2,8 @@
 
 namespace App\Http\Livewire;
 
+use Illuminate\Support\Facades\DB;	
 use Livewire\Component;
-use App\Models\Bottle;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -42,8 +42,23 @@ class BottleQtyModal extends Component
 		
 	}
 
+	public function countBottlesTotalPerId($cellarID, $bottleID)
+	{
+		$totalCount = DB::table('bottle_cellar')
+						->select(DB::raw('count(bottle_id)'))
+						->where('bottle_id','=', $bottleID)
+						->where('cellar_id','=', $cellarID)
+						->groupBy('cellar_id')
+						->get();
+
+		echo (int) filter_var($totalCount, FILTER_SANITIZE_NUMBER_INT);
+	}
+
     public function render()
     {	
-        return view('livewire.bottle-qty-modal');
+        return view('livewire.bottle-qty-modal', [
+		
+		]);
     }
+
 }

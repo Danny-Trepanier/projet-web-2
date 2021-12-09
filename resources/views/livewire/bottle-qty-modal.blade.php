@@ -4,10 +4,9 @@
 		<form action="">
 			<h1>{{$bottle->name}}</h1>
 			@forelse($myCellars as $cellar)
-				<p>{{count($cellar->bottles)}}</p>
 			<div>
 				<h2>{{$cellar->name}}</h2>
-
+					{{$this->countBottlesTotalPerId($cellar->id, $bottle->id)}}
 				<button wire:click.prevent>+</button>
 				<button wire:click.prevent>-</button>
 			</div>
