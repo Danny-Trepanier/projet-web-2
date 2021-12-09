@@ -11,12 +11,10 @@ use App\Models\BottleCellar;
 
 class ResearchText {
 
-    public $myCellars;
-
     public static function searchByName(string $name, $myCellars): array
     {
         return collect($myCellars)
-            ->filter(fn($object) => Str::contains(strtolower($object->name), strtolower($name)))
+            ->filter(fn($object) => Str::contains(strtolower($object['name']), strtolower($name)))
             ->all();
     }
 
@@ -39,10 +37,6 @@ class ResearchText {
     //     return collect($myCellars)
     //         ->filter(fn($object) => Str::contains(strtolower($object->price), strtolower($price)))
     //         ->all();
-    // }
-    // public static function arrayCellar()
-    // {
-    //     return $this->myCellars;
     // }
 
 }
