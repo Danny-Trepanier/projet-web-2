@@ -40,7 +40,6 @@
 	</article>
 
 
-
-	@livewire('bottle-qty-modal')
+	@livewire('bottle-qty-modal', ['bottle' => $bottle, 'myCellars' => $myCellars])
 
 </x-app-layout>

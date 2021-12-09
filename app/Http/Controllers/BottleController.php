@@ -104,7 +104,7 @@ class BottleController extends Controller
     {
         // Nous prenons tous les celliers de l'utilisateur
         $myCellars = Cellar::get()->where('user_id', Auth::user()->id);
-
+		
         return view('bottle.show', [
             'bottle' => $bottlePost,
             'myCellars' => $myCellars
