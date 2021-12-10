@@ -40,6 +40,8 @@ class BottleQtyModal extends Component
 				'bottle_id' => $bottleID,
 				'cellar_id' => $cellarID
 			]);
+
+		$this->emit(event: 'qtyChange'); 
 	}
 
 	public function substractBottle($cellarID, $bottleID)
@@ -49,6 +51,8 @@ class BottleQtyModal extends Component
 			->where('cellar_id','=', $cellarID)
 			->limit(1)
 			->delete();
+
+		$this->emit(event: 'qtyChange'); 
 	}
 
 	public function countBottlesTotalPerId($cellarID, $bottleID)

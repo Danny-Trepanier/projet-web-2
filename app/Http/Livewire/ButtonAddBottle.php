@@ -12,6 +12,8 @@ class ButtonAddBottle extends Component
 	public $quantity;
 	public $bottle;
 
+	protected $listeners = ['qtyChange' => 'getNbBottles'];
+
 	public function mount($bottle) 
 	{
 		$this->bottle = $bottle;
