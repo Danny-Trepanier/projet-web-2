@@ -6,9 +6,8 @@
 			<div>
 				<h2>{{$cellar->name}}</h2>
 					{{$this->countBottlesTotalPerId($cellar->id, $bottle->id)}}
-					{{$nbBottle}}
-				<button wire:click.prevent>+</button>
-				<button wire:click.prevent>-</button>
+				<button wire:click="addBottle({{$cellar->id}}, {{$bottle->id}})">+</button>
+				<button wire:click="substractBottle({{$cellar->id}}, {{$bottle->id}})">-</button>
 			</div>
 			@empty
 			<p>Vous n'avez aucun cellier</p>

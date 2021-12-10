@@ -5,7 +5,7 @@ namespace App\Http\Livewire;
 use Illuminate\Support\Facades\DB;	
 use Livewire\Component;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
+
 
 
 class BottleQtyModal extends Component
@@ -33,14 +33,22 @@ class BottleQtyModal extends Component
 		$this->show = false;
 	}
 
-	public function addBottle()
+	public function addBottle($cellarID, $bottleID)
 	{
-
+		DB::table('bottle_cellar')
+			->insert([
+				'bottle_id' => $bottleID,
+				'cellar_id' => $cellarID
+			]);
 	}
 
-	public function substractBottle()
+	public function substractBottle($cellarID, $bottleID)
 	{
-		
+		DB::table('bottle_cellar')
+			->where('bottle_id','=', $bottleID)
+			->where('cellar_id','=', $cellarID)
+			->limit(1)
+			->delete();
 	}
 
 	public function countBottlesTotalPerId($cellarID, $bottleID)
