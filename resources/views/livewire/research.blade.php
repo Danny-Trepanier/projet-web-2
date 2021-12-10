@@ -6,33 +6,33 @@
     <div>
 
     @if ($name == "")
-
+{{-- {{ dd($myCellars) }} --}}
         @forelse($myCellars as $myBottle)
 
-                <a href="{{ url("") }}/bottle/{{ $myBottle->id }}">
+                <a href="{{ url("") }}/bottle/{{ $myBottle->id ?? $myBottle['id'] }}">
                     <article class="wine-card">
                         <div class="img-wrap">
-                            <img src="{{ $myBottle->image_link }}?quality=80&fit=bounds&height=166&width=111&canvas=111:166 " alt="{{ $myBottle->name }}">
+                            <img src="{{ $myBottle->image_link ?? $myBottle['image_link'] }}?quality=80&fit=bounds&height=166&width=111&canvas=111:166 " alt="{{ $myBottle->name ?? $myBottle['name'] }}">
                         </div>
                         <div class="info-wrap">
                             <div class="info--text">
-                                <h1>{{ $myBottle->name }}</h1>
+                                <h1>{{ $myBottle->name ?? $myBottle['name'] }}</h1>
                                 <div>
-                                    <p>{{ $myBottle->country }}</p>
+                                    <p>{{ $myBottle->country ?? $myBottle['country'] }}</p>
                                     <p>Quantité(s) :
-                                        {{ $myBottle->bottleCount }}
+                                        {{ $myBottle->bottleCount ?? $myBottle['bottleCount'] }}
                                     </p>
-                                    <p>{{ $myBottle->price }}$</p>
+                                    <p>{{ $myBottle->price ?? $myBottle['price'] }}$</p>
                                 </div>
                             </div>
                             <div class="info--icons">
 
             <!-- Déploiement de l'icone de couleur selon les infos de la bouteille  -->
-                    @if($myBottle->color == 'rouge')
+                    @if($myBottle->color ?? $myBottle['color'] == 'rouge')
                                 <img src="{{ asset('img/icon/icone_vin_rouge.png') }}" alt="icone vin rouge">
-                    @elseif($myBottle->color == 'blanc')
+                    @elseif($myBottle->color ?? $myBottle['color'] == 'blanc')
                                 <img src="{{ asset('img/icon/icone_vin_blanc.png') }}" alt="icone vin rouge">
-                    @elseif($myBottle->color == 'rosé')
+                    @elseif($myBottle->color ?? $myBottle['color'] == 'rosé')
                                 <img src="{{ asset('img/icon/icone_vin_rose.png') }}" alt="icone vin rouge">
                     @endif
 
@@ -57,7 +57,7 @@
                 <p>Il y a aucune bouteille dans le cellier.</p>
             @endforelse
 
-    @elseif ($name && $name !== "")
+    @elseif ($name)
 
         @forelse($allBottles as $myBottle)
 
