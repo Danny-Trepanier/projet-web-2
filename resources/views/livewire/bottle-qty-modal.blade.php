@@ -3,11 +3,13 @@
 	<div class="modal-content">
 			<h1>{{$bottle->name}}</h1>
 			@forelse($myCellars as $cellar)
-			<div>
+			<div class="cellar--wrap">
 				<h2>{{$cellar->name}}</h2>
-					{{$this->countBottlesTotalPerId($cellar->id, $bottle->id)}}
-				<button wire:click="addBottle({{$cellar->id}}, {{$bottle->id}})">+</button>
-				<button wire:click="substractBottle({{$cellar->id}}, {{$bottle->id}})">-</button>
+				<div class="cellar--actions">
+					<button wire:click="substractBottle({{$cellar->id}}, {{$bottle->id}})">-</button>
+					<span>{{$this->countBottlesTotalPerId($cellar->id, $bottle->id)}}</span>
+					<button wire:click="addBottle({{$cellar->id}}, {{$bottle->id}})">+</button>
+				</div>
 			</div>
 			@empty
 			<p>Vous n'avez aucun cellier</p>

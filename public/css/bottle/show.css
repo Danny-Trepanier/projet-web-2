@@ -15,7 +15,8 @@
 }
 
 .bottle-detail > .img-wrap > img {
-	width: 264px;
+	/*width: 264px;*/
+	width: 230px;
 	z-index: 2;
 }
 
