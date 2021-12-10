@@ -73,6 +73,7 @@
 }
 
 .button--add {
+	display: block;
 	fill: #58181F;
 	margin-left: 5vw;
 }

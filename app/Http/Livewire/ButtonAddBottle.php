@@ -10,10 +10,11 @@ class ButtonAddBottle extends Component
 {
 
 	public $quantity;
+	public $bottle;
 
-	public function mount() 
+	public function mount($bottle) 
 	{
-
+		$this->bottle = $bottle;
 	}
 
 	public function showModal()
@@ -21,23 +22,24 @@ class ButtonAddBottle extends Component
 		$this->emit(event: 'showModal');
 	}
 
-	public function getNbBottles($bottleID)
+	public function getNbBottles()
 	{
 		$totalCount = DB::table('bottle_cellar')
-					->join('cellars', 'cellars.user_id', '=', Auth::user()->id)
+					->join('cellars', 'bottle_cellar.cellar_id', '=', 'cellars.id')
 					->select(DB::raw('count(bottle_id)'))
-					->where('bottle_id','=', $bottleID)
-					->groupBy('bottle_id')
+					->where('cellars.user_id','=', Auth::user()->id)
+					->where('bottle_cellar.bottle_id', '=',$this->bottle->id)
+					->groupBy('bottle_cellar.bottle_id')
 					->get();
 
-		$this->quanity = (int) filter_var($totalCount, FILTER_SANITIZE_NUMBER_INT);
-
+		$totalCount = (int) filter_var($totalCount, FILTER_SANITIZE_NUMBER_INT);
+		$this->quantity = $totalCount;
 		return $this->quantity;
-
 	}
 
 	public function render()
-    {
+    {	$this->getNbBottles();
+		
         return view('livewire.button-add-bottle');
     }
 
