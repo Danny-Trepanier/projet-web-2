@@ -13,6 +13,7 @@ class BottleQtyModal extends Component
 	public $show;
 	public $bottle;
 	public $myCellars;
+	public $nbBottle;
 
 	protected $listeners = ['showModal' => 'showModal'];
 
@@ -51,7 +52,8 @@ class BottleQtyModal extends Component
 						->groupBy('cellar_id')
 						->get();
 
-		echo (int) filter_var($totalCount, FILTER_SANITIZE_NUMBER_INT);
+		$this->nbBottle = (int) filter_var($totalCount, FILTER_SANITIZE_NUMBER_INT);
+		return $this->nbBottle;
 	}
 
     public function render()
