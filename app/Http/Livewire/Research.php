@@ -13,6 +13,7 @@ class Research extends Component
 
     public $name;
     public $myCellars;
+    public $comments;
     public $allBottles = [];
 
     public function updatedName($value)
