@@ -71,5 +71,5 @@ return [
 	'bottle_show_code_saq_text'   => 'Code SAQ:',
 	'bottle_show_return_button'   => 'Retour',
 	'bottle_show_bottle_quantity_text'   => 'Nb au cellier:',
-    'bottle_show_no_cellar'   => 'Vous n\'avez aucun cellier',
+    'bottle_show_no_cellar_text'   => 'Vous n\'avez aucun cellier',
 ];
