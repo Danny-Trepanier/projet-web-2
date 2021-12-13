@@ -13,9 +13,10 @@
 			</div>
 			@empty
 			<p>Vous n'avez aucun cellier</p>
+
 			@endforelse
 
-			<button wire:click="closeModal">X</button>
+			<button class="button-modal-close" wire:click="closeModal">X</button>
 	</div>
 </div>
 @else

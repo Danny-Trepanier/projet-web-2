@@ -1,7 +1,7 @@
 .modal--wrap {
 	margin-left: 36px;
 	position: absolute;
-	transform: translateY(300px);
+	transform: translateY(270px);
 	display: flex;
 }
 
