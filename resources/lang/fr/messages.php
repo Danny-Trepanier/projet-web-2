@@ -61,6 +61,52 @@ return [
     'cellar_edit_button_update' => 'Modifier',
 	'cellar_edit_button_delete' => 'Supprimer',
 
+    // Page show.blade.php de Cellar
+    'cellar_show_search_bar_placeholder' => 'Recherche par nom',
+    'cellar_show_quantity_text' => 'Quantité :|Quantités :',
+    'cellar_show_cellar_empty' => 'Il y a aucune bouteille dans le cellier.',
+    'cellar_show_search_result_empty' => 'Il y a aucune bouteille de se nom dans le cellier.',
+
+    // Profil -----------------------------------------------------------------------------------
+
+    'profil_show_title' => 'Mon compte',
+    'profil_show_profile_information_title' => 'Informations sur le profil',
+    'profil_show_profile_information_description' => 'Mettez à jour les informations de profil et l\'adresse courriel de votre compte.',
+    'profil_show_profile_information_label_name' => 'Nom',
+    'profil_show_profile_information_label_email' => 'Courriel',
+
+    'profil_show_update_password_title' => 'Mettre à jour le mot de passe',
+    'profil_show_update_password_description' => 'Assurez-vous que votre compte utilise un mot de passe long et aléatoire pour rester en sécurité.',
+    'profil_show_update_password_label_current_password' => 'Mot de passe actuel',
+    'profil_show_update_password_label_new_password' => 'Nouveau mot de passe',
+    'profil_show_update_password_label_confirm_password' => 'Confirmez le mot de passe',
+
+    'profil_show_browser_sessions_title' => 'Sessions de navigateur',
+    'profil_show_browser_sessions_description' => 'Gérez et déconnectez-vous de vos sessions actives sur d\'autres navigateurs et appareils.',
+    'profil_show_browser_sessions_content' => 'Si nécessaire, vous pouvez vous déconnecter de toutes vos autres sessions de navigateur sur tous vos appareils. Certaines de vos sessions récentes sont répertoriées ci-dessous; cependant, cette liste peut ne pas être exhaustive. Si vous pensez que votre compte a été compromis, vous devez également mettre à jour votre mot de passe.',
+    'profil_show_browser_sessions_this_device_text' => 'Cet appareil',
+    'profil_show_browser_sessions_last_active_text' => 'Dernière activité',
+    'profil_show_browser_sessions_logout_button' => 'Déconnectez-vous des autres sessions de navigateur',
+    'profil_show_browser_sessions_message_done' => 'Fait.',
+    'profil_show_browser_sessions_modal_title' => 'Déconnectez-vous des autres sessions de navigateur',
+    'profil_show_browser_sessions_modal_content' => 'Veuillez entrer votre mot de passe pour confirmer que vous souhaitez vous déconnecter de vos autres sessions de navigateur sur tous vos appareils.',
+    'profil_show_browser_sessions_modal_label_password' => 'Mot de passe',
+
+    'profil_show_delete_account_title' => 'Supprimer le compte',
+    'profil_show_delete_account_description' => 'Supprimez définitivement votre compte.',
+    'profil_show_delete_account_content' => 'Une fois votre compte supprimé, toutes ses ressources et données seront définitivement supprimées. Avant de supprimer votre compte, veuillez télécharger les données ou informations que vous souhaitez conserver.',
+    'profil_show_delete_account_modal_title' => 'Supprimer le compte',
+    'profil_show_delete_account_modal_content' => 'Êtes-vous sûr de vouloir supprimer votre compte ? Une fois votre compte supprimé, toutes ses ressources et données seront définitivement supprimées. Veuillez saisir votre mot de passe pour confirmer que vous souhaitez supprimer définitivement votre compte.',
+    'profil_show_delete_account_modal_label_password' => 'Mot de passe',
+
+    'profil_show_profile_message_success' => 'Enregistrée.',
+    'profil_show_profile_save_button' => 'Sauvegarder',
+    'profil_show_cancel_button' => 'Annuler',
+    'profil_show_browser_sessions_modal_logout_button' => 'Déconnectez-vous des autres sessions de navigateur',
+    'profil_show_delete_account_delete_button' => 'Supprimer le compte',
+
+    // Bottle -----------------------------------------------------------------------------------
+
 	//Page index.blade.php de Bottle
 	'bottle_index_title'   => 'Liste de la SAQ',
 	'bottle_index_search_bar_placeholder'   => 'Nom, Pays, Couleur, Prix...',

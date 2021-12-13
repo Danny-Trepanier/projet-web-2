@@ -43,7 +43,6 @@ return [
     'register_link_already_registered'   => 'Already registred ?',
     'register_button_register'   => 'Register',
 
-
     // Cellar -----------------------------------------------------------------------------------
 
     // Page index.blade.php de Cellar
@@ -64,8 +63,49 @@ return [
     'cellar_edit_button_update' => 'Update',
 	'cellar_edit_button_delete' => 'Delete',
 
+    // Page show.blade.php de Cellar
+    'cellar_show_search_bar_placeholder' => 'Search by name',
+    'cellar_show_quantity_text' => 'Quantity :|Quantities :',
+    'cellar_show_cellar_empty' => 'There are no bottles in the cellar.',
+    'cellar_show_search_result_empty' => 'There is no bottle of his name in the cellar.',
 
     // Profile -----------------------------------------------------------------------------------
+
+    'profil_show_title' => 'My account',
+    'profil_show_profile_information_title' => 'Profile Information',
+    'profil_show_profile_information_description' => 'Update your account\'s profile information and email address.',
+    'profil_show_profile_information_label_name' => 'Name',
+    'profil_show_profile_information_label_email' => 'Email',
+
+    'profil_show_update_password_title' => 'Update Password',
+    'profil_show_update_password_description' => 'Ensure your account is using a long, random password to stay secure.',
+    'profil_show_update_password_label_current_password' => 'Current Password',
+    'profil_show_update_password_label_new_password' => 'New Password',
+    'profil_show_update_password_label_confirm_password' => 'Confirm Password',
+
+    'profil_show_browser_sessions_title' => 'Browser Sessions',
+    'profil_show_browser_sessions_description' => 'Manage and log out your active sessions on other browsers and devices.',
+    'profil_show_browser_sessions_content' => 'If necessary, you may log out of all of your other browser sessions across all of your devices. Some of your recent sessions are listed below; however, this list may not be exhaustive. If you feel your account has been compromised, you should also update your password.',
+    'profil_show_browser_sessions_this_device_text' => 'This device',
+    'profil_show_browser_sessions_last_active_text' => 'Last active',
+    'profil_show_browser_sessions_logout_button' => 'Log Out Other Browser Sessions',
+    'profil_show_browser_sessions_message_done' => 'Done.',
+    'profil_show_browser_sessions_modal_title' => 'Log Out Other Browser Sessions',
+    'profil_show_browser_sessions_modal_content' => 'Please enter your password to confirm you would like to log out of your other browser sessions across all of your devices.',
+    'profil_show_browser_sessions_modal_label_password' => 'Password',
+
+    'profil_show_delete_account_title' => 'Delete Account',
+    'profil_show_delete_account_description' => 'Permanently delete your account.',
+    'profil_show_delete_account_content' => 'Once your account is deleted, all of its resources and data will be permanently deleted. Before deleting your account, please download any data or information that you wish to retain.',
+    'profil_show_delete_account_modal_title' => 'Delete Account',
+    'profil_show_delete_account_modal_content' => 'Are you sure you want to delete your account? Once your account is deleted, all of its resources and data will be permanently deleted. Please enter your password to confirm you would like to permanently delete your account.',
+    'profil_show_delete_account_modal_label_password' => 'Password',
+
+    'profil_show_profile_message_success' => 'Saved.',
+    'profil_show_profile_save_button' => 'Save',
+    'profil_show_cancel_button' => 'Cancel',
+    'profil_show_browser_sessions_modal_logout_button' => 'Log Out Other Browser Sessions',
+    'profil_show_delete_account_delete_button' => 'Delete Account',
 
 	// Bottle -----------------------------------------------------------------------------------
 

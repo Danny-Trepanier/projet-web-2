@@ -1,6 +1,6 @@
 <div class="research">
     <div class="filters--search-bar">
-        <input wire:model.debounce.1s="name" type="text" placeholder="Recherche par nom">
+        <input wire:model.debounce.1s="name" type="text" placeholder="{{ __('messages.cellar_show_search_bar_placeholder') }}">
     </div>
 
     <div>
@@ -19,7 +19,7 @@
                                 <h1>{{ $myBottle->name ?? $myBottle['name'] }}</h1>
                                 <div>
                                     <p>{{ $myBottle->country ?? $myBottle['country'] }}</p>
-                                    <p>Quantité(s) :
+                                    <p>{{ trans_choice('messages.cellar_show_quantity_text', $myBottle->bottleCount) }}
                                         {{ $myBottle->bottleCount ?? $myBottle['bottleCount'] }}
                                     </p>
                                     <p>{{ $myBottle->price ?? $myBottle['price'] }}$</p>
@@ -54,7 +54,7 @@
                 </a>
 
             @empty
-                <p>Il y a aucune bouteille dans le cellier.</p>
+                <p>{{ __('messages.cellar_show_cellar_empty') }}</p>
             @endforelse
 
     @elseif ($name)
@@ -71,7 +71,7 @@
                             <h1>{{ $myBottle['name'] }}</h1>
                             <div>
                                 <p>{{ $myBottle['country'] }}</p>
-                                <p>Quantité(s) :
+                                <p>{{ trans_choice('messages.cellar_show_quantity_text', $myBottle['bottleCount']) }}
                                     {{ $myBottle['bottleCount'] }}
                                 </p>
                                 <p>{{ $myBottle['price'] }}$</p>
@@ -106,7 +106,7 @@
             </a>
 
         @empty
-            <p>Il y a aucune bouteille de se nom dans le cellier.</p>
+            <p>{{ __('messages.cellar_show_search_result_empty') }}</p>
         @endforelse
 
     @endif
