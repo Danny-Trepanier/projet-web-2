@@ -22,7 +22,6 @@ return [
     'menu_link_french' => 'Français',
     'menu_link_english' => 'English',
 
-
     // Auth -----------------------------------------------------------------------------------
 
     // Login page
@@ -72,4 +71,13 @@ return [
 
 	//Page index.blade.php de Bottle
 	'bottle_index_title'   => 'List from the SAQ',
+    'bottle_index_search_bar_placeholder'   => 'Name, Country, Color, Price...',
+    'bottle_index_database_empty'   => 'There are no bottles in the database.',
+
+    //Page show.blade.php de Bottle
+	'bottle_show_title'   => 'Bottle details',
+    'bottle_show_code_saq_text'   => 'SAQ code:',
+	'bottle_show_return_button'   => 'Return',
+    'bottle_show_bottle_quantity_text'   => 'Nb in cellar:',
+    'bottle_show_no_cellar'   => 'You have no cellar',
 ];

@@ -13,7 +13,7 @@
 return [
 
     // Navigation
-    'menu_link_login' => 'Connection',
+    'menu_link_login' => 'Connexion',
     'menu_link_register' => 'Inscription',
     'menu_link_my_cellars' => 'Mes celliers',
     'menu_link_bottles' => 'Bouteilles de vin',
@@ -21,6 +21,8 @@ return [
     'menu_link_logout' => 'Déconnexion',
     'menu_link_french' => 'Français',
     'menu_link_english' => 'English',
+
+    // Authentification -----------------------------------------------------------------------------------
 
     // Page connexion
     'login_title_page'   => 'Mon compte',
@@ -61,4 +63,13 @@ return [
 
 	//Page index.blade.php de Bottle
 	'bottle_index_title'   => 'Liste de la SAQ',
+	'bottle_index_search_bar_placeholder'   => 'Nom, Pays, Couleur, Prix...',
+	'bottle_index_database_empty'   => 'Il y a aucune bouteille dans la base de donnée.',
+
+    //Page show.blade.php de Bottle
+	'bottle_show_title'   => 'Détails d\'une bouteille',
+	'bottle_show_code_saq_text'   => 'Code SAQ:',
+	'bottle_show_return_button'   => 'Retour',
+	'bottle_show_bottle_quantity_text'   => 'Nb au cellier:',
+    'bottle_show_no_cellar'   => 'Vous n\'avez aucun cellier',
 ];
