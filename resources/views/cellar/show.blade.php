@@ -27,6 +27,7 @@
 
         @livewire('research', [
             'myCellars' => $myCellars,
+            'comments' => $comments
         ])
 
 	</section>

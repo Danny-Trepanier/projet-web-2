@@ -4,9 +4,7 @@
     </div>
 
     <div>
-
     @if ($name == "")
-{{-- {{ dd($myCellars) }} --}}
         @forelse($myCellars as $myBottle)
 
                 <a href="{{ url("") }}/bottle/{{ $myBottle->id ?? $myBottle['id'] }}">
@@ -19,9 +17,7 @@
                                 <h1>{{ $myBottle->name ?? $myBottle['name'] }}</h1>
                                 <div>
                                     <p>{{ $myBottle->country ?? $myBottle['country'] }}</p>
-                                    <p>{{ trans_choice('messages.cellar_show_quantity_text', $myBottle->bottleCount) }}
-                                        {{ $myBottle->bottleCount ?? $myBottle['bottleCount'] }}
-                                    </p>
+                                    <p>{{ $myBottle->bottleCount ?? $myBottle['bottleCount'] }}</p>
                                     <p>{{ $myBottle->price ?? $myBottle['price'] }}$</p>
                                 </div>
                             </div>
@@ -37,17 +33,22 @@
                     @endif
 
             <!-- Affichage de la note laissée par l'usager sur la bouteille -->
-                                {{-- @if($myBottle->comment)
-                                    <div>
-                                        <span><b>{{ $myBottle->comment->note }}</b></span>
-                                        <img src="{{ asset('img/icon/icon_etoile_rouge.png') }}" alt="icone etoile note">
-                                    </div>
-                                @else
-                                    <div>
-                                        <span><b>/</b></span>
-                                        <img src="{{ asset('img/icon/icon_etoile_vide.png') }}" alt="icone etoile vide">
-                                    </div>
-                                @endif --}}
+                    {{-- @forelse($comments as $comment)
+                        @if($myBottle->id == $comment->bottle_id ?? $myBottle['id']  == $comment->bottle_id )
+                            <div>
+                                <span><b>{{ $comment->note }}</b></span>
+                                <img src="{{ asset('img/icon/icon_etoile_rouge.png') }}" alt="icone etoile note">
+                            </div>
+
+                        @else
+
+                        @endif
+                    @empty
+                        <div>
+                            <span><b>/</b></span>
+                            <img src="{{ asset('img/icon/icon_etoile_vide.png') }}" alt="icone etoile vide">
+                        </div>
+                    @endforelse --}}
                             </div>
                         </div>
                     </article>
@@ -71,9 +72,7 @@
                             <h1>{{ $myBottle['name'] }}</h1>
                             <div>
                                 <p>{{ $myBottle['country'] }}</p>
-                                <p>{{ trans_choice('messages.cellar_show_quantity_text', $myBottle['bottleCount']) }}
-                                    {{ $myBottle['bottleCount'] }}
-                                </p>
+                                <p>{{ $myBottle['bottleCount'] }}</p>
                                 <p>{{ $myBottle['price'] }}$</p>
                             </div>
                         </div>
@@ -89,17 +88,22 @@
                 @endif
 
         <!-- Affichage de la note laissée par l'usager sur la bouteille -->
-                            {{-- @if($myBottle->comment)
-                                <div>
-                                    <span><b>{{ $myBottle->comment->note }}</b></span>
-                                    <img src="{{ asset('img/icon/icon_etoile_rouge.png') }}" alt="icone etoile note">
-                                </div>
-                            @else
-                                <div>
-                                    <span><b>/</b></span>
-                                    <img src="{{ asset('img/icon/icon_etoile_vide.png') }}" alt="icone etoile vide">
-                                </div>
-                            @endif --}}
+                @forelse($comments as $comment)
+                    @if($myBottle['id'] == $comment->bottle_id)
+                        <div>
+                            <span><b>{{ $comment->note }}</b></span>
+                            <img src="{{ asset('img/icon/icon_etoile_rouge.png') }}" alt="icone etoile note">
+                        </div>
+
+                    @else
+
+                    @endif
+                    @empty
+                        <div>
+                            <span><b>/</b></span>
+                            <img src="{{ asset('img/icon/icon_etoile_vide.png') }}" alt="icone etoile vide">
+                        </div>
+                @endforelse
                         </div>
                     </div>
                 </article>

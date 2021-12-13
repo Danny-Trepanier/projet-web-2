@@ -76,6 +76,9 @@ class CellarController extends Controller
         // WHERE cellar_id = 1
         // GROUP BY bottle_id
 
+        $comments = Comment::all()->where('user_id', Auth::user()->id );
+        // dd($comments);
+
         $myCellars = DB::table('bottle_cellar')
                             ->join('bottles', 'bottle_cellar.bottle_id', '=', 'bottles.id')
                             ->select(DB::raw('count(bottle_id) as bottleCount'), 'bottle_cellar.cellar_id', 'bottles.*')
@@ -89,6 +92,7 @@ class CellarController extends Controller
         return view('cellar.show', [
             'cellar' => $cellarPost,
             'myCellars' => $myCellars,
+            'comments' => $comments,
         ]);
     }
 
