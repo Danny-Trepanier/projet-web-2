@@ -10,7 +10,7 @@
 				<button wire:click="substractBottle({{$cellar->id}}, {{$bottle->id}})">-</button>
 			</div>
 			@empty
-			<p>Vous n'avez aucun cellier</p>
+			<p>{{ __('messages.bottle_show_no_cellar_text') }}</p>
 			@endforelse
 
 			<button wire:click="closeModal">X</button>
