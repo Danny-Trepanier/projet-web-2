@@ -16,18 +16,17 @@
 
 .bottle-detail > .img-wrap > img {
 	/*width: 264px;*/
-	width: 230px;
+	width: 220px;
 	z-index: 2;
 }
 
+/* SVG couleurs de vin --------------------- */
 
 .bottle-detail > svg {
 	width: 55px;
 	margin-left: 36px;
 	position: absolute;
-	transform: translateY(64px);
-
-	z-index: 3;
+	transform: translateY(60px);
 }
 
 .bottle-detail > .icon-rouge {
@@ -42,7 +41,7 @@
 
 .bottle-detail > .detail--info > h1 {
 	font-size: 26px;
-	margin: 0px 36px 0 36px;
+	margin: 10px 36px 10px 36px;
 }
 
 
@@ -51,10 +50,35 @@
 	padding: 15px 36px 15px 36px;
 }
 
+
+.container--info {
+	display:flex;
+	flex-direction: column;
+	height: fit-content;
+	font-family: var(--font-subtitle);
+	font-size: 18px;
+}
+
+.container--info > div {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 5px;
+}
+
+.bottle-detail > a >.link--back {
+	width: 120px;
+	margin-left: 36px;
+	margin-bottom: 0px;
+}
+
+
+/* Modale du bouton d'ajout d'ajout de bouteille ------------ */
 .wrap--quantity {
 	position: absolute;
 	transform: translateY(120px);
 	vertical-align: center;
+	font-family: var(--font-subtitle);
+
 }
 
 
@@ -75,47 +99,15 @@
 
 .button--add {
 	display: block;
-	fill: #58181F;
 	margin-left: 5vw;
+	z-index: 5;
+	background-color: var(--mint-cream);
+	border: none;
+	transition: 100ms ease-in-out;
 }
 
-.container--info {
-	display:flex;
-	flex-direction: column;
-	height: fit-content;
-}
-
-.container--info > div {
-	display: flex;
-	justify-content: space-between;
-}
-
-.bottle-detail > .button {
-	display: flex;
-	color: var(--mint-cream);
-	align-items: center;
-	justify-content: center;
-	width: 127px;
-	height: 55px;
-	border-radius: 14px;
-	margin-top: 20px;
-	margin-left: 36px;
-}
-
-.bottle-detail > .button > svg {
-	margin-right: 5px;
-	fill: var(--mint-cream);
-}
-
-
-/*   MODALE */
-
-.modal--bottle {
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-
-	background: blue;
+.button--add:hover,
+.button--add:active {
+	background-color: var(--mint-cream);
+	transform: scale(120%);
 }

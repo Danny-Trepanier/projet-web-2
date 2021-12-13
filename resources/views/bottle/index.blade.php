@@ -25,8 +25,8 @@
 			</div>
 		</div>
 		<div class="filters--search-bar">
-			
-			<input type="search" placeholder=" Nom, Pays, Couleur, Prix... " results="0">
+
+			<input type="search" placeholder=" {{ __('messages.bottle_index_search_bar_placeholder') }} " results="0">
 		</div>
 	</section>
 	<section class="liste-wrap">
@@ -48,9 +48,9 @@
 								<p>{{ $bottle->price }}$</p>
 							</div>
 						</div>
-		
+
 						<div class="info--icons">
-		
+
 		<!-- Déploiement de l'icone de couleur selon les infos de la bouteille  -->
 							@if($bottle->color == 'rouge')
 							<img src="{{ asset('img/icon/icone_vin_rouge.png') }}" alt="icone vin rouge">
@@ -59,7 +59,7 @@
 							@elseif($bottle->color == 'rosé')
 							<img src="{{ asset('img/icon/icone_vin_rose.png') }}" alt="icone vin rouge">
 							@endif
-		
+
 		<!-- Affichage de la note laissée par l'usager sur la bouteille -->
 							@forelse($comments as $comment)
 								@if($bottle->id == $comment->bottle_id)
@@ -67,9 +67,9 @@
 								<span><b>{{ $comment->note }}</b></span>
 								<img src="{{ asset('img/icon/icon_etoile_rouge.png') }}" alt="icone etoile note">
 							</div>
-		
+
 							@else
-		
+
 							@endif
 						@empty
 							<div>
@@ -77,14 +77,14 @@
 								<img src="{{ asset('img/icon/icon_etoile_vide.png') }}" alt="icone etoile vide">
 							</div>
 				@endforelse
-		
+
 						</div>
 					</div>
 				</article>
 			</a>
-		
+
 			@empty
-			<p>Il y a aucune bouteille dans la base de donnée.</p>
+			<p>{{ __('messages.bottle_index_database_empty') }}</p>
 			@endforelse
 	</section>
 
