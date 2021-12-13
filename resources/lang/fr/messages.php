@@ -61,6 +61,12 @@ return [
     'cellar_edit_button_update' => 'Modifier',
 	'cellar_edit_button_delete' => 'Supprimer',
 
+    // Page show.blade.php de Cellar
+    'cellar_show_search_bar_placeholder' => 'Recherche par nom',
+    'cellar_show_quantity_text' => 'Quantité :|Quantités :',
+    'cellar_show_cellar_empty' => 'Il y a aucune bouteille dans le cellier.',
+    'cellar_show_search_result_empty' => 'Il y a aucune bouteille de se nom dans le cellier.',
+
 	//Page index.blade.php de Bottle
 	'bottle_index_title'   => 'Liste de la SAQ',
 	'bottle_index_search_bar_placeholder'   => 'Nom, Pays, Couleur, Prix...',
