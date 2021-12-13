@@ -1,15 +1,15 @@
 <x-jet-action-section>
     <x-slot name="title">
-        {{ __('Browser Sessions') }}
+        {{ __('messages.profil_show_browser_sessions_title') }}
     </x-slot>
 
     <x-slot name="description">
-        {{ __('Manage and log out your active sessions on other browsers and devices.') }}
+        {{ __('messages.profil_show_browser_sessions_description') }}
     </x-slot>
 
     <x-slot name="content">
         <div>
-            {{ __('If necessary, you may log out of all of your other browser sessions across all of your devices. Some of your recent sessions are listed below; however, this list may not be exhaustive. If you feel your account has been compromised, you should also update your password.') }}
+            {{ __('messages.profil_show_browser_sessions_content') }}
         </div>
 
         @if (count($this->sessions) > 0)
@@ -39,9 +39,9 @@
                                     {{ $session->ip_address }},
 
                                     @if ($session->is_current_device)
-                                        <span>{{ __('This device') }}</span>
+                                        <span>{{ __('messages.profil_show_browser_sessions_this_device_text') }}</span>
                                     @else
-                                        {{ __('Last active') }} {{ $session->last_active }}
+                                        {{ __('messages.profil_show_browser_sessions_last_active_text') }} {{ $session->last_active }}
                                     @endif
                                 </div>
                             </div>
@@ -53,26 +53,26 @@
 
         <div>
             <x-jet-button wire:click="confirmLogout" wire:loading.attr="disabled">
-                {{ __('Log Out Other Browser Sessions') }}
+                {{ __('messages.profil_show_browser_sessions_logout_button') }}
             </x-jet-button>
 
             <x-jet-action-message on="loggedOut">
-                {{ __('Done.') }}
+                {{ __('messages.profil_show_browser_sessions_message_done') }}
             </x-jet-action-message>
         </div>
 
         <!-- Log Out Other Devices Confirmation Modal -->
         <x-jet-dialog-modal wire:model="confirmingLogout">
             <x-slot name="title">
-                {{ __('Log Out Other Browser Sessions') }}
+                {{ __('messages.profil_show_browser_sessions_modal_title') }}
             </x-slot>
 
             <x-slot name="content">
-                {{ __('Please enter your password to confirm you would like to log out of your other browser sessions across all of your devices.') }}
+                {{ __('messages.profil_show_browser_sessions_modal_content') }}
 
                 <div x-data="{}" x-on:confirming-logout-other-browser-sessions.window="setTimeout(() => $refs.password.focus(), 250)">
                     <x-jet-input type="password"
-                                placeholder="{{ __('Password') }}"
+                                placeholder="{{ __('messages.profil_show_browser_sessions_modal_label_password') }}"
                                 x-ref="password"
                                 wire:model.defer="password"
                                 wire:keydown.enter="logoutOtherBrowserSessions" />
@@ -83,13 +83,13 @@
 
             <x-slot name="footer">
                 <x-jet-secondary-button wire:click="$toggle('confirmingLogout')" wire:loading.attr="disabled">
-                    {{ __('Cancel') }}
+                    {{ __('messages.profil_show_cancel_button') }}
                 </x-jet-secondary-button>
 
                 <x-jet-button
                             wire:click="logoutOtherBrowserSessions"
                             wire:loading.attr="disabled">
-                    {{ __('Log Out Other Browser Sessions') }}
+                    {{ __('messages.profil_show_browser_sessions_modal_logout_button') }}
                 </x-jet-button>
             </x-slot>
 
