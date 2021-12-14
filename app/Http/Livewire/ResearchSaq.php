@@ -7,30 +7,30 @@ use Illuminate\Support\Str;
 
 // Tutoriel youtube https://www.youtube.com/watch?v=QfZgqYV5pac
 
-class Research extends Component
+class ResearchSaq extends Component
 {
 
     public $name;
-    public $myCellars;
+    public $bottles;
     public $comments;
-    public $allBottles = [];
+    public $allBottlesSaq = [];
 
     public function updatedName($value)
     {
         if ($value != "") {
-            $this->allBottles = $this->searchByName($value);
+            $this->allBottlesSaq = $this->searchByName($value);
         }
     }
 
     public function searchByName(string $name): array
     {
-        return collect($this->myCellars)
+        return collect($this->bottles)
             ->filter(fn($object) => Str::contains(strtolower($object['name']), strtolower($name)))
             ->all();
     }
 
     public function render()
     {
-        return view('livewire.research');
+        return view('livewire.research-saq');
     }
 }
