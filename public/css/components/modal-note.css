@@ -1,28 +1,42 @@
-.modal--wrap {
+.note--wrap {
 	margin-left: 36px;
 	position: absolute;
-	transform: translateY(270px);
+	transform: translateY(260px);
 	display: flex;
 }
 
-.modal--wrap > .note--number {
+.note--wrap > .note--number {
 	font-family: var(--font-subtitle);
 	font-size: 36px;
-	margin-right: 5px;
+	color: black;
+	padding-left: 0;
+	width: fit-content;
+	border: none;
+	background-color: inherit;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
 }
 
-.modal--wrap > .icon--star {
+.note--wrap > .note--number > span {
+	margin-right: 10px;
+}
+
+.note--wrap > .note--number > svg {
+	padding-right: 5px;
+}
+
+.note--wrap > .note--number > .icon--star {
 	fill: var(--caput-mortuum);
 	width: 20px;
 }
 
-.modal--wrap > .icon--star-empty {
+.note--wrap > .note--number >.icon--star-empty {
 	fill: white;
 	stroke: black;
 	stroke-width: 5px;
 	width: 20px;
 }
-
 
 
 .form--hidden {

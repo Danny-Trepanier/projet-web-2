@@ -19,9 +19,9 @@ class ButtonAddBottle extends Component
 		$this->bottle = $bottle;
 	}
 
-	public function showModal()
+	public function showQtyModal()
 	{
-		$this->emit(event: 'showModal');
+		$this->emit(event: 'showQtyModal');
 	}
 
 	public function getNbBottles()

@@ -10,12 +10,12 @@ use Illuminate\Http\Request;
 
 class BottleQtyModal extends Component
 {
-	public $show;
+	public $showQty;
 	public $bottle;
 	public $myCellars;
 	public $nbBottle;
 
-	protected $listeners = ['showModal' => 'showModal'];
+	protected $listeners = ['showQtyModal' => 'showQtyModal'];
 
 	public function mount($bottle, $myCellars)
 	{
@@ -23,14 +23,14 @@ class BottleQtyModal extends Component
 		$this->myCellars = $myCellars;
 	}
 
-	public function showModal()
+	public function showQtyModal()
 	{
-		$this->show = true;
+		$this->showQty = true;
 	}
 
-	public function closeModal()
+	public function closeQtyModal()
 	{
-		$this->show = false;
+		$this->showQty = false;
 	}
 
 	public function addBottle($cellarID, $bottleID)

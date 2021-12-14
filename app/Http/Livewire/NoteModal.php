@@ -11,14 +11,23 @@ use Illuminate\Support\Facades\Auth;
 class NoteModal extends Component
 {
 	public Bottle $bottle;
+	public $showNote;
+
+	protected $listeners = ['showNoteModal' => 'showNoteModal'];
 
 	public function mount($bottle)
 	{
 		$this->bottle = $bottle;
 	}
 	
-	public function showModal(){
+	public function showNoteModal()
+	{
+		$this->showNote = true;
+	}
 
+	public function closeNoteModal()
+	{
+		$this->showNote = false;
 	}
 
 

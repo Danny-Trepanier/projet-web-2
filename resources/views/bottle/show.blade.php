@@ -1,8 +1,8 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+<!--         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('messages.bottle_show_title') }}
-        </h2>
+        </h2> -->
     </x-slot>
 
 	<article class="bottle-detail">
@@ -17,7 +17,7 @@
 
 		@livewire('button-add-bottle', ['bottle' => $bottle])
 
-		@livewire('note-modal', ['bottle' => $bottle])
+		@livewire('button-add-note', ['bottle' => $bottle])
 
 		<section class="detail--info">
 			<h1>{{ $bottle->name }}</h1>
@@ -42,5 +42,6 @@
 
 
 	@livewire('bottle-qty-modal', ['bottle' => $bottle, 'myCellars' => $myCellars])
+	@livewire('note-modal', ['bottle' => $bottle])
 
 </x-app-layout>

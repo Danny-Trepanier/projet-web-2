@@ -1,4 +1,4 @@
-@if($show == true)
+@if($showQty == true)
 <div class="modal--fullscreen">
 	<div class="modal-content">
 			<h1>{{$bottle->name}}</h1>
@@ -15,7 +15,7 @@
 			<p>{{ __('messages.bottle_show_no_cellar_text') }}</p>
 			@endforelse
 
-			<button class="button-modal-close" wire:click="closeModal">X</button>
+			<button class="button-modal-close" wire:click="closeQtyModal">X</button>
 	</div>
 </div>
 @else

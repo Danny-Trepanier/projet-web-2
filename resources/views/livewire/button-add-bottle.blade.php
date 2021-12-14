@@ -2,7 +2,7 @@
 	<span>{{ __('messages.bottle_show_bottle_quantity_text') }}</span>
 	<div>
 		<p class="number--quantity">{{$quantity}}</p>
-		<button class="button--add" wire:click="showModal">
+		<button class="button--add" wire:click="showQtyModal">
 			<svg xmlns="http://www.w3.org/2000/svg" width="62.198" height="48.515" viewBox="0 0 62.198 48.515">
 			<g id="noun-amount-3884000" transform="translate(-84 -72.237)">
 				<path id="Path_16" data-name="Path 16" d="M216.476,75.9a20.722,20.722,0,0,1,13.16,4.714,14.726,14.726,0,0,1,4.452-.72,24.013,24.013,0,0,0-17.612-7.661A24.27,24.27,0,0,0,198.8,79.9a14.823,14.823,0,0,1,4.518.72,20.721,20.721,0,0,1,13.16-4.713Z" transform="translate(-101.377)" fill="#58181f"/>
