@@ -72,7 +72,10 @@
                 </a>
 
             @empty
-                <p class="research--empty">{{ __('messages.cellar_show_cellar_empty') }}</p>
+                <div class="research--empty">
+                    <p>{{ __('messages.cellar_show_cellar_empty') }}</p>
+                    <button><a href="{{ route('bottle') }}">{{ __('messages.menu_link_bottles') }}</a></button>
+                </div>
             @endforelse
 
     @else
