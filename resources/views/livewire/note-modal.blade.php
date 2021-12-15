@@ -1,26 +1,33 @@
 @if($showNote == true)
 <div class="modal--fullscreen">
-	<div class="modal-content">
+	<div class="modal-note-content">
 		<form action="{{ route('bottle.create.comment') }}" method="POST">
 		@csrf
-			<fieldset>
-				<div class="form-group">
+			<fieldset class="wrap--btn-note">
 					<input name="bottle_id" type="hidden" value="{{ $bottle->id }}">
-					<input class="form-check-input" type="radio" name="note" value="1">
-					<label class="form-check-label" for="note">1</label>
-					<input class="form-check-input" type="radio" name="note" value="2">
-					<label class="form-check-label" for="note">2</label>
-					<input class="form-check-input" type="radio" name="note" value="3">
-					<label class="form-check-label" for="note">3</label>
-					<input class="form-check-input" type="radio" name="note" value="4">
-					<label class="form-check-label" for="note">4</label>
-					<input class="form-check-input" type="radio" name="note" value="5">
-					<label class="form-check-label" for="note">5</label>
-				</div>
+
+					<div>
+						<label for="note">1</label>
+						<input type="radio" name="note" value="1">
+					</div>
+					<div>
+						<label for="note">2</label>
+						<input type="radio" name="note" value="2">	
+					</div>
+					<div>
+						<label for="note">3</label>
+						<input type="radio" name="note" value="3">
+					</div>
+					<div>
+						<label for="note">4</label>
+						<input type="radio" name="note" value="4">
+					</div>
+					<div>
+						<label for="note">5</label>
+						<input type="radio" name="note" value="5">
+					</div>
 		
-				<div>
 					<button type="submit" class="btn btn-primary">Note</button>
-				</div>
 			</fieldset>
 		</form>
 	</div>
