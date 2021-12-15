@@ -14,3 +14,7 @@
 	border-radius: 10px;
 	text-indent: 4ch;
 }
+
+.research--empty {
+    padding: 15px;
+}
