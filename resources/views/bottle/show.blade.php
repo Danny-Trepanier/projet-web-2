@@ -32,7 +32,7 @@
 				</div>
 			</div>
 		</section>
-		<a class="link--back" href="{{ URL::previous() }}">
+		<a href="{{ URL::previous() }}">
 			<button class="link--back">
 						{{ __('messages.bottle_show_return_button') }}
 			</button>

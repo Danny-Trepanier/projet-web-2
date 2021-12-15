@@ -25,11 +25,12 @@
 	background-color: white;
 	border-radius: 1em;
 	padding: 1em;
+	overflow-y: auto;
 }
 
 .modal-content > h1 {
 	font-size: 20px;
-	text-align: right;
+	text-align: center;
 	margin-top: 1em;
 	margin-bottom: 2em;
 }
@@ -42,6 +43,10 @@
 	margin-top: 1em;
 	display: flex;
 	align-items: center;
+}
+
+.cellar--actions {
+	background-color: var(--mint-cream);
 }
 
 .cellar--actions > button {
@@ -57,4 +62,46 @@
 	margin-top: 3em;
 	width: 150px;
 }
-	
+
+/* Zone du bouton d'activation de la modale */
+
+.wrap--quantity {
+	position: absolute;
+	transform: translateY(120px);
+	vertical-align: center;
+	font-family: var(--font-subtitle);
+	background-color: var(--mint-cream);
+	padding: 15px 100px 15px 36px;
+	overflow: hidden;
+}
+
+
+.wrap--quantity > div {
+	display: flex;
+	align-items: center;
+}
+
+.wrap--quantity > div > svg {
+	margin-left: 1ch;
+}
+
+
+.number--quantity {
+	font-family: var(--font-subtitle);
+	font-size: 50px;
+}
+
+.button--add {
+	display: block;
+	margin-left: 2vw;
+	z-index: 5;
+	background-color: var(--mint-cream);
+	border: none;
+	transition: 100ms ease-in-out;
+}
+
+.button--add:hover,
+.button--add:active {
+	background-color: var(--mint-cream);
+	transform: scale(120%);
+}
