@@ -16,5 +16,12 @@
 }
 
 .research--empty {
-    padding: 15px;
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
+
+.research--empty > button {
+    margin-top: 15px;
 }
