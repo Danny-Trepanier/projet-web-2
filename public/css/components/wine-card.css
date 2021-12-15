@@ -1,4 +1,4 @@
-/* Composant wine-card pour les vin de la liste de la SAQ */
+/* Composant wine-card pour les vin de la liste de la SAQ et du Cellier*/
 
 .wine-card {
 	display: flex;
@@ -23,15 +23,14 @@
 	/*transform: translateY(-30%);*/
 	margin-left: auto;
 	margin-right: auto;
-	border: 1px pink solid;
 }
 
 .wine-card > .info-wrap {
 	height: 58px;
 	display: flex;
 	flex-wrap: wrap;
-	border: 1px solid blue;
 	margin-right: 5vw;
+	background-color: var(--mint-cream);
 }
 
 
@@ -52,8 +51,6 @@
 	justify-content: space-between;
 	height: 58px;
 	margin-right: 5vw;
-	border: 1px solid orange;
-
 }
 
 .wine-card > .info-wrap > .info--text > div {
@@ -68,7 +65,6 @@
 }
 
 .wine-card > .info-wrap > .info--icons {
-	border: 1px solid green;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -91,4 +87,8 @@
 	height: 100%;
 }
 
+.info--icons > div > span {
+	transform: translateY(2px);
+	margin-right: 2px;
+}
 
