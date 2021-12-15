@@ -25,55 +25,51 @@
                                 </div>
                                 <div class="info--icons">
 
-                <!-- Déploiement de l'icone de couleur selon les infos de la bouteille  -->
-                @if (isset($myBottle->color))
-                    @if($myBottle->color  == 'rouge')
-                        <img src="{{ asset('img/icon/icone_vin_rouge.png') }}" alt="icone vin rouge">
-                    @elseif($myBottle->color  == 'blanc')
-                        <img src="{{ asset('img/icon/icone_vin_blanc.png') }}" alt="icone vin rouge">
-                    @elseif($myBottle->color  == 'rosé')
-                        <img src="{{ asset('img/icon/icone_vin_rose.png') }}" alt="icone vin rouge">
-                    @endif
-                @elseif (isset($myBottle['color']))
-                    @if($myBottle['color']  == 'rouge')
-                        <img src="{{ asset('img/icon/icone_vin_rouge.png') }}" alt="icone vin rouge">
-                    @elseif($myBottle['color']  == 'blanc')
-                        <img src="{{ asset('img/icon/icone_vin_blanc.png') }}" alt="icone vin rouge">
-                    @elseif($myBottle['color']  == 'rosé')
-                        <img src="{{ asset('img/icon/icone_vin_rose.png') }}" alt="icone vin rouge">
-                    @endif
-                @endif
+                                    <!-- Déploiement de l'icone de couleur selon les infos de la bouteille  -->
+                                    @if (isset($myBottle->color))
+                                        @if($myBottle->color  == 'rouge')
+                                            <img src="{{ asset('img/icon/icone_vin_rouge.png') }}" alt="icone vin rouge">
+                                        @elseif($myBottle->color  == 'blanc')
+                                            <img src="{{ asset('img/icon/icone_vin_blanc.png') }}" alt="icone vin rouge">
+                                        @elseif($myBottle->color  == 'rosé')
+                                            <img src="{{ asset('img/icon/icone_vin_rose.png') }}" alt="icone vin rouge">
+                                        @endif
+                                    @elseif (isset($myBottle['color']))
+                                        @if($myBottle['color']  == 'rouge')
+                                            <img src="{{ asset('img/icon/icone_vin_rouge.png') }}" alt="icone vin rouge">
+                                        @elseif($myBottle['color']  == 'blanc')
+                                            <img src="{{ asset('img/icon/icone_vin_blanc.png') }}" alt="icone vin rouge">
+                                        @elseif($myBottle['color']  == 'rosé')
+                                            <img src="{{ asset('img/icon/icone_vin_rose.png') }}" alt="icone vin rouge">
+                                        @endif
+                                    @endif
 
-                <!-- Affichage de la note laissée par l'usager sur la bouteille -->
-                @forelse($comments as $comment)
-                    @if (isset($myBottle->id))
-                        @if($myBottle->id == $comment->bottle_id)
-                            <div>
-                                <span><b>{{ $comment->note }}</b></span>
-                                <img src="{{ asset('img/icon/icon_etoile_rouge.png') }}" alt="icone etoile note">
-                            </div>
-                        @endif
-                    @elseif (isset($myBottle['id']))
-                        @if($myBottle['id'] == $comment->bottle_id)
-                            <div>
-                                <span><b>{{ $comment->note }}</b></span>
-                                <img src="{{ asset('img/icon/icon_etoile_rouge.png') }}" alt="icone etoile note">
-                            </div>
-                        @endif
-                    @endif
-                    @empty
-                        <div>
-                            <span><b>/</b></span>
-                            <img src="{{ asset('img/icon/icon_etoile_vide.png') }}" alt="icone etoile vide">
-                        </div>
-                @endforelse
+                                    <!-- Affichage de la note laissée par l'usager sur la bouteille -->
+                                    @forelse($comments as $comment)
+                                        @if (isset($myBottle->id))
+                                            @if($myBottle->id == $comment->bottle_id)
+                                                <div>
+                                                    <span><b>{{ $comment->note }}</b></span>
+                                                    <img src="{{ asset('img/icon/icon_etoile_rouge.png') }}" alt="icone etoile note">
+                                                </div>
+                                            @endif
+                                        @elseif (isset($myBottle['id']))
+                                            @if($myBottle['id'] == $comment->bottle_id)
+                                                <div>
+                                                    <span><b>{{ $comment->note }}</b></span>
+                                                    <img src="{{ asset('img/icon/icon_etoile_rouge.png') }}" alt="icone etoile note">
+                                                </div>
+                                            @endif
+                                        @endif
+                                    @empty
+                                    @endforelse
                                 </div>
                             </div>
                         </article>
                     </a>
 
                 @empty
-                    <p>{{ __('messages.cellar_show_cellar_empty') }}</p>
+                    <p class="research--empty">{{ __('messages.cellar_show_cellar_empty') }}</p>
                 @endforelse
 
         @else
@@ -96,32 +92,25 @@
                             </div>
                             <div class="info--icons">
 
-            <!-- Déploiement de l'icone de couleur selon les infos de la bouteille  -->
-                    @if($myBottle['color'] == 'rouge')
-                                <img src="{{ asset('img/icon/icone_vin_rouge.png') }}" alt="icone vin rouge">
-                    @elseif($myBottle['color'] == 'blanc')
-                                <img src="{{ asset('img/icon/icone_vin_blanc.png') }}" alt="icone vin rouge">
-                    @elseif($myBottle['color'] == 'rosé')
-                                <img src="{{ asset('img/icon/icone_vin_rose.png') }}" alt="icone vin rouge">
-                    @endif
+                                <!-- Déploiement de l'icone de couleur selon les infos de la bouteille  -->
+                                @if($myBottle['color'] == 'rouge')
+                                            <img src="{{ asset('img/icon/icone_vin_rouge.png') }}" alt="icone vin rouge">
+                                @elseif($myBottle['color'] == 'blanc')
+                                            <img src="{{ asset('img/icon/icone_vin_blanc.png') }}" alt="icone vin rouge">
+                                @elseif($myBottle['color'] == 'rosé')
+                                            <img src="{{ asset('img/icon/icone_vin_rose.png') }}" alt="icone vin rouge">
+                                @endif
 
-            <!-- Affichage de la note laissée par l'usager sur la bouteille -->
-                    @forelse($comments as $comment)
-                        @if($myBottle['id'] == $comment->bottle_id)
-                            <div>
-                                <span><b>{{ $comment->note }}</b></span>
-                                <img src="{{ asset('img/icon/icon_etoile_rouge.png') }}" alt="icone etoile note">
-                            </div>
-
-                        @else
-
-                        @endif
-                        @empty
-                            <div>
-                                <span><b>/</b></span>
-                                <img src="{{ asset('img/icon/icon_etoile_vide.png') }}" alt="icone etoile vide">
-                            </div>
-                    @endforelse
+                                <!-- Affichage de la note laissée par l'usager sur la bouteille -->
+                                @forelse($comments as $comment)
+                                    @if($myBottle['id'] == $comment->bottle_id)
+                                        <div>
+                                            <span><b>{{ $comment->note }}</b></span>
+                                            <img src="{{ asset('img/icon/icon_etoile_rouge.png') }}" alt="icone etoile note">
+                                        </div>
+                                    @endif
+                                @empty
+                                @endforelse
                             </div>
                         </div>
                     </article>
