@@ -34,6 +34,8 @@ class ButtonAddNote extends Component
 		$currentNote = (int) filter_var($currentNote, FILTER_SANITIZE_NUMBER_INT);
 		$this->note = $currentNote;
 		return $this->note;
+
+		$this->render();
 	}
 
     public function render()
