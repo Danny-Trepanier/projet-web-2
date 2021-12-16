@@ -15,9 +15,10 @@
 			<p>{{ __('messages.bottle_show_no_cellar_text') }}</p>
 			@endforelse
 
-			<button class="button-modal-close" wire:click="closeQtyModal">X</button>
+			<button class="button-modal-close" wire:click="closeQtyModal"><strong>✓</strong></button>
 	</div>
 </div>
+
 @else
 <div class="modal--closed"></div>
 @endif
