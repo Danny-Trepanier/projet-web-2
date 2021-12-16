@@ -11,6 +11,6 @@
 .register--already-registered {
     display: flex;
     flex-direction: column;
-    margin-top: 35px;
+    margin-top: 25px;
 }
 
