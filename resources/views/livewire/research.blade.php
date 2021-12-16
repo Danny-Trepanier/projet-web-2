@@ -18,7 +18,7 @@
                                 <h1>{{ $myBottle->name ?? $myBottle['name'] }}</h1>
                                 <div>
                                     <p>{{ $myBottle->country ?? $myBottle['country'] }}</p>
-                                    <p>{{ $myBottle->bottleCount ?? $myBottle['bottleCount'] }}</p>
+                                    <p>{{ __('messages.cellar_show_quantity_text') }} {{ $myBottle->bottleCount ?? $myBottle['bottleCount'] }}</p>
                                     <p>{{ $myBottle->price ?? $myBottle['price'] }}$</p>
                                 </div>
                             </div>
@@ -92,7 +92,7 @@
                             <h1>{{ $myBottle['name'] }}</h1>
                             <div>
                                 <p>{{ $myBottle['country'] }}</p>
-                                <p>{{ $myBottle['bottleCount'] }}</p>
+                                <p>{{ __('messages.cellar_show_quantity_text') }} {{ $myBottle['bottleCount'] }}</p>
                                 <p>{{ $myBottle['price'] }}$</p>
                             </div>
                         </div>

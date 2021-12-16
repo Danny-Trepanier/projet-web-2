@@ -63,7 +63,7 @@ return [
 
     // Page show.blade.php de Cellar
     'cellar_show_search_bar_placeholder' => 'Recherche par nom',
-    'cellar_show_quantity_text' => 'Quantité :|Quantités :',
+    'cellar_show_quantity_text' => 'Quantité :',
     'cellar_show_cellar_empty' => 'Il y a aucune bouteille dans le cellier.',
     'cellar_show_search_result_empty' => 'Il y a aucune bouteille de se nom dans le cellier.',
 
