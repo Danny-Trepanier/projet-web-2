@@ -2,7 +2,7 @@
 
 namespace App\Http\Livewire;
 
-use Illuminate\Support\Facades\DB;	
+use Illuminate\Support\Facades\DB;
 use Livewire\Component;
 use Illuminate\Http\Request;
 

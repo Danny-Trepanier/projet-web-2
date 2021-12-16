@@ -1,6 +1,6 @@
 <div class="note--wrap">
 	<button class="note--number" wire:click="showNoteModal">
-		<span>{{ $bottle->comment->note ?? '/' }}</span>
+		<span>{{ $note ?? '/' }}</span>
 	
 @if($bottle->comment)
 	@for ($i = 0; $i < $bottle->comment->note; $i++)

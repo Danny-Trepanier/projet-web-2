@@ -3,14 +3,13 @@
 namespace App\Http\Livewire;
 
 use Livewire\Component;
-use App\Models\Bottle;
-use App\Models\Comment;
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 
 class NoteModal extends Component
 {
-	public Bottle $bottle;
+	public $bottle;
+	public $note;
 	public $showNote;
 
 	protected $listeners = ['showNoteModal' => 'showNoteModal'];
@@ -34,25 +33,26 @@ class NoteModal extends Component
 	/**
      * Ajoute une note à une bouteille de vin.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param  
+     * @return 
      */
 
-    public function storeComment(Request $bottlePost)
+    public function storeComment($bottleID, $note)
     {
-        $bottlePost->validate([
-            'note' => 'required|min:1|max:5',
-        ]);
+		DB::table('comments')
+			->updateOrInsert(
+			[
+				'bottle_id' => $bottleID,
+				'user_id' => Auth::user()->id,
+			],
+			[
+				'note' => $note,
+			]
+		);
 
-        $bottle = Comment::updateOrCreate(
-            [
-                'bottle_id' => $bottlePost->bottle_id,
-                'user_id' => Auth::user()->id,
-            ],
-            [
-                'note' => $bottlePost->note,
-            ]
-        );
+		$this->emit(event: 'noteChange');
+		$this->closeNoteModal();
+
     }
 
 	public function render()
