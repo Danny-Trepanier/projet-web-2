@@ -117,7 +117,7 @@
                 </a>
 
             @empty
-                <p>{{ __('messages.cellar_show_search_result_empty') }}</p>
+                <p class="research--empty">{{ __('messages.cellar_show_search_result_empty') }}</p>
             @endforelse
 
         @endif
