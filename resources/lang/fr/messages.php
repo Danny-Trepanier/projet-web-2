@@ -115,6 +115,7 @@ return [
 	'bottle_index_title'   => 'Liste de la SAQ',
 	'bottle_index_search_bar_placeholder'   => 'Nom, Pays, Couleur, Prix...',
 	'bottle_index_database_empty'   => 'Il y a aucune bouteille dans la base de donnée.',
+    'bottle_index_empty'   => 'Recherchez une bouteille par nom.',
 
     //Page show.blade.php de Bottle
 	'bottle_show_title'   => 'Détails d\'une bouteille',

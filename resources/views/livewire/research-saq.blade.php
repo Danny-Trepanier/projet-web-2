@@ -7,7 +7,7 @@
 
         @if (!$name)
 
-            <p class="research--empty">{{ __('messages.cellar_show_cellar_empty') }}</p>
+            <p class="research--empty">{{ __('messages.bottle_index_empty') }}</p>
 
         @else
 
