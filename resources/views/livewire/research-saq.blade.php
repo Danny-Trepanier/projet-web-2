@@ -54,7 +54,7 @@
                 </a>
 
             @empty
-                <p class="research--empty">{{ __('messages.cellar_show_search_result_empty') }}</p>
+                <p class="research--empty">{{ __('messages.bottle_index_search_result_empty') }}</p>
             @endforelse
 
         @endif

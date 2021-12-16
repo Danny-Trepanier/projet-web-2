@@ -116,6 +116,7 @@ return [
 	'bottle_index_search_bar_placeholder'   => 'Nom, Pays, Couleur, Prix...',
 	'bottle_index_database_empty'   => 'Il y a aucune bouteille dans la base de donnée.',
     'bottle_index_empty'   => 'Recherchez une bouteille par nom.',
+    'bottle_index_search_result_empty'   => 'Il y a aucune bouteille de se nom dans la liste.',
 
     //Page show.blade.php de Bottle
 	'bottle_show_title'   => 'Détails d\'une bouteille',

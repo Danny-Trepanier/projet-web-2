@@ -40,6 +40,10 @@
     flex-direction: row;
 }
 
+.login--button {
+    margin-top: 40px;
+}
+
 .password--forgot {
     width: 85%;
     margin-left: auto;

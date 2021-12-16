@@ -24,13 +24,7 @@
             <div>
                 <input id="password" type="password" name="password" class="login--input" placeholder="{{ __('messages.login_label_for_password') }}"/>
             </div>
-            <div class="login--container-checkbox">
-                <label for="remember_me">
-                    <input type="checkbox" id="remember_me" name="remember"/>
-                    <span>{{ __('messages.login_remember_me_text') }}</span>
-                </label>
-            </div>
-            <div>
+            <div class="login--button">
                 @if (Route::has('password.request'))
                     <a href="{{ route('password.request') }}">
                         {{ __('messages.login_link_forgot_password') }}
