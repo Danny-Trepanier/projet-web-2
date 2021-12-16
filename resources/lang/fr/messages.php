@@ -26,13 +26,17 @@ return [
 
     // Page connexion
     'login_title_page'   => 'Mon compte',
-    'login_label_for_email'   => 'Courriel *',
-    'login_label_for_password'   => 'Mot de passe *',
+    'login_label_for_email'   => 'Courriel',
+    'login_label_for_password'   => 'Mot de passe',
     'login_button_login'   => 'Me connecter',
     'login_button_register'   => 'S\'enregistrer',
     'login_remember_me_text'   => 'Se souvenir de moi',
     'login_link_forgot_password'   => 'Mot de passe oublié ?',
     'login_span_or_register_text'   => 'ou inscrivez-vous :',
+
+    // Forgot password page
+    'forgot_passport_text'   => 'Mot de passe oublié? Aucun problème. Communiquez-nous simplement votre adresse e-mail et nous vous enverrons par e-mail un lien de réinitialisation de mot de passe qui vous permettra d\'en choisir un nouveau.',
+    'forgot_passport_button'   => 'Réinitialisation du mot de passe',
 
     // Page d'inscription
     'register_title_page' => 'M\'inscrire',

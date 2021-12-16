@@ -19,12 +19,10 @@
             <h2>{{ __('messages.login_title_page') }}</h2>
             <x-jet-validation-errors class="error"/>
             <div>
-                <label for="email" value="{{ __('messages.login_label_for_email') }}">
-                <input id="email" type="email" name="email" :value="old('email')" class="login--input"/>
+                <input id="email" type="email" name="email" :value="old('email')" class="login--input" placeholder="{{ __('messages.login_label_for_email') }}"/>
             </div>
             <div>
-                <label for="password" value="{{ __('messages.login_label_for_password') }}" class="login--label">
-                <input id="password" type="password" name="password" class="login--input"/>
+                <input id="password" type="password" name="password" class="login--input" placeholder="{{ __('messages.login_label_for_password') }}"/>
             </div>
             <div class="login--container-checkbox">
                 <label for="remember_me">

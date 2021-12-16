@@ -26,13 +26,17 @@ return [
 
     // Login page
     'login_title_page'   => 'My account',
-    'login_label_for_email'   => 'Email *',
-    'login_label_for_password'   => 'Password *',
+    'login_label_for_email'   => 'Email',
+    'login_label_for_password'   => 'Password',
     'login_button_login'   => 'Login',
     'login_button_register'   => 'Register',
     'login_remember_me_text'   => 'Remember me',
     'login_link_forgot_password'   => 'Forgot your password ?',
     'login_span_or_register_text'   => 'or register :',
+
+    // Forgot password page
+    'forgot_passport_text'   => 'Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.',
+    'forgot_passport_button'   => 'Email password reset link',
 
     // Register page
     'register_title_page' => 'Register',

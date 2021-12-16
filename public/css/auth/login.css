@@ -40,4 +40,11 @@
     flex-direction: row;
 }
 
+.password--forgot {
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 60px;
+}
+
 
