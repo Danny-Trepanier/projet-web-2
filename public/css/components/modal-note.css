@@ -24,20 +24,8 @@
 	margin-right: 10px;
 }
 
-.note--wrap > .note--number > svg {
-	padding-right: 5px;
-}
-
 .note--wrap > .note--number > .icon--star {
-	fill: var(--caput-mortuum);
-	width: 20px;
-}
-
-.note--wrap > .note--number >.icon--star-empty {
-	fill: white;
-	stroke: black;
-	stroke-width: 5px;
-	width: 20px;
+	padding-right: 5px;
 }
 
 /* Fenetre modale d'ajoute de la note */
@@ -50,7 +38,7 @@
 	padding: 1em;
 }
 
-.modal-note-content > form > .wrap--btn-note {
+.modal-note-content > .wrap--btn-note {
 	display: flex;
 	flex-direction: column;
 }
