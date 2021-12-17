@@ -30,11 +30,12 @@ class ScraperCalling extends Action
     public function handle(ActionFields $fields, Collection $models)
     {
         $adata = [];
-        $numberPage = $fields->page;
-        $product_list_limit = $fields->product;
+        $first_page = $fields->page;
+        $last_page = $first_page + 9;
+        $product_list_limit = 96;
         $client = new Client();
 
-        for($i=1; $i<=$numberPage; $i++) {
+        for($i=$first_page; $i<=$last_page; $i++) {
             $url = "https://www.saq.com/fr/produits/vin?p={$i}&product_list_limit={$product_list_limit}";
             $page = $client->request('GET', $url);
 
@@ -60,30 +61,40 @@ class ScraperCalling extends Action
                         "ml_quantity" => $ml_quantity,
                         "country" => $country,
                     );
-                    array_push($adata, $data);
+                    //array_push($adata, $data);
+                    DB::table('bottles')->updateOrInsert(
+                        ['code' => $data["code"]],
+                        $data
+                    );
                 }
                 catch (Exception $e) {
                     echo 'Impossible de prendre la bouteille '.$name;
                     echo "<br>";
                     // Pourquoi sommes-nous capable d'avoir accès à la bouteille même en cas erreur ?
                     // On peut quand même l'ajouter à notre tableau !?
-                    $data = array(
-                        "name" => $name,
-                        "image_link" => substr($image_link, 0, -58),
-                        "code" => $code,
-                        "price" => substr($price, 0, -3),
-                        "color" => substr($color, -5),
-                        "ml_quantity" => $ml_quantity,
-                        "country" => $country,
-                    );
-                    array_push($adata, $data);
+                    // $data = array(
+                    //     "name" => $name,
+                    //     "image_link" => substr($image_link, 0, -58),
+                    //     "code" => $code,
+                    //     "price" => substr($price, 0, -3),
+                    //     "color" => substr($color, -5),
+                    //     "ml_quantity" => $ml_quantity,
+                    //     "country" => $country,
+                    // );
+                    // array_push($adata, $data);
                 }
-                DB::table('bottles')->updateOrInsert(
-                    ['code' => $data["code"]],
-                    $data
-                );
             }
         }
+    }
+
+    /**
+     * Get the displayable name of the action.
+     *
+     * @return string
+     */
+    public function name()
+    {
+        return __('Mettre à jour la liste de vin');
     }
 
     /**
@@ -95,17 +106,16 @@ class ScraperCalling extends Action
     {
         return [
             Select::make('page')->options([
-                '1' => 1,
-                '5' => 5,
-                '10' => 10,
-                '25' => 25,
-                '50' => 50,
-                '100' => 100,
-            ]),
-            Select::make('product')->options([
-                '24' => 24,
-                '48' => 48,
-                '96' => 96,
+                1 => 'Page 1 à 10',
+                11 => 'Page 11 à 20',
+                21 => 'Page 21 à 30',
+                31 => 'Page 31 à 40',
+                41 => 'Page 41 à 50',
+                51 => 'Page 51 à 60',
+                61 => 'Page 61 à 70',
+                71 => 'Page 71 à 80',
+                81 => 'Page 81 à 90',
+                91 => 'Page 91 à 100',
             ]),
         ];
     }
