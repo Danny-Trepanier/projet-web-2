@@ -12,7 +12,8 @@
     {{ csrf_field() }}
 
     @component('nova::auth.partials.heading')
-        {{ __('Forgot your password?') }}
+    {{ __('nova::messages.reset_title_form') }}
+
     @endcomponent
 
     @if (session('status'))
@@ -24,12 +25,12 @@
     @include('nova::auth.partials.errors')
 
     <div class="mb-6 {{ $errors->has('email') ? ' has-error' : '' }}">
-        <label class="block font-bold mb-2" for="email">{{ __('Email Address') }}</label>
+        <label class="block font-bold mb-2" for="email">{{ __('nova::messages.reset_label_for_email') }}</label>
         <input class="form-control form-input form-input-bordered w-full" id="email" type="email" name="email" value="{{ old('email') }}" required>
     </div>
 
     <button class="w-full btn btn-default btn-primary hover:bg-primary-dark" type="submit">
-        {{ __('Send Password Reset Link') }}
+        {{ __('nova::messages.reset_send_button') }}
     </button>
 </form>
 @endsection

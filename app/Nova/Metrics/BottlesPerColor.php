@@ -9,6 +9,16 @@ use Laravel\Nova\Http\Requests\NovaRequest;
 class BottlesPerColor extends Partition
 {
     /**
+     * Get the displayable name of the metric.
+     *
+     * @return string
+     */
+    public function name()
+    {
+        return __('Bouteille par couleur');
+    }
+
+    /**
      * Calculate the value of the metric.
      *
      * @param  \Laravel\Nova\Http\Requests\NovaRequest  $request
