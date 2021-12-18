@@ -6,13 +6,13 @@
 
         <div class="cellar--index">
             <div class="cellar--index-create">
-                <button><a href="{{ url("") }}/cellar/create/cellar">{{ __('messages.cellar_index_link_create') }}</a></button>
+                <a href="{{ url("") }}/cellar/create/cellar"><button>{{ __('messages.cellar_index_link_create') }}</button></a>
             </div>
             @forelse ($cellars as $cellar)
                 <div>
                     <h2 class="cellar--index-name">{{ $cellar->name }}</h2>
-                    <button><a href="{{ url("") }}/cellar/{{ $cellar->id }}">{{ __('messages.cellar_index_link_see') }}</a></button>
-                    <button><a href="{{ url("") }}/cellar/{{ $cellar->id }}/edit">{{ __('messages.cellar_index_link_update') }}</a></button>
+                    <a href="{{ url("") }}/cellar/{{ $cellar->id }}"><button>{{ __('messages.cellar_index_link_see') }}</button></a>
+                    <a href="{{ url("") }}/cellar/{{ $cellar->id }}/edit"><button>{{ __('messages.cellar_index_link_update') }}</button></a>
                 </div>
             @empty
                 <div class="cellar--index-empty">

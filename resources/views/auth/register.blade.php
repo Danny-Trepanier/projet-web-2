@@ -3,7 +3,7 @@
     <div class="title">
         <h1>{{ __('messages.register_title_page') }}</h1>
     </div>
-    
+
     <div class="register--container">
 
         <form method="POST" action="{{ route('register') }}">
@@ -51,7 +51,7 @@
                     {{ __('messages.register_link_already_registered') }}
                 </a>
 
-                <button class="button">
+                <button>
                     {{ __('messages.register_button_register') }}
                 </button>
             </div>

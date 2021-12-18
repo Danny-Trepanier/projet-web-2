@@ -1,3 +1,9 @@
+.login--container {
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .login--container .login--logo {
    text-align: center;
 }
@@ -15,12 +21,6 @@
 
 .login--container .login--label {
     font-family: var(--font-size-subtitle);
-}
-
-.login--container form {
-    width: 85%;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .login--container .login--container-checkbox {

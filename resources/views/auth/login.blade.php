@@ -31,13 +31,12 @@
                     </a>
                 @endif
                 <button>{{ __('messages.login_button_login') }}</button>
-                <span>{{ __('messages.login_span_or_register_text') }}</span>
-                <button>
-                    <a href="{{ route('register') }}">{{ __('messages.login_button_register') }}</a>
-                </button>
             </div>
 
         </form>
+        
+        <span>{{ __('messages.login_span_or_register_text') }}</span>
+        <a href="{{ route('register') }}"><button>{{ __('messages.login_button_register') }}</button></a>
 
     </div>
 
