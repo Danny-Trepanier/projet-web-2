@@ -71,6 +71,7 @@ fieldset {
 
 input {
     font-family: var(--font-text);
+    font-size: 16px;
     border-radius: 10px 10px;
     width: calc(100% - 10px);
     height: 30px;
