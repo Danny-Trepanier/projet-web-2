@@ -2,8 +2,7 @@
 <div class="modal--fullscreen">
 	<div class="modal-note-content">
 			<fieldset class="wrap--btn-note">
-				<input name="bottle_id" type="hidden" value="{{ $bottle->id }}">
-	
+
 				<div>
 					<label for="note">1</label>
 					<input wire:model="note" type="radio" name="note" value="1">

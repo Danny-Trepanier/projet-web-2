@@ -15,16 +15,27 @@ class NoteModal extends Component
 
 	protected $listeners = ['showNoteModal' => 'showNoteModal'];
 
+	/**
+	 * Mount les info passées au composant pour pouvoir
+	 * être public
+	 * @param $bottle
+	 */
 	public function mount($bottle)
 	{
 		$this->bottle = $bottle;
 	}
 	
+	/**
+	 * Affiche la modale de la note au clic
+	 */
 	public function showNoteModal()
 	{
 		$this->showNote = true;
 	}
 
+	/**
+	 * Ferme la fenêtre modale de la note
+	 */
 	public function closeNoteModal()
 	{
 		$this->showNote = false;
@@ -33,11 +44,13 @@ class NoteModal extends Component
 
 	/**
      * Ajoute une note à une bouteille de vin.
+	 * Après validation, met la base de données à jour.
+	 * Envoi l'évènemement noteChange pour l'affichage
+	 * Ferme la modale
      *
-     * @param  
-     * @return 
+     * @param $bottleID
+	 * @param $note
      */
-
     public function storeComment($bottleID, $note)
     {
 		if($note >= '1' && $note <= '5' ) {
@@ -53,11 +66,13 @@ class NoteModal extends Component
 			);
 		$this->emit(event: 'noteChange');
 		}
-
 		$this->closeNoteModal();
-
     }
 
+	/**
+	 * Affichage de la note modale
+	 * @return
+	 */
 	public function render()
     {
         return view('livewire.note-modal');
