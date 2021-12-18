@@ -3,7 +3,7 @@
 .wine-card {
 	display: flex;
 	height: 120px;
-	justify-content: space-between;
+	justify-content: space-around;
 	border-bottom: 1px solid black;
 	align-items: center;
 	max-width: 700px;
@@ -42,7 +42,7 @@
 	font-size: 13px;
 	line-height: 16px;
 	text-align: left;
-	width: 24ch;
+	width: 22ch;
 }
 
 .wine-card > .info-wrap > .info--text {
