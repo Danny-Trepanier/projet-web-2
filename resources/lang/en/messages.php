@@ -92,7 +92,7 @@ return [
     'profil_show_browser_sessions_content' => 'If necessary, you may log out of all of your other browser sessions across all of your devices. Some of your recent sessions are listed below; however, this list may not be exhaustive. If you feel your account has been compromised, you should also update your password.',
     'profil_show_browser_sessions_this_device_text' => 'This device',
     'profil_show_browser_sessions_last_active_text' => 'Last active',
-    'profil_show_browser_sessions_logout_button' => 'Log Out Other Browser Sessions',
+    'profil_show_browser_sessions_logout_button' => 'Log out sessions',
     'profil_show_browser_sessions_message_done' => 'Done.',
     'profil_show_browser_sessions_modal_title' => 'Log Out Other Browser Sessions',
     'profil_show_browser_sessions_modal_content' => 'Please enter your password to confirm you would like to log out of your other browser sessions across all of your devices.',
