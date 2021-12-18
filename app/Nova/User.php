@@ -2,11 +2,13 @@
 
 namespace App\Nova;
 
-use Illuminate\Http\Request;
-use Laravel\Nova\Fields\Gravatar;
 use Laravel\Nova\Fields\ID;
-use Laravel\Nova\Fields\Password;
+use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Text;
+use App\Nova\Metrics\NewUsers;
+use App\Nova\Metrics\UsersPerDay;
+use Laravel\Nova\Fields\Gravatar;
+use Laravel\Nova\Fields\Password;
 
 class User extends Resource
 {
@@ -23,6 +25,36 @@ class User extends Resource
      * @var string
      */
     public static $title = 'name';
+
+    /**
+     * Get the displayable label of the resource.
+     *
+     * @return string
+     */
+    public static function label()
+    {
+        return  __('nova::messages.nav_users_button');
+    }
+
+    /**
+     * Get the text for the create resource button.
+     *
+     * @return string|null
+     */
+    public static function createButtonLabel()
+    {
+        return  __('nova::messages.nav_users_create_button');
+    }
+
+    /**
+     * Get the text for the update resource button.
+     *
+     * @return string|null
+     */
+    public static function updateButtonLabel()
+    {
+        return  __('nova::messages.nav_users_update_button');
+    }
 
     /**
      * The columns that should be searched.
@@ -71,7 +103,8 @@ class User extends Resource
      */
     public function cards(Request $request)
     {
-        return [];
+        return [
+        ];
     }
 
     /**

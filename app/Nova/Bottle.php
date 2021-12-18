@@ -33,6 +33,36 @@ class Bottle extends Resource
     public static $title = 'name';
 
     /**
+     * Get the displayable label of the resource.
+     *
+     * @return string
+     */
+    public static function label()
+    {
+        return  __('nova::messages.nav_bottles_button');
+    }
+
+    /**
+     * Get the text for the create resource button.
+     *
+     * @return string|null
+     */
+    public static function createButtonLabel()
+    {
+        return  __('nova::messages.nav_bottles_create_button');
+    }
+
+    /**
+     * Get the text for the update resource button.
+     *
+     * @return string|null
+     */
+    public static function updateButtonLabel()
+    {
+        return  __('nova::messages.nav_bottles_update_button');
+    }
+
+    /**
      * The columns that should be searched.
      *
      * @var array
@@ -84,10 +114,7 @@ class Bottle extends Resource
                 ->step(0.01)
                 ->rules('required'),
 
-            Image::make('Lien image', 'image_link')
-                ->disk('public')
-                ->disableDownload()
-                ->creationRules('required'),
+            Text::make('Lien image', 'image_link')->hideFromIndex(),
         ];
     }
 
@@ -101,7 +128,6 @@ class Bottle extends Resource
     {
         return [
             (new Metrics\NewBottles()),
-            (new Metrics\BottlesPerDay()),
             (new Metrics\BottlesPerColor()),
         ];
     }

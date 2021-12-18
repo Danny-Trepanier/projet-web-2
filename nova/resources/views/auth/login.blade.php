@@ -12,7 +12,7 @@
     {{ csrf_field() }}
 
     @component('nova::auth.partials.heading')
-        {{ __('Welcome Back!') }}
+        {{ __('nova::messages.login_title_form') }}
     @endcomponent
 
     @if ($errors->any())
@@ -26,33 +26,32 @@
     @endif
 
     <div class="mb-6 {{ $errors->has('email') ? ' has-error' : '' }}">
-        <label class="block font-bold mb-2" for="email">{{ __('Email Address') }}</label>
+        <label class="block font-bold mb-2" for="email">{{ __('nova::messages.login_label_for_email') }}</label>
         <input class="form-control form-input form-input-bordered w-full" id="email" type="email" name="email" value="{{ old('email') }}" required autofocus>
     </div>
 
     <div class="mb-6 {{ $errors->has('password') ? ' has-error' : '' }}">
-        <label class="block font-bold mb-2" for="password">{{ __('Password') }}</label>
+        <label class="block font-bold mb-2" for="password">{{ __('nova::messages.login_label_for_password') }}</label>
         <input class="form-control form-input form-input-bordered w-full" id="password" type="password" name="password" required>
     </div>
 
     <div class="flex mb-6">
         <label class="flex items-center text-xl font-bold">
             <input class="" type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}>
-            <span class="text-base ml-2">{{ __('Remember Me') }}</span>
+            <span class="text-base ml-2">{{ __('nova::messages.login_remember_me_text') }}</span>
         </label>
-
 
         @if (\Laravel\Nova\Nova::resetsPasswords())
         <div class="ml-auto">
             <a class="text-primary dim font-bold no-underline" href="{{ route('nova.password.request') }}">
-                {{ __('Forgot Your Password?') }}
+                {{ __('nova::messages.login_link_forgot_password') }}
             </a>
         </div>
         @endif
     </div>
 
     <button class="w-full btn btn-default btn-primary hover:bg-primary-dark" type="submit">
-        {{ __('Login') }}
+        {{ __('nova::messages.login_button_login') }}
     </button>
 </form>
 @endsection

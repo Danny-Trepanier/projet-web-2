@@ -92,7 +92,7 @@ return [
     'profil_show_browser_sessions_content' => 'If necessary, you may log out of all of your other browser sessions across all of your devices. Some of your recent sessions are listed below; however, this list may not be exhaustive. If you feel your account has been compromised, you should also update your password.',
     'profil_show_browser_sessions_this_device_text' => 'This device',
     'profil_show_browser_sessions_last_active_text' => 'Last active',
-    'profil_show_browser_sessions_logout_button' => 'Log Out Other Browser Sessions',
+    'profil_show_browser_sessions_logout_button' => 'Log out sessions',
     'profil_show_browser_sessions_message_done' => 'Done.',
     'profil_show_browser_sessions_modal_title' => 'Log Out Other Browser Sessions',
     'profil_show_browser_sessions_modal_content' => 'Please enter your password to confirm you would like to log out of your other browser sessions across all of your devices.',
@@ -118,12 +118,12 @@ return [
     'bottle_index_search_bar_placeholder'   => 'Name, Country, Color, Price...',
     'bottle_index_database_empty'   => 'There are no bottles in the database.',
     'bottle_index_empty'   => 'Search for a bottle by name.',
-    'bottle_index_search_result_empty'   => 'There is no bottle of his name in the list.',
+    'bottle_index_search_result_empty'   => 'There is no bottle by this name on the list.',
 
     //Page show.blade.php de Bottle
 	'bottle_show_title'   => 'Bottle details',
     'bottle_show_code_saq_text'   => 'SAQ code:',
 	'bottle_show_return_button'   => 'Return',
-    'bottle_show_bottle_quantity_text'   => 'Nb in cellar:',
+    'bottle_show_bottle_quantity_text'   => 'Nb in total:',
     'bottle_show_no_cellar_text'   => 'You have no cellar',
 ];

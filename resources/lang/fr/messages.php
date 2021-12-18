@@ -90,7 +90,7 @@ return [
     'profil_show_browser_sessions_content' => 'Si nécessaire, vous pouvez vous déconnecter de toutes vos autres sessions de navigateur sur tous vos appareils. Certaines de vos sessions récentes sont répertoriées ci-dessous; cependant, cette liste peut ne pas être exhaustive. Si vous pensez que votre compte a été compromis, vous devez également mettre à jour votre mot de passe.',
     'profil_show_browser_sessions_this_device_text' => 'Cet appareil',
     'profil_show_browser_sessions_last_active_text' => 'Dernière activité',
-    'profil_show_browser_sessions_logout_button' => 'Déconnectez-vous des autres sessions de navigateur',
+    'profil_show_browser_sessions_logout_button' => 'Mettre fin aux sessions',
     'profil_show_browser_sessions_message_done' => 'Fait.',
     'profil_show_browser_sessions_modal_title' => 'Déconnectez-vous des autres sessions de navigateur',
     'profil_show_browser_sessions_modal_content' => 'Veuillez entrer votre mot de passe pour confirmer que vous souhaitez vous déconnecter de vos autres sessions de navigateur sur tous vos appareils.',
@@ -114,14 +114,14 @@ return [
 	//Page index.blade.php de Bottle
 	'bottle_index_title'   => 'Liste de la SAQ',
 	'bottle_index_search_bar_placeholder'   => 'Nom, Pays, Couleur, Prix...',
-	'bottle_index_database_empty'   => 'Il y a aucune bouteille dans la base de donnée.',
+	'bottle_index_database_empty'   => 'Il n\'y a aucune bouteille dans la base de donnée.',
     'bottle_index_empty'   => 'Recherchez une bouteille par nom.',
-    'bottle_index_search_result_empty'   => 'Il y a aucune bouteille de se nom dans la liste.',
+    'bottle_index_search_result_empty'   => 'Il n\'y a aucune bouteille de ce nom dans la liste.',
 
     //Page show.blade.php de Bottle
 	'bottle_show_title'   => 'Détails d\'une bouteille',
 	'bottle_show_code_saq_text'   => 'Code SAQ:',
 	'bottle_show_return_button'   => 'Retour',
-	'bottle_show_bottle_quantity_text'   => 'Nb au cellier:',
+	'bottle_show_bottle_quantity_text'   => 'Nb au total:',
     'bottle_show_no_cellar_text'   => 'Vous n\'avez aucun cellier',
 ];

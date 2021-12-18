@@ -5,6 +5,7 @@ namespace App\Http\Livewire;
 use Livewire\Component;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
 
 class NoteModal extends Component
 {
@@ -39,6 +40,7 @@ class NoteModal extends Component
 
     public function storeComment($bottleID, $note)
     {
+		if($note >= '1' && $note <= '5' ) {
 		DB::table('comments')
 			->updateOrInsert(
 			[
@@ -48,9 +50,10 @@ class NoteModal extends Component
 			[
 				'note' => $note,
 			]
-		);
-
+			);
 		$this->emit(event: 'noteChange');
+		}
+
 		$this->closeNoteModal();
 
     }

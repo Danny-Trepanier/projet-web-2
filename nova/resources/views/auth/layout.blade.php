@@ -1,3 +1,4 @@
+@php $locale = session()->get('locale'); @endphp
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="h-full font-sans antialiased">
 <head>
