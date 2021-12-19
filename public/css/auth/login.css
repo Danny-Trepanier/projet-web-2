@@ -8,7 +8,7 @@
    text-align: center;
 }
 
-.login--container .login--logo img {
+.login--container .login--logo svg {
     max-width: 100px;
     margin-top: 20px;
 }
