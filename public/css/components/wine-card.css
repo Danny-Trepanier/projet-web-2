@@ -20,7 +20,6 @@
 
 .wine-card > .img-wrap > img {
 	object-fit: cover;
-	/*transform: translateY(-30%);*/
 	margin-left: auto;
 	margin-right: auto;
 }
