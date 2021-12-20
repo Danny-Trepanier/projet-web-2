@@ -64,6 +64,7 @@ class ScraperCalling extends Action
                         "color" => substr($color, -5),
                         "ml_quantity" => $ml_quantity,
                         "country" => $country,
+                        "created_at" => now()->toDateTimeString(),
                     );
 
                     // Ajout des données récupérées à la base de donnée si le code de la bouteille n'existe pas, si le code existe, met à jour les informations
