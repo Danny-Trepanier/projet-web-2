@@ -3,7 +3,6 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BottleController;
 use App\Http\Controllers\CellarController;
-use App\Http\Controllers\ScraperController;
 use App\Http\Controllers\LocalizationController;
 
 /*
@@ -26,9 +25,6 @@ Route::get('/', function () {
 // Route pour changer la langue du site
 Route::get('/lang/{locale}', [LocalizationController::class, 'index']);
 
-// Route du scraper
-Route::get('/scraper', [ScraperController::class, 'index'])->middleware(['auth:sanctum', 'verified'])->name('scraper');
-
 // Routes pour le cellier
 Route::get('/cellar', [CellarController::class, 'index'])->middleware(['auth:sanctum', 'verified'])->name('cellar');
 Route::get('/cellar/{cellarPost}', [CellarController::class, 'show'])->middleware(['auth:sanctum', 'verified']);
@@ -41,10 +37,3 @@ Route::delete('/cellar/{cellarPost}/edit', [CellarController::class, 'destroy'])
 // Routes pour une bouteille
 Route::get('/bottle', [BottleController::class, 'index'])->middleware(['auth:sanctum', 'verified'])->name('bottle');
 Route::get('/bottle/{bottlePost}', [BottleController::class, 'show'])->middleware(['auth:sanctum', 'verified']);
-Route::get('/bottle/create/bottle', [BottleController::class, 'create'])->middleware(['auth:sanctum', 'verified']);
-Route::post('/bottle/create/bottle', [BottleController::class, 'store'])->middleware(['auth:sanctum', 'verified']);
-Route::get('/bottle/{bottlePost}/edit', [BottleController::class, 'edit'])->middleware(['auth:sanctum', 'verified']);
-Route::put('/bottle/{bottlePost}/edit', [BottleController::class, 'update'])->middleware(['auth:sanctum', 'verified']);
-
-//Route pour ajouter une note à une bouteille
-Route::post('/bottle/create/comment', [BottleController::class, 'storeComment'])->middleware(['auth:sanctum', 'verified'])->name('bottle.create.comment');
