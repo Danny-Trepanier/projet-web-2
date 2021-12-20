@@ -5,20 +5,20 @@ namespace App\Nova\Actions;
 use Exception;
 use Goutte\Client;
 use Illuminate\Bus\Queueable;
-use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Actions\Action;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
 use Laravel\Nova\Fields\ActionFields;
 use Illuminate\Queue\InteractsWithQueue;
-use Illuminate\Contracts\Queue\ShouldQueue;
 
 class ScraperCalling extends Action
 {
     use InteractsWithQueue, Queueable;
 
-    public $name = 'Mettre à jour la liste de vin';
+    public $refreshWhenActionRuns = true;
+
+    public $name = 'Lancer le scraper';
 
     /**
      * Perform the action on the given models.
@@ -29,18 +29,21 @@ class ScraperCalling extends Action
      */
     public function handle(ActionFields $fields, Collection $models)
     {
-        $adata = [];
+        // Déclaration des variables
         $first_page = $fields->page;
         $last_page = $first_page + 9;
         $product_list_limit = 96;
         $client = new Client();
 
+        // Boucle qui permet de changer de page sur le site de la SAQ
         for($i=$first_page; $i<=$last_page; $i++) {
             $url = "https://www.saq.com/fr/produits/vin?p={$i}&product_list_limit={$product_list_limit}";
             $page = $client->request('GET', $url);
 
+            // Boucle qui permet de prendre les informations de toutes les bouteilles sur la page
             for($j=1; $j<=$product_list_limit; $j++) {
                 try {
+                    // On précise quels informations nous voulons récuperer
                     $name = $page->filterXPath("//html/body/div[3]/div[2]/div[1]/main/div/div[2]/div[3]/ol/li[{$j}]/div/div[3]/div[1]/div[1]/strong[1]/a")->text();
                     $image_link = $page->filterXPath("//html/body/div[3]/div[2]/div[1]/main/div/div[2]/div[3]/ol/li[{$j}]/div/a/span[2]/span/img")->attr('src');
                     $code = $page->filterXPath("//html/body/div[3]/div[2]/div[1]/main/div/div[2]/div[3]/ol/li[{$j}]/div/div[3]/div[1]/div[1]/div[2]/span[2]")->text();
@@ -52,6 +55,7 @@ class ScraperCalling extends Action
                     // On remplace la virgule par un point pour éviter une erreur sql
                     $price = str_replace(",", ".", $price);
 
+                    // On enregistre l'information de la bouteille dans un tableau
                     $data = array(
                         "name" => $name,
                         "image_link" => substr($image_link, 0, -58),
@@ -61,27 +65,17 @@ class ScraperCalling extends Action
                         "ml_quantity" => $ml_quantity,
                         "country" => $country,
                     );
-                    //array_push($adata, $data);
+
+                    // Ajout des données récupérées à la base de donnée si le code de la bouteille n'existe pas, si le code existe, met à jour les informations
                     DB::table('bottles')->updateOrInsert(
                         ['code' => $data["code"]],
                         $data
                     );
                 }
                 catch (Exception $e) {
+                    // En cas d'erreur, on affiche le nom de la bouteille
                     echo 'Impossible de prendre la bouteille '.$name;
                     echo "<br>";
-                    // Pourquoi sommes-nous capable d'avoir accès à la bouteille même en cas erreur ?
-                    // On peut quand même l'ajouter à notre tableau !?
-                    // $data = array(
-                    //     "name" => $name,
-                    //     "image_link" => substr($image_link, 0, -58),
-                    //     "code" => $code,
-                    //     "price" => substr($price, 0, -3),
-                    //     "color" => substr($color, -5),
-                    //     "ml_quantity" => $ml_quantity,
-                    //     "country" => $country,
-                    // );
-                    // array_push($adata, $data);
                 }
             }
         }
