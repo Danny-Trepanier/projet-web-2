@@ -16,12 +16,18 @@ class Cellar extends Model
         'user_id'
     ];
 
-    // Un cellier appartient à un utilisateur
+
+    /**
+     * Un cellier appartient à un utilisateur
+     */
     public function user()
     {
         return $this->belongsTo(User::class);
     }
 
+    /**
+     * Un cellier peut contenir plusieurs bouteilles
+     */
     public function bottles()
     {
         return $this->belongsToMany(Bottle::class);

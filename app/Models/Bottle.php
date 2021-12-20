@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use App\Models\Cart;
 use App\Models\Cellar;
 use App\Models\Comment;
 use Illuminate\Database\Eloquent\Model;
@@ -22,13 +21,17 @@ class Bottle extends Model
         'image_link',
     ];
 
-    // Une bouteille peut appartenir à plusieurs celliers
+    /**
+     * Une bouteille peut appartenir à plusieurs celliers
+     */
     public function cellars()
     {
         return $this->belongsToMany(Cellar::class);
     }
 
-    // Une bouteille peut avoir plusieurs notes
+    /**
+     * Une bouteille peut avoir une note
+     */
     public function comment()
     {
         return $this->hasOne(Comment::class);

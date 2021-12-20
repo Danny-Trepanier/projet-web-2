@@ -16,6 +16,9 @@ class Comment extends Model
         'user_id',
     ];
 
+    /**
+     * Une note appartient à une bouteille
+     */
     public function bottle()
     {
         return $this->belongsTo(Bottle::class);
