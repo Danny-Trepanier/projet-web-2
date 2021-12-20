@@ -2,8 +2,12 @@
 
 namespace App\Providers;
 
+use App\Nova\Metrics\BottlesPerColor;
+use App\Nova\Metrics\BottlesPerDay;
+use App\Nova\Metrics\NewBottles;
+use App\Nova\Metrics\NewUsers;
+use App\Nova\Metrics\UsersPerDay;
 use Illuminate\Support\Facades\Gate;
-use Laravel\Nova\Cards\Help;
 use Laravel\Nova\Nova;
 use Laravel\Nova\NovaApplicationServiceProvider;
 
@@ -56,7 +60,11 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     protected function cards()
     {
         return [
-            new Help,
+            new NewUsers,
+            new UsersPerDay,
+            new NewBottles,
+            new BottlesPerDay,
+            new BottlesPerColor,
         ];
     }
 

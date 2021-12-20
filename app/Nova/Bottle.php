@@ -5,19 +5,14 @@ namespace App\Nova;
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Text;
-use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Select;
-use App\Nova\Metrics\NewBottles;
 use Laravel\Nova\Fields\Country;
-use Laravel\Nova\Fields\Currency;
-use App\Nova\Metrics\BottlesPerDay;
-use App\Nova\Actions\ScraperCalling;
-use App\Nova\Metrics\BottlesPerColor;
-use Laravel\Nova\Http\Requests\NovaRequest;
 
 class Bottle extends Resource
 {
+    public $refreshWhenActionRuns = true;
+
     /**
      * The model the resource corresponds to.
      *
@@ -40,26 +35,6 @@ class Bottle extends Resource
     public static function label()
     {
         return  __('nova::messages.nav_bottles_button');
-    }
-
-    /**
-     * Get the text for the create resource button.
-     *
-     * @return string|null
-     */
-    public static function createButtonLabel()
-    {
-        return  __('nova::messages.nav_bottles_create_button');
-    }
-
-    /**
-     * Get the text for the update resource button.
-     *
-     * @return string|null
-     */
-    public static function updateButtonLabel()
-    {
-        return  __('nova::messages.nav_bottles_update_button');
     }
 
     /**

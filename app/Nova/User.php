@@ -5,8 +5,6 @@ namespace App\Nova;
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Text;
-use App\Nova\Metrics\NewUsers;
-use App\Nova\Metrics\UsersPerDay;
 use Laravel\Nova\Fields\Gravatar;
 use Laravel\Nova\Fields\Password;
 
@@ -34,26 +32,6 @@ class User extends Resource
     public static function label()
     {
         return  __('nova::messages.nav_users_button');
-    }
-
-    /**
-     * Get the text for the create resource button.
-     *
-     * @return string|null
-     */
-    public static function createButtonLabel()
-    {
-        return  __('nova::messages.nav_users_create_button');
-    }
-
-    /**
-     * Get the text for the update resource button.
-     *
-     * @return string|null
-     */
-    public static function updateButtonLabel()
-    {
-        return  __('nova::messages.nav_users_update_button');
     }
 
     /**
@@ -104,6 +82,8 @@ class User extends Resource
     public function cards(Request $request)
     {
         return [
+            (new Metrics\NewUsers()),
+            (new Metrics\UsersPerDay()),
         ];
     }
 
