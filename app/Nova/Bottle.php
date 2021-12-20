@@ -103,6 +103,7 @@ class Bottle extends Resource
     {
         return [
             (new Metrics\NewBottles()),
+            (new Metrics\BottlesPerDay()),
             (new Metrics\BottlesPerColor()),
         ];
     }
