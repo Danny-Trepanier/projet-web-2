@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 
 class LocalizationController extends Controller
 {
     /**
+     * Permet que l'utilisateur change la langue de l'application
      * @param $locale
      * @return RedirectResponse
      */
@@ -15,7 +15,7 @@ class LocalizationController extends Controller
     {
         App::setLocale($locale);
         session()->put('locale', $locale);
-        
+
         return redirect()->back();
     }
 }

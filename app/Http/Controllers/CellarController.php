@@ -2,10 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Bottle;
 use App\Models\Cellar;
 use App\Models\Comment;
-use App\Models\BottleCellar;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
@@ -19,7 +17,7 @@ class CellarController extends Controller
      */
     public function index()
     {
-        // Nous prenons tous les celliers de l'utilisateur
+        // Nous prenons tous les celliers de l'utilisateur pour les retourner
         $myCellars = Cellar::get()->where('user_id', Auth::user()->id);
 
         return view('cellar.index', [
@@ -28,7 +26,7 @@ class CellarController extends Controller
     }
 
     /**
-     * Nous affichons la vue de la création d'un cellier.
+     * Affiche la vue de la création d'un cellier.
      *
      * @return \Illuminate\Http\Response
      */
@@ -39,9 +37,10 @@ class CellarController extends Controller
     }
 
     /**
-     * Nous enregistrons le cellier dans notre base de donnée.
+     * Enregistre le cellier dans notre base de donnée.
      *
      * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request  $cellarPost
      * @return \Illuminate\Http\Response
      */
     public function store(Request $cellarPost)
@@ -51,7 +50,7 @@ class CellarController extends Controller
             'name' => 'required|min:4|max:255',
         ]);
 
-        $cellar = Cellar::create([
+        Cellar::create([
             'name' => $cellarPost->name,
             'user_id' => Auth::user()->id
         ]);
@@ -60,34 +59,27 @@ class CellarController extends Controller
     }
 
     /**
-     * Affiche le cellier.
+     * Affiche le cellier d'un utilisateur.
      *
      * @param  \App\Models\Cellar  $cellar
+     * @param  \Illuminate\Http\Request  $cellarPost
      * @return \Illuminate\Http\Response
      */
     public function show(Cellar $cellarPost)
     {
+        // Empêche l'utilisateur de voir des celliers qui sont pas à lui
         $this->authorize('view', $cellarPost);
 
-        //$myCellars = Cellar::find($cellarPost->id)->groupBy('bottle_id');
-        // SELECT COUNT(bottle_id) AS bottleCount, bottle_id, cellar_id, name, color, ml_quantity, country, code, price, image_link
-        // FROM `bottle_cellar`
-        // INNER JOIN bottles ON bottle_cellar.bottle_id = bottles.id
-        // WHERE cellar_id = 1
-        // GROUP BY bottle_id
-
+        // On récupère les notes sur les bouteilles que l'utilisateur à donnée pour les retourner
         $comments = Comment::all()->where('user_id', Auth::user()->id );
-        // dd($comments);
 
+        // On récupère les celliers de l'utilisateur et les bouteilles à l'intérieur de ces celliers pour les retourner
         $myCellars = DB::table('bottle_cellar')
                             ->join('bottles', 'bottle_cellar.bottle_id', '=', 'bottles.id')
                             ->select(DB::raw('count(bottle_id) as bottleCount'), 'bottle_cellar.cellar_id', 'bottles.*')
                             ->where('cellar_id', '=', $cellarPost->id)
                             ->groupBy('bottle_id')
                             ->get();
-
-
-        //dd($myCellars);
 
         return view('cellar.show', [
             'cellar' => $cellarPost,
@@ -97,13 +89,15 @@ class CellarController extends Controller
     }
 
     /**
-     * Affiche le formulaire pour éditer le cellier de l'utilisateur.
+     * Affiche la vue pour éditer le cellier de l'utilisateur.
      *
      * @param  \App\Models\Cellar  $cellar
+     * @param  \Illuminate\Http\Request  $cellarPost
      * @return \Illuminate\Http\Response
      */
     public function edit(Cellar $cellarPost)
     {
+        // Empêche l'utilisateur de modifier les celliers qui sont pas à lui
         $this->authorize('update', $cellarPost);
 
         return view('cellar.edit', [
@@ -112,14 +106,16 @@ class CellarController extends Controller
     }
 
     /**
-     * Met à jour les informations du cellier.
+     * Met à jour les informations du cellier de l'utilisateur.
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\Cellar  $cellar
+     * @param  \Illuminate\Http\Request  $cellarPost
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Cellar $cellarPost)
     {
+        // Empêche l'utilisateur de modifier les celliers qui sont pas à lui
         $this->authorize('update', $cellarPost);
 
         $request->validate([
@@ -134,13 +130,15 @@ class CellarController extends Controller
     }
 
     /**
-     * Supprimer le cellier de l'utilisateur.
+     * Supprime le cellier de l'utilisateur.
      *
      * @param  \App\Models\Cellar  $cellar
+     * @param  \Illuminate\Http\Request  $cellarPost
      * @return \Illuminate\Http\Response
      */
     public function destroy(Cellar $cellarPost)
     {
+        // Empêche l'utilisateur de supprimer un cellier qui est pas à lui
         $this->authorize('delete', $cellarPost);
 
         $cellarPost->delete();
