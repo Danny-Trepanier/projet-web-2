@@ -2,8 +2,9 @@
 
 namespace App\Nova\Metrics;
 
-use Laravel\Nova\Http\Requests\NovaRequest;
+use App\Models\User;
 use Laravel\Nova\Metrics\Trend;
+use Laravel\Nova\Http\Requests\NovaRequest;
 
 class UsersPerDay extends Trend
 {
@@ -15,7 +16,17 @@ class UsersPerDay extends Trend
      */
     public function calculate(NovaRequest $request)
     {
-        return $this->countByDays($request, Model::class);
+        return $this->countByDays($request, User::class);
+    }
+
+    /**
+     * Get the displayable name of the metric.
+     *
+     * @return string
+     */
+    public function name()
+    {
+        return __('Nouveaux utilisateurs par jour');
     }
 
     /**

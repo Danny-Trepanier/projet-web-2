@@ -2,6 +2,7 @@
 
 namespace App\Nova\Metrics;
 
+use App\Models\User;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use Laravel\Nova\Metrics\Value;
 
@@ -15,7 +16,17 @@ class NewUsers extends Value
      */
     public function calculate(NovaRequest $request)
     {
-        return $this->count($request, Model::class);
+        return $this->count($request, User::class);
+    }
+
+    /**
+     * Get the displayable name of the metric.
+     *
+     * @return string
+     */
+    public function name()
+    {
+        return __('Nouveaux utilisateurs');
     }
 
     /**

@@ -8,6 +8,18 @@ use Laravel\Nova\Http\Requests\NovaRequest;
 
 class BottlesPerDay extends Trend
 {
+    public $refreshWhenActionRuns = true;
+
+    /**
+     * Get the displayable name of the metric.
+     *
+     * @return string
+     */
+    public function name()
+    {
+        return __('Nouvelle bouteille par jour');
+    }
+
     /**
      * Calculate the value of the metric.
      *
@@ -40,7 +52,7 @@ class BottlesPerDay extends Trend
      */
     public function cacheFor()
     {
-        // return now()->addMinutes(5);
+         return now()->addMinutes(1);
     }
 
     /**

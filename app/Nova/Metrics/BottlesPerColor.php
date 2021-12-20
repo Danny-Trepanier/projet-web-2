@@ -8,6 +8,8 @@ use Laravel\Nova\Http\Requests\NovaRequest;
 
 class BottlesPerColor extends Partition
 {
+    public $refreshWhenActionRuns = true;
+
     /**
      * Get the displayable name of the metric.
      *
@@ -36,7 +38,7 @@ class BottlesPerColor extends Partition
      */
     public function cacheFor()
     {
-        // return now()->addMinutes(5);
+         return now()->addMinutes(1);
     }
 
     /**

@@ -8,6 +8,8 @@ use Laravel\Nova\Http\Requests\NovaRequest;
 
 class NewBottles extends Value
 {
+    public $refreshWhenActionRuns = true;
+
     /**
      * Get the displayable name of the metric.
      *
@@ -26,7 +28,7 @@ class NewBottles extends Value
      */
     public function calculate(NovaRequest $request)
     {
-        return $this->result(4883)->previous(50);
+        return $this->count($request, Bottle::class);
     }
 
     /**
@@ -54,7 +56,7 @@ class NewBottles extends Value
      */
     public function cacheFor()
     {
-        // return now()->addMinutes(5);
+         return now()->addMinutes(1);
     }
 
     /**
