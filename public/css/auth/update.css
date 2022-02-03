@@ -1,0 +1,50 @@
+/* ---- Général -------------------------------------------------- */
+
+.user {
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.user div {
+    display: flex;
+    flex-flow: column wrap;
+    width: 100%;
+}
+
+.user svg {
+    max-width: 60px;
+}
+
+.user form {
+    margin-top: 5px;
+}
+
+.user h3 {
+    margin-bottom: 10px;
+}
+
+.user label {
+    font-size: var(--font-size-text);
+    font-weight: 700;
+}
+
+.user--information {
+    padding-top: 30px;
+}
+
+.user--password-update, .user--authentification, .user--logout, .user--delete {
+    padding-top: 30px;
+}
+
+.user--authentification button, .user--logout button, .user--delete button {
+    margin-top: 25px;
+}
+
+.user--delete button {
+    background-color: var(--red);
+}
+
+.user--delete {
+    margin-bottom: 40px;
+}

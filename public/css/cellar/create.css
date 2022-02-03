@@ -1,0 +1,12 @@
+.cellar--create {
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+}
+
+.cellar--create h2 {
+    margin-bottom: 20px;
+}

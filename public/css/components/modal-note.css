@@ -1,0 +1,54 @@
+/* Bouton d'ajout d'une note */
+
+.note--wrap {
+	margin-left: 36px;
+	position: absolute;
+	transform: translateY(260px);
+	display: flex;
+}
+
+.note--wrap > .note--number {
+	font-family: var(--font-subtitle);
+	font-size: 36px;
+	color: black;
+	padding-left: 0;
+	width: fit-content;
+	border: none;
+	background-color: inherit;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.note--wrap > .note--number > span {
+	margin-right: 10px;
+}
+
+.note--wrap > .note--number > .icon--star {
+	padding-right: 5px;
+}
+
+/* Fenetre modale d'ajoute de la note */
+
+.modal-note-content {
+	height: fit-content;
+	width: 50%;
+	background-color: white;
+	border-radius: 1em;
+	padding: 1em;
+}
+
+.modal-note-content > .wrap--btn-note {
+	display: flex;
+	flex-direction: column;
+}
+
+.wrap--btn-note > div {
+	display: flex;
+	align-items: center;
+	margin-bottom: 2em;
+}
+
+.wrap--btn-note > div > label {
+	margin-left: 2em;
+}

@@ -1,0 +1,73 @@
+/* Fiche détail d'une bouteille de la SAQ */
+
+.bottle-detail {
+	background-color: white;
+	margin-bottom: 30px;
+	max-width: 600px;
+	display: flex;
+	flex-direction: column;
+}
+
+.bottle-detail > .img-wrap {
+	display:flex;
+	justify-content: flex-end;
+	margin-top: 0;
+}
+
+.bottle-detail > .img-wrap > img {
+	/*width: 264px;*/
+	width: 220px;
+	z-index: 2;
+}
+
+/* SVG couleurs de vin --------------------- */
+
+.bottle-detail > svg {
+	width: 55px;
+	margin-left: 36px;
+	position: absolute;
+	transform: translateY(60px);
+}
+
+.bottle-detail > .icon-rouge {
+	fill: #9B0E27;
+}
+.bottle-detail > .icon-blanc {
+	fill: #ECE09D;
+}
+.bottle-detail > .icon-rosé {
+	fill: #FFB9B9;
+}
+
+/* Section d'informations de la bouteille ------ */
+
+.bottle-detail > .detail--info > h1 {
+	font-size: 26px;
+	margin: 10px 36px 10px 36px;
+}
+
+.bg--color {
+	background-color: var(--mint-cream);
+	padding: 15px 36px 15px 36px;
+}
+
+
+.container--info {
+	display:flex;
+	flex-direction: column;
+	height: fit-content;
+	font-family: var(--font-subtitle);
+	font-size: 18px;
+}
+
+.container--info > div {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 5px;
+}
+
+.bottle-detail > a > .link--back {
+	width: 120px;
+	margin-left: 36px;
+	margin-top: 10px;
+}

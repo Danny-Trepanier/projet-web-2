@@ -3,8 +3,8 @@
 /public/storage
 /storage/*.key
 /vendor
-.env
 .env.backup
+.env
 .phpunit.result.cache
 docker-compose.override.yml
 Homestead.json
@@ -13,3 +13,9 @@ npm-debug.log
 yarn-error.log
 /.idea
 /.vscode
+env
+composer.lock
+composer.json
+package-lock.json
+package.json
+tableau-de-bord-maxime-fournier.md

@@ -1,0 +1,16 @@
+.cellar--edit {
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+}
+
+.cellar--edit h2 {
+    margin-bottom: 20px;
+}
+
+.cellar--edit form .red {
+    background-color: var(--red);
+}

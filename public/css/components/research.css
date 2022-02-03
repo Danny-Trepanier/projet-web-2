@@ -1,0 +1,27 @@
+/* CSS du components research */
+
+.research > .filters--search-bar {
+	background-color: var(--caput-mortuum);
+	height: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.research > .filters--search-bar > input {
+	width: 90%;
+	height: 70%;
+	border-radius: 10px;
+	text-indent: 4ch;
+}
+
+.research--empty {
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
+
+.research--empty > button {
+    margin-top: 15px;
+}

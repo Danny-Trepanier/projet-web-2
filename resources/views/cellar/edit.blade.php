@@ -1,0 +1,46 @@
+<x-app-layout>
+
+    <div class="title">
+        <h1>{{ __('messages.cellar_edit_title') }}</h1>
+    </div>
+
+    <div class="cellar--edit">
+
+        <form action="" method="POST">
+            @csrf
+            @method('PUT')
+
+            <fieldset>
+                <div>
+                    <label for="exampleInputEmail1">{{ __('messages.cellar_edit_label_for_name') }}</label>
+                    <input type="text" class="form-control" name="name" value="{{$cellar->name}}">
+                </div>
+                <div>
+                    @if ($errors->any())
+                        <div>
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+                </div>
+                <div>
+                    <button type="submit" class="button">{{ __('messages.cellar_edit_button_update') }}</button>
+                </div>
+            </fieldset>
+
+        </form>
+		<form action="" method="POST">
+			@method('DELETE')
+			@csrf
+			<div>
+				<button type="submit" class="button red">{{ __('messages.cellar_edit_button_delete') }}</button>
+			</div>
+		</form>
+
+
+    </div>
+
+</x-app-layout>

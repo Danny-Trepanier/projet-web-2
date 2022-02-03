@@ -1,0 +1,143 @@
+.menu--burger {
+    display: block;
+    position: relative;
+    padding: 0px;
+    width: 45px;
+    height: 45px;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+    margin-left: 0;
+}
+
+.menu--burger:active, .menu--burger:hover {
+    background-color: transparent;
+    text-decoration: none;
+}
+
+.menu--burger-bar {
+    position: absolute;
+    display: block;
+    width: 45px;
+    height: 6px;
+    margin: 15px 0px 0px 30px;
+    background-color: rgb(0, 0, 0);
+    border-radius: 5px;
+}
+
+.menu--burger-bar::before, .menu--burger-bar::after {
+    position: absolute;
+    content: "";
+    left: 0px;
+    width: 45px;
+    height: 6px;
+    background-color: rgb(0, 0, 0);
+    border-radius: 5px;
+}
+
+.menu--burger-bar::before {
+    transform: translateY(-12px);
+}
+
+.menu--burger-bar::after {
+    transform: translateY(12px);
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.navbar--links {
+    position: absolute;
+    display: flex;
+    flex-flow: column wrap;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    width: 100%;
+    height: calc(100vh);
+    display: none;
+    top: 0px;
+    bottom: 0;
+    padding-top: 80px;
+    z-index: 100;
+}
+
+.navbar--link {
+    padding: 10px 30px;
+    font-size: var(--font-size-title);
+    font-family: var(--font-title);
+    background-color: rgb(48, 46, 46);
+}
+
+.navbar--link a {
+    color: white;
+    text-decoration: none;
+}
+
+.navbar--link:active {
+   background-color: rgb(83, 81, 81);
+   border-left: white 10px solid;
+   padding-left: 20px;
+}
+
+.navbar--link-button {
+    margin-left: 0px;
+}
+
+.navbar--link-lang {
+    display: flex;
+    font-size: 1rem;
+    font-family: var(--font-title);
+    padding: 10px 30px 20px 30px;
+    background-color: rgb(48, 46, 46);
+    color: white;
+    text-decoration: none;
+}
+
+.navbar--link-lang:active, .navbar--link-lang:hover {
+    text-decoration: underline;
+}
+
+.navbar--link-button .red {
+    color: red !important;
+    font-family: var(--font-title);
+    font-size: var(--font-subtitle);
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+    text-transform: capitalize;
+}
+
+.navbar img {
+    display: flex;
+}
+
+
+/* -- vue du menu burger ouvert -- */
+.show-nav .navbar--links {
+    display: inline;
+    position: fixed;
+}
+
+.overflow-scroll-hidden {
+    overflow-y: hidden;
+}
+
+    .menu--burger-bar-white, .menu--burger-bar-white::before, .menu--burger-bar-white::after {
+        position: fixed;
+        margin-left: 30px;
+        background-color: white;
+        z-index: 101;
+    }
+
+    .navbar--logo-blanc {
+        width: 120px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 80px;
+        opacity: 25%;
+    }

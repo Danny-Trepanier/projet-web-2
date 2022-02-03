@@ -1,0 +1,20 @@
+.cellar--index {
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cellar--index .cellar--index-create {
+    margin-bottom: 15px;
+    margin-top: 40px;
+}
+
+.cellar--index .cellar--index-name {
+    margin-bottom: 10px;
+}
+
+.cellar--index  .cellar--index-empty {
+    text-align: center;
+}
